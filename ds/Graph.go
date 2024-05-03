@@ -1,22 +1,20 @@
 package ds
 
-import "slices"
-
 type Graph struct {
 	is_directed bool
-	vertices    []int
+	vertices    map[int]bool
 	adj_list    map[int][]int
 }
 
 func NewGraph(is_directed bool) *Graph {
 	return &Graph{
 		is_directed: is_directed,
-		vertices:    []int{},
+		vertices:    map[int]bool{},
 		adj_list:    map[int][]int{},
 	}
 }
 
-func (graph *Graph) GetVertices() []int {
+func (graph *Graph) GetVertices() map[int]bool {
 	return graph.vertices
 }
 
@@ -25,8 +23,10 @@ func (graph *Graph) GetAdjList() map[int][]int {
 }
 
 func (graph *Graph) AddVertex(v int) {
-	if !slices.Contains(graph.vertices, v) {
-		graph.vertices = append(graph.vertices, v)
+	_, ok := graph.vertices[v]
+
+	if !ok {
+		graph.vertices[v] = true
 		graph.adj_list[v] = []int{}
 	}
 }
