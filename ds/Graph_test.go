@@ -36,80 +36,80 @@ var _ = Describe("Graph", func() {
 		})
 
 		It("shoud add an edge to the first vertex", func() {
-			Expect(2).Should(BeKeyOf(graph.vertices[1].edges))
+			Expect(2).Should(BeKeyOf(graph.vertices[1].next))
 		})
 	})
 
 	Context("Small graph", func() {
-		// Small dataset
-		graph := NewGraph(true)
-		graph.AddEdge(1, 4)
-		graph.AddEdge(2, 8)
-		graph.AddEdge(3, 6)
-		graph.AddEdge(4, 7)
-		graph.AddEdge(5, 2)
-		graph.AddEdge(6, 9)
-		graph.AddEdge(7, 1)
-		graph.AddEdge(8, 6)
-		graph.AddEdge(8, 5)
-		graph.AddEdge(9, 3)
-		graph.AddEdge(9, 7)
+		var edge_list = [][2]int{{1, 4}, {2, 8}, {3, 6}, {4, 7}, {5, 2}, {6, 9}, {7, 1}, {8, 6}, {8, 5}, {9, 3}, {9, 7}}
 
 		It("should correctly add multiple vertices", func() {
+			graph := NewGraph(true)
+			graph.AddEdges(edge_list)
+
 			expected := map[int]*Vertex{
 				1: {
 					is_explored:    false,
 					finishing_time: 0,
 					leader:         0,
-					edges:          map[int]bool{4: true},
+					next:           map[int]bool{4: true},
+					prev:           map[int]bool{7: true},
 				},
 				2: {
 					is_explored:    false,
 					finishing_time: 0,
 					leader:         0,
-					edges:          map[int]bool{8: true},
+					next:           map[int]bool{8: true},
+					prev:           map[int]bool{5: true},
 				},
 				3: {
 					is_explored:    false,
 					finishing_time: 0,
 					leader:         0,
-					edges:          map[int]bool{6: true},
+					next:           map[int]bool{6: true},
+					prev:           map[int]bool{9: true},
 				},
 				4: {
 					is_explored:    false,
 					finishing_time: 0,
 					leader:         0,
-					edges:          map[int]bool{7: true},
+					next:           map[int]bool{7: true},
+					prev:           map[int]bool{1: true},
 				},
 				5: {
 					is_explored:    false,
 					finishing_time: 0,
 					leader:         0,
-					edges:          map[int]bool{2: true},
+					next:           map[int]bool{2: true},
+					prev:           map[int]bool{8: true},
 				},
 				6: {
 					is_explored:    false,
 					finishing_time: 0,
 					leader:         0,
-					edges:          map[int]bool{9: true},
+					next:           map[int]bool{9: true},
+					prev:           map[int]bool{3: true, 8: true},
 				},
 				7: {
 					is_explored:    false,
 					finishing_time: 0,
 					leader:         0,
-					edges:          map[int]bool{1: true},
+					next:           map[int]bool{1: true},
+					prev:           map[int]bool{4: true, 9: true},
 				},
 				8: {
 					is_explored:    false,
 					finishing_time: 0,
 					leader:         0,
-					edges:          map[int]bool{6: true, 5: true},
+					next:           map[int]bool{6: true, 5: true},
+					prev:           map[int]bool{2: true},
 				},
 				9: {
 					is_explored:    false,
 					finishing_time: 0,
 					leader:         0,
-					edges:          map[int]bool{3: true, 7: true},
+					next:           map[int]bool{3: true, 7: true},
+					prev:           map[int]bool{6: true},
 				},
 			}
 			received := graph.GetVertices()
@@ -118,29 +118,44 @@ var _ = Describe("Graph", func() {
 		})
 
 		It("running DFS() from vertex 1 should explore vertices 4 and 7 ", func() {
+			graph := NewGraph(true)
+			graph.AddEdges(edge_list)
 			graph.DFS(1)
 
-			Expect(graph.vertices[4].is_explored).Should(BeTrue())
-			Expect(graph.vertices[7].is_explored).Should(BeTrue())
-			Expect(graph.vertices[3].is_explored).Should(BeFalse())
-			Expect(graph.vertices[5].is_explored).Should(BeFalse())
+			Expect(graph.AreExplored([]int{4, 7})).To(BeTrue())
+			Expect(graph.AreExplored([]int{3, 5})).To(BeFalse())
+		})
+
+		It("running ReverseDFS() from vertex 6 should explore vertices 8, 2, 5, 3, 9 ", func() {
+			graph := NewGraph(true)
+			graph.AddEdges(edge_list)
+			graph.ReverseDFS(6)
+
+			Expect(graph.AreExplored([]int{8, 2, 5, 3, 9})).To(BeTrue())
+			Expect(graph.AreExplored([]int{1, 4, 7})).To(BeFalse())
+		})
+
+		It("running DFS() from vertex 6 should explore vertices 8, 2, 5, 3, 9 ", func() {
+			graph := NewGraph(true)
+			graph.AddEdges(edge_list)
+			graph.DFS(6)
+
+			Expect(graph.AreExplored([]int{3, 9, 1, 4, 7})).To(BeTrue())
+			Expect(graph.AreExplored([]int{8, 2, 5})).To(BeFalse())
 		})
 	})
 
 	Context("Huge graph", func() {
 		huge_graph := NewGraph(true)
-		integer_tupples, _ := utils.ReadIntegersTuplesFromFile("../data/scc")
-		n := len(integer_tupples)
-		for i := 0; i < n; i++ {
-			huge_graph.AddEdge(integer_tupples[i][0], integer_tupples[i][1])
-		}
+		edge_list, _ := utils.ReadIntegersTuplesFromFile("../data/scc")
+		huge_graph.AddEdges(edge_list)
 
 		It("should compute the last vertex with correct data", func() {
 			expected := &Vertex{
 				is_explored:    false,
 				finishing_time: 0,
 				leader:         0,
-				edges: map[int]bool{
+				next: map[int]bool{
 					233422: true,
 					233423: true,
 					233424: true,
@@ -157,6 +172,7 @@ var _ = Describe("Graph", func() {
 					233435: true,
 					233436: true,
 				},
+				prev: map[int]bool{},
 			}
 			received := huge_graph.GetVertices()[875713]
 
