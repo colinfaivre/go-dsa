@@ -4,7 +4,7 @@ import "testing"
 
 func TestInsertionSort(t *testing.T) {
 	arr := []int{3, 2, 1}
-	expected := []int{1, 2, 4}
+	expected := []int{1, 2, 3}
 	InsertionSort(arr)
 
 	for i := range arr {
