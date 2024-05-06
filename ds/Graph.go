@@ -2,7 +2,7 @@ package ds
 
 type Graph struct {
 	is_directed bool
-	vertices    map[int]Vertex
+	vertices    map[int]*Vertex
 }
 
 type Vertex struct {
@@ -15,11 +15,11 @@ type Vertex struct {
 func NewGraph(is_directed bool) *Graph {
 	return &Graph{
 		is_directed: is_directed,
-		vertices:    map[int]Vertex{},
+		vertices:    map[int]*Vertex{},
 	}
 }
 
-func (graph *Graph) GetVertices() map[int]Vertex {
+func (graph *Graph) GetVertices() map[int]*Vertex {
 	return graph.vertices
 }
 
@@ -27,7 +27,7 @@ func (graph *Graph) AddVertex(v int) {
 	_, ok := graph.vertices[v]
 
 	if !ok {
-		graph.vertices[v] = Vertex{
+		graph.vertices[v] = &Vertex{
 			edges:          map[int]bool{},
 			is_visited:     false,
 			finishing_time: 0,
@@ -43,5 +43,15 @@ func (graph *Graph) AddEdge(v, w int) {
 	graph.vertices[v].edges[w] = true
 	if !graph.is_directed {
 		graph.vertices[w].edges[v] = true
+	}
+}
+
+func (graph *Graph) DFS(start_vertex int) {
+	graph.vertices[start_vertex].is_visited = true
+
+	for edge := range graph.vertices[start_vertex].edges {
+		if !graph.vertices[edge].is_visited {
+			graph.DFS(edge)
+		}
 	}
 }

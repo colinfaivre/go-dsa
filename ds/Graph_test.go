@@ -9,16 +9,25 @@ import (
 func TestGraph(t *testing.T) {
 	// Small dataset
 	graph := NewGraph(true)
-	graph.AddEdge(1, 2)
-	graph.AddEdge(3, 4)
-	graph.AddEdge(3, 5)
-	graph.AddEdge(4, 6)
+	graph.AddEdge(1, 4)
+	graph.AddEdge(2, 8)
+	graph.AddEdge(3, 6)
+	graph.AddEdge(4, 7)
+	graph.AddEdge(5, 2)
+	graph.AddEdge(6, 9)
+	graph.AddEdge(7, 1)
+	graph.AddEdge(8, 6)
+	graph.AddEdge(8, 5)
+	graph.AddEdge(9, 3)
+	graph.AddEdge(9, 7)
 
-	expected_vertices := map[int][]int{1: {2}, 2: {}, 3: {4, 5}, 4: {6}, 5: {}, 6: {}}
+	expected_vertices := map[int][]int{1: {4}, 2: {8}, 3: {6}, 4: {7}, 5: {2}, 6: {9}, 7: {1}, 8: {6, 5}, 9: {3, 7}}
 	received_vertices := graph.GetVertices()
+	graph.DFS(1)
 
-	// t.Logf("graph %v", graph)
-	if !received_vertices[1].edges[2] && received_vertices[6].edges != nil {
+	t.Logf("graph %v", graph.vertices[2])
+
+	if !received_vertices[1].edges[4] && !received_vertices[9].edges[7] {
 		t.Errorf("graph.GetVertices() expected %v but received %v", expected_vertices, received_vertices)
 	}
 
