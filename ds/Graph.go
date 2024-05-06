@@ -2,44 +2,46 @@ package ds
 
 type Graph struct {
 	is_directed bool
-	vertices    map[int]bool
-	adj_list    map[int][]int
+	vertices    map[int]Vertex
+}
+
+type Vertex struct {
+	is_visited     bool
+	finishing_time int
+	leader         int
+	edges          map[int]bool
 }
 
 func NewGraph(is_directed bool) *Graph {
 	return &Graph{
 		is_directed: is_directed,
-		vertices:    map[int]bool{},
-		adj_list:    map[int][]int{},
+		vertices:    map[int]Vertex{},
 	}
 }
 
-func (graph *Graph) GetVertices() map[int]bool {
+func (graph *Graph) GetVertices() map[int]Vertex {
 	return graph.vertices
-}
-
-func (graph *Graph) GetAdjList() map[int][]int {
-	return graph.adj_list
 }
 
 func (graph *Graph) AddVertex(v int) {
 	_, ok := graph.vertices[v]
 
 	if !ok {
-		graph.vertices[v] = true
-		graph.adj_list[v] = []int{}
+		graph.vertices[v] = Vertex{
+			edges:          map[int]bool{},
+			is_visited:     false,
+			finishing_time: 0,
+			leader:         0,
+		}
 	}
 }
 
 func (graph *Graph) AddEdge(v, w int) {
-	if graph.adj_list[v] == nil {
-		graph.AddVertex(v)
-	}
-	if graph.adj_list[w] == nil {
-		graph.AddVertex(w)
-	}
-	graph.adj_list[v] = append(graph.adj_list[v], w)
+	graph.AddVertex(v)
+	graph.AddVertex(w)
+
+	graph.vertices[v].edges[w] = true
 	if !graph.is_directed {
-		graph.adj_list[w] = append(graph.adj_list[w], v)
+		graph.vertices[w].edges[v] = true
 	}
 }

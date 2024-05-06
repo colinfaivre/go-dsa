@@ -14,22 +14,12 @@ func TestGraph(t *testing.T) {
 	graph.AddEdge(3, 5)
 	graph.AddEdge(4, 6)
 
-	expected_vertices := map[int]bool{1: true, 2: true, 3: true, 4: true, 5: true, 6: true}
+	expected_vertices := map[int][]int{1: {2}, 2: {}, 3: {4, 5}, 4: {6}, 5: {}, 6: {}}
 	received_vertices := graph.GetVertices()
 
-	expected_adj_list := map[int][]int{1: {2}, 2: {}, 3: {4, 5}, 4: {6}, 5: {}, 6: {}}
-	received_adj_list := graph.GetAdjList()
-
-	if expected_vertices[1] != received_vertices[1] {
+	// t.Logf("graph %v", graph)
+	if !received_vertices[1].edges[2] && received_vertices[6].edges != nil {
 		t.Errorf("graph.GetVertices() expected %v but received %v", expected_vertices, received_vertices)
-	}
-
-	if expected_vertices[5] != received_vertices[5] {
-		t.Errorf("graph.GetVertices() expected %v but received %v", expected_vertices, received_vertices)
-	}
-
-	if expected_adj_list[1][0] != 2 && expected_adj_list[6] != nil {
-		t.Errorf("graph.GetVertices() expected %v but received %v", expected_adj_list, received_adj_list)
 	}
 
 	// Huge dataset
@@ -41,10 +31,11 @@ func TestGraph(t *testing.T) {
 		huge_graph.AddEdge(integer_tupples[i][0], integer_tupples[i][1])
 	}
 
-	expected_huge_adj_list := []int{233422, 233423, 233424, 233425, 233426, 233427, 233428, 233429, 233430, 233431, 233432, 233433, 233434, 233435, 233436}
-	received_huge_adj_list := huge_graph.GetAdjList()[875713]
+	// t.Logf("huge_graph %v", huge_graph.vertices[875713])
+	expected_huge_vertices := Vertex{is_visited: false, finishing_time: 0, leader: 0, edges: map[int]bool{233422: true, 233423: true, 233424: true, 233425: true, 233426: true, 233427: true, 233428: true, 233429: true, 233430: true, 233431: true, 233432: true, 233433: true, 233434: true, 233435: true, 233436: true}}
+	received_huge_vertices := huge_graph.GetVertices()[875713]
 
-	if expected_huge_adj_list[0] != received_huge_adj_list[0] {
-		t.Errorf("huge_graph.GetAdjList() expected %v but received %v", expected_adj_list, received_adj_list)
+	if !received_huge_vertices.edges[233422] || !received_huge_vertices.edges[233436] {
+		t.Errorf("huge_graph.GetVertices() expected %v but received %v", expected_huge_vertices, received_huge_vertices)
 	}
 }
