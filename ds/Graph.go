@@ -6,7 +6,7 @@ type Graph struct {
 }
 
 type Vertex struct {
-	is_visited     bool
+	is_explored    bool
 	finishing_time int
 	leader         int
 	edges          map[int]bool
@@ -29,7 +29,7 @@ func (graph *Graph) AddVertex(v int) {
 	if !ok {
 		graph.vertices[v] = &Vertex{
 			edges:          map[int]bool{},
-			is_visited:     false,
+			is_explored:    false,
 			finishing_time: 0,
 			leader:         0,
 		}
@@ -47,11 +47,27 @@ func (graph *Graph) AddEdge(v, w int) {
 }
 
 func (graph *Graph) DFS(start_vertex int) {
-	graph.vertices[start_vertex].is_visited = true
+	graph.vertices[start_vertex].is_explored = true
 
 	for edge := range graph.vertices[start_vertex].edges {
-		if !graph.vertices[edge].is_visited {
+		if !graph.vertices[edge].is_explored {
 			graph.DFS(edge)
+		}
+	}
+}
+
+func (graph *Graph) BFS(start_vertex int) {
+	graph.vertices[start_vertex].is_explored = true
+	queue := Queue{}
+	queue.Enqueue(start_vertex)
+
+	for !queue.IsEmpty() {
+		v := queue.Dequeue()
+		for w := range graph.vertices[v].edges {
+			if !graph.vertices[w].is_explored {
+				graph.vertices[w].is_explored = true
+				queue.Enqueue(w)
+			}
 		}
 	}
 }

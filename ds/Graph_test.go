@@ -41,7 +41,7 @@ func TestGraph(t *testing.T) {
 	}
 
 	// t.Logf("huge_graph %v", huge_graph.vertices[875713])
-	expected_huge_vertices := Vertex{is_visited: false, finishing_time: 0, leader: 0, edges: map[int]bool{233422: true, 233423: true, 233424: true, 233425: true, 233426: true, 233427: true, 233428: true, 233429: true, 233430: true, 233431: true, 233432: true, 233433: true, 233434: true, 233435: true, 233436: true}}
+	expected_huge_vertices := Vertex{is_explored: false, finishing_time: 0, leader: 0, edges: map[int]bool{233422: true, 233423: true, 233424: true, 233425: true, 233426: true, 233427: true, 233428: true, 233429: true, 233430: true, 233431: true, 233432: true, 233433: true, 233434: true, 233435: true, 233436: true}}
 	received_huge_vertices := huge_graph.GetVertices()[875713]
 
 	if !received_huge_vertices.edges[233422] || !received_huge_vertices.edges[233436] {
