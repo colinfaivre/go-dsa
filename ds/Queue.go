@@ -14,3 +14,7 @@ func (queue *Queue) Dequeue() int {
 
 	return to_remove
 }
+
+func (queue *Queue) IsEmpty() bool {
+	return len(queue.items) == 0
+}

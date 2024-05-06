@@ -15,3 +15,7 @@ func (stack *Stack) Pop() int {
 
 	return to_remove
 }
+
+func (stack *Stack) IsEmpty() bool {
+	return len(stack.items) == 0
+}
