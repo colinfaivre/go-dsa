@@ -56,7 +56,7 @@ func (graph *Graph) AddEdges(edge_list [][2]int) {
 	}
 }
 
-func (graph *Graph) IsEplored(v int) bool {
+func (graph *Graph) IsExplored(v int) bool {
 	return graph.vertices[v].is_explored
 }
 
