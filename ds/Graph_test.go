@@ -18,11 +18,11 @@ var _ = Describe("Graph", func() {
 		graph := NewGraph(true)
 
 		It("is directed", func() {
-			Expect(graph.is_directed).Should(Equal(true))
+			Expect(graph.is_directed).To(Equal(true))
 		})
 
 		It("has an empty map of vertices", func() {
-			Expect(graph.GetVertices()).Should(Equal(map[int]*Vertex{}))
+			Expect(graph.GetVertices()).To(Equal(map[int]*Vertex{}))
 		})
 	})
 
@@ -31,12 +31,12 @@ var _ = Describe("Graph", func() {
 		graph.AddEdge(1, 2)
 
 		It("should add two vertices", func() {
-			Expect(1).Should(BeKeyOf(graph.vertices))
-			Expect(2).Should(BeKeyOf(graph.vertices))
+			Expect(1).To(BeKeyOf(graph.vertices))
+			Expect(2).To(BeKeyOf(graph.vertices))
 		})
 
 		It("shoud add an edge to the first vertex", func() {
-			Expect(2).Should(BeKeyOf(graph.vertices[1].next))
+			Expect(2).To(BeKeyOf(graph.vertices[1].next))
 		})
 	})
 
@@ -114,7 +114,7 @@ var _ = Describe("Graph", func() {
 			}
 			received := graph.GetVertices()
 
-			Expect(expected).Should(Equal(received))
+			Expect(expected).To(Equal(received))
 		})
 
 		It("running DFS() from vertex 1 should explore vertices 1, 4, 7", func() {
@@ -179,7 +179,7 @@ var _ = Describe("Graph", func() {
 			}
 			received := huge_graph.GetVertices()[875713]
 
-			Expect(received).Should(Equal(expected))
+			Expect(received).To(Equal(expected))
 		})
 
 		It("can run DFS", func() {

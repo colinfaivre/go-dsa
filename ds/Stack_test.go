@@ -17,7 +17,7 @@ var _ = Describe("Stack", func() {
 		stack := Stack{}
 
 		It("Has an empty slice of integers", func() {
-			Expect(stack.IsEmpty()).Should(Equal(true))
+			Expect(stack.IsEmpty()).To(Equal(true))
 		})
 	})
 
@@ -26,7 +26,7 @@ var _ = Describe("Stack", func() {
 		stack.Push(42)
 
 		It("adds an item at the end of the stack", func() {
-			Expect(stack.items[len(stack.items)-1]).Should(Equal(42))
+			Expect(stack.items[len(stack.items)-1]).To(Equal(42))
 		})
 	})
 
@@ -36,11 +36,11 @@ var _ = Describe("Stack", func() {
 		removed := stack.Pop()
 
 		It("returns the popped integer", func() {
-			Expect(removed).Should(Equal(42))
+			Expect(removed).To(Equal(42))
 		})
 
 		It("should be empty", func() {
-			Expect(stack.IsEmpty()).Should(Equal(true))
+			Expect(stack.IsEmpty()).To(Equal(true))
 		})
 	})
 })
