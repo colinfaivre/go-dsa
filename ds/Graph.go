@@ -1,5 +1,7 @@
 package ds
 
+import "github.com/colinfaivre/go-dsa/sort"
+
 type Graph struct {
 	is_directed           bool
 	vertices              map[int]*Vertex
@@ -8,6 +10,7 @@ type Graph struct {
 	curr_leader           int
 	finish_time_to_vertex map[int]int
 	is_explored           map[int]bool
+	scc_sizes             map[int]int
 }
 
 type Vertex struct {
@@ -25,6 +28,7 @@ func NewGraph(is_directed bool) *Graph {
 		curr_leader:           0,
 		finish_time_to_vertex: map[int]int{},
 		is_explored:           map[int]bool{},
+		scc_sizes:             map[int]int{},
 	}
 }
 
@@ -86,6 +90,7 @@ func (graph *Graph) InitSearchOrder() {
 func (graph *Graph) DFS(start_vertex int) {
 	graph.is_explored[start_vertex] = true
 	graph.vertices[start_vertex].leader = graph.curr_leader
+	graph.scc_sizes[graph.curr_leader]++
 	graph.search_path = append(graph.search_path, start_vertex)
 
 	for v := range graph.vertices[start_vertex].next {
@@ -144,4 +149,15 @@ func (graph *Graph) Kosaraju() {
 			graph.DFS(graph.finish_time_to_vertex[i])
 		}
 	}
+}
+
+func (graph *Graph) GetTheFiveBiggestSCC() []int {
+	scc_size_list := make([]int, 0, len(graph.scc_sizes))
+
+	for _, val := range graph.scc_sizes {
+		scc_size_list = append(scc_size_list, val)
+	}
+
+	scc_size_list = sort.MergeSort(scc_size_list)
+	return scc_size_list
 }

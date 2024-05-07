@@ -173,12 +173,11 @@ var _ = Describe("Graph", func() {
 			Expect(received).To(Equal(expected))
 		})
 
-		It("can run DFS()", func() {
-			huge_graph.DFS(2)
-		})
+		It("can run Kosaraju()", func() {
+			huge_graph.Kosaraju()
 
-		It("can run ReverseDFS()", func() {
-			huge_graph.ReverseDFS(2)
+			fmt.Printf("Kosaraju()\n %+v\n", len(huge_graph.scc_sizes))
+			fmt.Printf("Kosaraju()\n %+v\n", huge_graph.GetTheFiveBiggestSCC())
 		})
 
 	})
