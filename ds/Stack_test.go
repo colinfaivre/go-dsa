@@ -43,4 +43,17 @@ var _ = Describe("Stack", func() {
 			Expect(stack.IsEmpty()).To(Equal(true))
 		})
 	})
+
+	Context("Push and Pop Scenario", func() {
+		stack := Stack{}
+		stack.Push(1)
+		stack.Push(2)
+		stack.Push(3)
+		stack.Pop()
+		stack.Pop()
+
+		It("should have 1", func() {
+			Expect(stack.items).To(Equal([]int{1}))
+		})
+	})
 })
