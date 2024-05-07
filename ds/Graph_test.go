@@ -1,6 +1,7 @@
 package ds
 
 import (
+	"fmt"
 	"testing"
 
 	"github.com/colinfaivre/go-dsa/utils"
@@ -117,14 +118,13 @@ var _ = Describe("Graph", func() {
 			Expect(expected).To(Equal(received))
 		})
 
-		It("running DFS() from vertex 1 should explore vertices 1, 4, 7", func() {
+		It("running DFS() from vertex 1 and 2 should explore vertices 1, 4, 7, 2, 8, 6, 9, 3, 5", func() {
 			graph := NewGraph(true)
 			graph.AddEdges(edge_list)
 			graph.DFS(1)
+			graph.DFS(2)
 
-			Expect(graph.AreExplored([]int{4, 7})).To(BeTrue())
-			Expect(graph.AreExplored([]int{3, 5})).To(BeFalse())
-			Expect(graph.search_path).To(Equal([]int{1, 4, 7}))
+			Expect(graph.search_path).To(Equal([]int{1, 4, 7, 2, 8, 6, 9, 3, 5}))
 		})
 
 		It("running ReverseDFS() from vertex 6 should explore vertices 6, 3, 8, 2, 5, 9", func() {
@@ -145,6 +145,16 @@ var _ = Describe("Graph", func() {
 			Expect(graph.AreExplored([]int{3, 9, 1, 4, 7})).To(BeTrue())
 			Expect(graph.AreExplored([]int{8, 2, 5})).To(BeFalse())
 			Expect(graph.search_path).To(Equal([]int{6, 9, 3, 7, 1, 4}))
+		})
+
+		It("can run DfsLoop_1()", func() {
+			graph := NewGraph(true)
+			graph.AddEdges(edge_list)
+			graph.DfsLoop_1()
+			fmt.Printf("DfsLoop_1 %v", graph)
+			for vertex_id, vertex := range graph.vertices {
+				fmt.Println("\n", vertex_id, vertex)
+			}
 		})
 	})
 
@@ -182,12 +192,13 @@ var _ = Describe("Graph", func() {
 			Expect(received).To(Equal(expected))
 		})
 
-		It("can run DFS", func() {
+		It("can run DFS()", func() {
 			huge_graph.DFS(2)
 		})
 
-		It("can run ReverseDFS", func() {
+		It("can run ReverseDFS()", func() {
 			huge_graph.ReverseDFS(2)
 		})
+
 	})
 })
