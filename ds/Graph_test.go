@@ -50,67 +50,49 @@ var _ = Describe("Graph", func() {
 
 			expected := map[int]*Vertex{
 				1: {
-					is_explored:    false,
-					finishing_time: 0,
-					leader:         0,
-					next:           map[int]bool{4: true},
-					prev:           map[int]bool{7: true},
+					leader: 0,
+					next:   map[int]bool{4: true},
+					prev:   map[int]bool{7: true},
 				},
 				2: {
-					is_explored:    false,
-					finishing_time: 0,
-					leader:         0,
-					next:           map[int]bool{8: true},
-					prev:           map[int]bool{5: true},
+					leader: 0,
+					next:   map[int]bool{8: true},
+					prev:   map[int]bool{5: true},
 				},
 				3: {
-					is_explored:    false,
-					finishing_time: 0,
-					leader:         0,
-					next:           map[int]bool{6: true},
-					prev:           map[int]bool{9: true},
+					leader: 0,
+					next:   map[int]bool{6: true},
+					prev:   map[int]bool{9: true},
 				},
 				4: {
-					is_explored:    false,
-					finishing_time: 0,
-					leader:         0,
-					next:           map[int]bool{7: true},
-					prev:           map[int]bool{1: true},
+					leader: 0,
+					next:   map[int]bool{7: true},
+					prev:   map[int]bool{1: true},
 				},
 				5: {
-					is_explored:    false,
-					finishing_time: 0,
-					leader:         0,
-					next:           map[int]bool{2: true},
-					prev:           map[int]bool{8: true},
+					leader: 0,
+					next:   map[int]bool{2: true},
+					prev:   map[int]bool{8: true},
 				},
 				6: {
-					is_explored:    false,
-					finishing_time: 0,
-					leader:         0,
-					next:           map[int]bool{9: true},
-					prev:           map[int]bool{3: true, 8: true},
+					leader: 0,
+					next:   map[int]bool{9: true},
+					prev:   map[int]bool{3: true, 8: true},
 				},
 				7: {
-					is_explored:    false,
-					finishing_time: 0,
-					leader:         0,
-					next:           map[int]bool{1: true},
-					prev:           map[int]bool{4: true, 9: true},
+					leader: 0,
+					next:   map[int]bool{1: true},
+					prev:   map[int]bool{4: true, 9: true},
 				},
 				8: {
-					is_explored:    false,
-					finishing_time: 0,
-					leader:         0,
-					next:           map[int]bool{6: true, 5: true},
-					prev:           map[int]bool{2: true},
+					leader: 0,
+					next:   map[int]bool{6: true, 5: true},
+					prev:   map[int]bool{2: true},
 				},
 				9: {
-					is_explored:    false,
-					finishing_time: 0,
-					leader:         0,
-					next:           map[int]bool{3: true, 7: true},
-					prev:           map[int]bool{6: true},
+					leader: 0,
+					next:   map[int]bool{3: true, 7: true},
+					prev:   map[int]bool{6: true},
 				},
 			}
 			received := graph.GetVertices()
@@ -147,11 +129,12 @@ var _ = Describe("Graph", func() {
 			Expect(graph.search_path).To(Equal([]int{6, 9, 3, 7, 1, 4}))
 		})
 
-		It("can run DfsLoop_1()", func() {
+		It("can run Kosaraju()", func() {
 			graph := NewGraph(true)
 			graph.AddEdges(edge_list)
-			graph.DfsLoop_1()
-			fmt.Printf("DfsLoop_1 %v", graph)
+			graph.Kosaraju()
+
+			fmt.Printf("Kosaraju()\n %+v\n", graph)
 			for vertex_id, vertex := range graph.vertices {
 				fmt.Println("\n", vertex_id, vertex)
 			}
@@ -165,9 +148,7 @@ var _ = Describe("Graph", func() {
 
 		It("should compute the last vertex with correct data", func() {
 			expected := &Vertex{
-				is_explored:    false,
-				finishing_time: 0,
-				leader:         0,
+				leader: 0,
 				next: map[int]bool{
 					233422: true,
 					233423: true,

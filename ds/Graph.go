@@ -1,26 +1,30 @@
 package ds
 
 type Graph struct {
-	is_directed bool
-	vertices    map[int]*Vertex
-	search_path []int
-	curr_time   int
-	curr_leader int
+	is_directed           bool
+	vertices              map[int]*Vertex
+	search_path           []int
+	curr_time             int
+	curr_leader           int
+	finish_time_to_vertex map[int]int
+	is_explored           map[int]bool
 }
 
 type Vertex struct {
-	is_explored    bool
-	finishing_time int
-	leader         int
-	next           map[int]bool
-	prev           map[int]bool
+	leader int
+	next   map[int]bool
+	prev   map[int]bool
 }
 
 func NewGraph(is_directed bool) *Graph {
 	return &Graph{
-		is_directed: is_directed,
-		vertices:    map[int]*Vertex{},
-		search_path: []int{},
+		is_directed:           is_directed,
+		vertices:              map[int]*Vertex{},
+		search_path:           []int{},
+		curr_time:             0,
+		curr_leader:           0,
+		finish_time_to_vertex: map[int]int{},
+		is_explored:           map[int]bool{},
 	}
 }
 
@@ -37,11 +41,9 @@ func (graph *Graph) AddVertex(v int) {
 
 	if !ok {
 		graph.vertices[v] = &Vertex{
-			next:           map[int]bool{},
-			prev:           map[int]bool{},
-			is_explored:    false,
-			finishing_time: 0,
-			leader:         0,
+			next:   map[int]bool{},
+			prev:   map[int]bool{},
+			leader: 0,
 		}
 	}
 }
@@ -65,12 +67,12 @@ func (graph *Graph) AddEdges(edge_list [][2]int) {
 }
 
 func (graph *Graph) IsExplored(v int) bool {
-	return graph.vertices[v].is_explored
+	return graph.is_explored[v]
 }
 
 func (graph *Graph) AreExplored(vertices []int) bool {
 	for _, v := range vertices {
-		if !graph.vertices[v].is_explored {
+		if !graph.is_explored[v] {
 			return false
 		}
 	}
@@ -82,62 +84,41 @@ func (graph *Graph) InitSearchOrder() {
 }
 
 func (graph *Graph) DFS(start_vertex int) {
-	graph.vertices[start_vertex].is_explored = true
+	graph.is_explored[start_vertex] = true
 	graph.vertices[start_vertex].leader = graph.curr_leader
-	stack := Stack{}
-	stack.Push(start_vertex)
 	graph.search_path = append(graph.search_path, start_vertex)
 
-	for !stack.IsEmpty() {
-		v := stack.Pop()
-		for w := range graph.vertices[v].next {
-			if !graph.vertices[w].is_explored {
-				stack.Push(v)
-				graph.vertices[w].is_explored = true
-				graph.search_path = append(graph.search_path, w)
-				stack.Push(w)
-				break
-			}
+	for v := range graph.vertices[start_vertex].next {
+		if !graph.is_explored[v] {
+			graph.DFS(v)
 		}
 	}
-
-	graph.curr_time++
-	graph.vertices[start_vertex].finishing_time = graph.curr_time
 }
 
 func (graph *Graph) ReverseDFS(start_vertex int) {
-	graph.vertices[start_vertex].is_explored = true
-	stack := Stack{}
-	stack.Push(start_vertex)
+	graph.is_explored[start_vertex] = true
 	graph.search_path = append(graph.search_path, start_vertex)
 
-	for !stack.IsEmpty() {
-		v := stack.Pop()
-		for w := range graph.vertices[v].prev {
-			if !graph.vertices[w].is_explored {
-				stack.Push(v)
-				graph.vertices[w].is_explored = true
-				stack.Push(w)
-				graph.search_path = append(graph.search_path, w)
-				break
-			}
+	for v := range graph.vertices[start_vertex].prev {
+		if !graph.is_explored[v] {
+			graph.ReverseDFS(v)
 		}
 	}
 
 	graph.curr_time++
-	graph.vertices[start_vertex].finishing_time = graph.curr_time
+	graph.finish_time_to_vertex[graph.curr_time] = start_vertex
 }
 
 func (graph *Graph) BFS(start_vertex int) {
-	graph.vertices[start_vertex].is_explored = true
+	graph.is_explored[start_vertex] = true
 	queue := Queue{}
 	queue.Enqueue(start_vertex)
 
 	for !queue.IsEmpty() {
 		v := queue.Dequeue()
 		for w := range graph.vertices[v].next {
-			if !graph.vertices[w].is_explored {
-				graph.vertices[w].is_explored = true
+			if !graph.is_explored[w] {
+				graph.is_explored[w] = true
 				queue.Enqueue(w)
 				graph.search_path = append(graph.search_path, w)
 			}
@@ -145,24 +126,22 @@ func (graph *Graph) BFS(start_vertex int) {
 	}
 }
 
-func (graph *Graph) DfsLoop_1() {
-	graph.curr_time = 0
+func (graph *Graph) Kosaraju() {
 
 	for i := len(graph.vertices); i >= 1; i-- {
-		v, ok := graph.vertices[i]
-		if ok && !v.is_explored {
+		_, ok := graph.vertices[i]
+		if ok && !graph.is_explored[i] {
 			graph.ReverseDFS(i)
 		}
 	}
-}
 
-func (graph *Graph) DfsLoop_2() {
-	graph.curr_leader = 0
+	graph.is_explored = map[int]bool{}
 
-	for i := 1; i <= 875714; i++ {
-		v, ok := graph.vertices[i]
-		if ok && !v.is_explored {
-			graph.DFS(i)
+	for i := len(graph.finish_time_to_vertex); i >= 1; i-- {
+		_, ok := graph.vertices[graph.finish_time_to_vertex[i]]
+		if ok && !graph.is_explored[graph.finish_time_to_vertex[i]] {
+			graph.curr_leader = i
+			graph.DFS(graph.finish_time_to_vertex[i])
 		}
 	}
 }
