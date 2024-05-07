@@ -117,31 +117,34 @@ var _ = Describe("Graph", func() {
 			Expect(expected).Should(Equal(received))
 		})
 
-		It("running DFS() from vertex 1 should explore vertices 4 and 7 ", func() {
+		It("running DFS() from vertex 1 should explore vertices 1, 4, 7", func() {
 			graph := NewGraph(true)
 			graph.AddEdges(edge_list)
 			graph.DFS(1)
 
 			Expect(graph.AreExplored([]int{4, 7})).To(BeTrue())
 			Expect(graph.AreExplored([]int{3, 5})).To(BeFalse())
+			Expect(graph.search_path).To(Equal([]int{1, 4, 7}))
 		})
 
-		It("running ReverseDFS() from vertex 6 should explore vertices 8, 2, 5, 3, 9 ", func() {
+		It("running ReverseDFS() from vertex 6 should explore vertices 6, 3, 8, 2, 5, 9", func() {
 			graph := NewGraph(true)
 			graph.AddEdges(edge_list)
 			graph.ReverseDFS(6)
 
 			Expect(graph.AreExplored([]int{8, 2, 5, 3, 9})).To(BeTrue())
 			Expect(graph.AreExplored([]int{1, 4, 7})).To(BeFalse())
+			Expect(graph.search_path).To(Equal([]int{6, 3, 8, 2, 5, 9}))
 		})
 
-		It("running DFS() from vertex 6 should explore vertices 8, 2, 5, 3, 9 ", func() {
+		It("running DFS() from vertex 6 should explore vertices 6, 9, 3, 7, 1, 4", func() {
 			graph := NewGraph(true)
 			graph.AddEdges(edge_list)
 			graph.DFS(6)
 
 			Expect(graph.AreExplored([]int{3, 9, 1, 4, 7})).To(BeTrue())
 			Expect(graph.AreExplored([]int{8, 2, 5})).To(BeFalse())
+			Expect(graph.search_path).To(Equal([]int{6, 9, 3, 7, 1, 4}))
 		})
 	})
 
@@ -177,6 +180,14 @@ var _ = Describe("Graph", func() {
 			received := huge_graph.GetVertices()[875713]
 
 			Expect(received).Should(Equal(expected))
+		})
+
+		It("can run DFS", func() {
+			huge_graph.DFS(2)
+		})
+
+		It("can run ReverseDFS", func() {
+			huge_graph.ReverseDFS(2)
 		})
 	})
 })

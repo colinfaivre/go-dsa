@@ -3,6 +3,7 @@ package ds
 type Graph struct {
 	is_directed bool
 	vertices    map[int]*Vertex
+	search_path []int
 }
 
 type Vertex struct {
@@ -17,6 +18,7 @@ func NewGraph(is_directed bool) *Graph {
 	return &Graph{
 		is_directed: is_directed,
 		vertices:    map[int]*Vertex{},
+		search_path: []int{},
 	}
 }
 
@@ -69,27 +71,48 @@ func (graph *Graph) AreExplored(vertices []int) bool {
 	return true
 }
 
-func (graph *Graph) DFS(start_vertex int) {
-	graph.vertices[start_vertex].is_explored = true
+func (graph *Graph) InitSearchOrder() {
+	graph.search_path = []int{}
+}
 
-	for edge := range graph.vertices[start_vertex].next {
-		if !graph.vertices[edge].is_explored {
-			graph.DFS(edge)
+func (graph *Graph) DFS(start_vertex int) {
+	graph.search_path = []int{start_vertex}
+	graph.vertices[start_vertex].is_explored = true
+	stack := Stack{}
+	stack.Push(start_vertex)
+
+	for !stack.IsEmpty() {
+		v := stack.Pop()
+		for w := range graph.vertices[v].next {
+			if !graph.vertices[w].is_explored {
+				graph.vertices[w].is_explored = true
+				stack.Push(w)
+				graph.search_path = append(graph.search_path, w)
+			}
 		}
 	}
 }
 
 func (graph *Graph) ReverseDFS(start_vertex int) {
+	graph.search_path = []int{start_vertex}
 	graph.vertices[start_vertex].is_explored = true
+	stack := Stack{}
+	stack.Push(start_vertex)
 
-	for edge := range graph.vertices[start_vertex].prev {
-		if !graph.vertices[edge].is_explored {
-			graph.ReverseDFS(edge)
+	for !stack.IsEmpty() {
+		v := stack.Pop()
+		for w := range graph.vertices[v].prev {
+			if !graph.vertices[w].is_explored {
+				graph.vertices[w].is_explored = true
+				stack.Push(w)
+				graph.search_path = append(graph.search_path, w)
+			}
 		}
 	}
 }
 
 func (graph *Graph) BFS(start_vertex int) {
+	graph.search_path = []int{start_vertex}
 	graph.vertices[start_vertex].is_explored = true
 	queue := Queue{}
 	queue.Enqueue(start_vertex)
@@ -100,6 +123,7 @@ func (graph *Graph) BFS(start_vertex int) {
 			if !graph.vertices[w].is_explored {
 				graph.vertices[w].is_explored = true
 				queue.Enqueue(w)
+				graph.search_path = append(graph.search_path, w)
 			}
 		}
 	}
