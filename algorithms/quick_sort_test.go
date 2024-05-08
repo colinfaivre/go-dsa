@@ -7,7 +7,7 @@ import (
 )
 
 func TestQuickSort(t *testing.T) {
-	arr, _ := parsing.ReadIntegersFromFile("../data/100_000_numbers")
+	arr, _ := parsing.ReadIntegersFromFile("../testdata/100_000_numbers")
 	received := QuickSort(arr)
 
 	if received[0] != 1 {

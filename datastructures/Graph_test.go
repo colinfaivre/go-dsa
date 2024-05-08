@@ -143,7 +143,7 @@ var _ = Describe("Graph", func() {
 
 	Context("Huge graph", func() {
 		huge_graph := NewGraph(true)
-		edge_list, _ := parsing.ReadIntegersTuplesFromFile("../data/scc")
+		edge_list, _ := parsing.ReadIntegersTuplesFromFile("../testdata/scc")
 		huge_graph.AddEdges(edge_list)
 
 		It("should compute the last vertex with correct data", func() {
