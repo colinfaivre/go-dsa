@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/colinfaivre/go-dsa/utils"
+	"github.com/colinfaivre/go-dsa/parsing"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 )
@@ -143,7 +143,7 @@ var _ = Describe("Graph", func() {
 
 	Context("Huge graph", func() {
 		huge_graph := NewGraph(true)
-		edge_list, _ := utils.ReadIntegersTuplesFromFile("../data/scc")
+		edge_list, _ := parsing.ReadIntegersTuplesFromFile("../data/scc")
 		huge_graph.AddEdges(edge_list)
 
 		It("should compute the last vertex with correct data", func() {

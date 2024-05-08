@@ -3,11 +3,11 @@ package algorithms
 import (
 	"testing"
 
-	"github.com/colinfaivre/go-dsa/utils"
+	"github.com/colinfaivre/go-dsa/parsing"
 )
 
 func TestSelectionSort(t *testing.T) {
-	arr, _ := utils.ReadIntegersFromFile("../data/100_000_numbers")
+	arr, _ := parsing.ReadIntegersFromFile("../data/100_000_numbers")
 	received := SelectionSort(arr)
 
 	if received[0] != 1 {
