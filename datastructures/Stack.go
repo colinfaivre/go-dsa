@@ -1,4 +1,4 @@
-package ds
+package datastructures
 
 type Stack struct {
 	items []int

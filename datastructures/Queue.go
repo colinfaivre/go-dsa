@@ -1,4 +1,4 @@
-package ds
+package datastructures
 
 type Queue struct {
 	items []int

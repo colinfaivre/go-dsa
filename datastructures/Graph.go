@@ -1,4 +1,4 @@
-package ds
+package datastructures
 
 import "github.com/colinfaivre/go-dsa/sort"
 
