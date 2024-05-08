@@ -22,7 +22,6 @@
     - shortest paths with BFS
     - quicksort with pivot selection or randomization
 - document applications of data structures and algo
-- write a hierarchical `README` with links to algo and ds implementations
 - find a way to include `stanford dsa course` notes in this repo (`docs` or specific `READMEs`)
 
 ## 🧗‍♂️Train
