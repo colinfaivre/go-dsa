@@ -5,10 +5,10 @@
 - finish `Heap` course
 - implement `Heap`
 - finish `Dijkstra` course notes
-- implement `Dijkstra` using heap
+- implement `Dijkstra` using `Heap`
 
 ## 🏗️ Maintain
-- fix flaky tests (map keys ordering is not reliable)
+- fix flaky tests (map keys ordering is not reliable in graph traversals)
 - better organise test mocks
 - better understand `ginkgo` test architectures and commands
 - use `ginkgo` testing framework everywhere
@@ -27,6 +27,7 @@
 ## 🧗‍♂️Train
 - add tests in `/problems` for sorting problems
 - add copy_me template for scaffolding an algo from scratch to train
+    - space complexity
     - time complexity
     - applications
     - implementations

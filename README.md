@@ -13,4 +13,4 @@
 - [grokking algorithms](https://www.manning.com/books/grokking-algorithms)
 
 ### 🧑‍🎓 Courses:
-- Coursera stanford algo course link
+- [Coursera - algorithms](https://www.coursera.org/specializations/algorithms)
