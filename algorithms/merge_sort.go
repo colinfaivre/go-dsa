@@ -1,4 +1,4 @@
-package sort
+package algorithms
 
 // O(nlogn)
 // used by firefox Array.prototype.sort

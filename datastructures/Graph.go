@@ -1,6 +1,6 @@
 package datastructures
 
-import "github.com/colinfaivre/go-dsa/sort"
+import "github.com/colinfaivre/go-dsa/algorithms"
 
 type Graph struct {
 	is_directed           bool
@@ -158,6 +158,6 @@ func (graph *Graph) GetTheFiveBiggestSCC() []int {
 		scc_size_list = append(scc_size_list, val)
 	}
 
-	scc_size_list = sort.MergeSort(scc_size_list)
+	scc_size_list = algorithms.MergeSort(scc_size_list)
 	return scc_size_list
 }

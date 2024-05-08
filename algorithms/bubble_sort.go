@@ -1,4 +1,4 @@
-package sort
+package algorithms
 
 // O(n^2)
 // The bubble sort algorithm compares each every two adjacent values

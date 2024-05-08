@@ -1,4 +1,4 @@
-package sort
+package algorithms
 
 // O(n^2)
 // The insertion sort algorithm builds the final sorted array one value at a time.
