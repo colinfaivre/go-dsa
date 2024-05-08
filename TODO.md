@@ -12,9 +12,6 @@
 - better organise test mocks
 - use testing framework everywhere
 - time track function executions: https://coderwall.com/p/cp5fya/measuring-execution-time-in-go
-- rename `ds` folder and package into `datastructures`
-- rename `sort` folder and package into `algorithms`
-- rename `utils` folder and package into `parsing`
 - add a `problems` folder and package
 
 ## 📔 Document
