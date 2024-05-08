@@ -8,7 +8,7 @@ import (
 
 // @TODO white huge slice to file for comparison
 func TestMergeSort(t *testing.T) {
-	arr, _ := parsing.ReadIntegersFromFile("../testdata/100_000_numbers")
+	arr, _ := parsing.ReadIntegersFromFile("../test/data/100_000_numbers")
 	received := MergeSort(arr)
 
 	if received[0] != 1 {

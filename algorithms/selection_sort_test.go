@@ -7,7 +7,7 @@ import (
 )
 
 func TestSelectionSort(t *testing.T) {
-	arr, _ := parsing.ReadIntegersFromFile("../testdata/100_000_numbers")
+	arr, _ := parsing.ReadIntegersFromFile("../test/data/100_000_numbers")
 	received := SelectionSort(arr)
 
 	if received[0] != 1 {
