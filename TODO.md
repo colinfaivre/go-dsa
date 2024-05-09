@@ -1,7 +1,10 @@
 # TODO
 
 ## 💪 Practice
-- implement `Dijkstra` naive
+- ➡️ implement `Dijkstra` naive
+- implement `LinkedList`
+- implement `Queue` with a `LinkedList`
+- implement `Stack` with a `LinkedList`
 - finish `Heap` course
 - implement `Heap`
 - finish `Dijkstra` course notes
@@ -9,9 +12,9 @@
 
 ## 🏗️ Maintain
 - fix flaky tests (map keys ordering is not reliable in graph traversals)
-- better organise test mocks
 - better understand `ginkgo` test architectures and commands
-- use `ginkgo` testing framework everywhere
+- better organise test mocks
+- some sorting algos return the sorted array and others sort the original in place
 - time track function executions: https://coderwall.com/p/cp5fya/measuring-execution-time-in-go
 - use what could be useful in `ts` dsa repo here and delete it
 
