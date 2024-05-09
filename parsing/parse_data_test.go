@@ -2,36 +2,50 @@ package parsing
 
 import (
 	"testing"
+
+	. "github.com/onsi/ginkgo/v2"
+	. "github.com/onsi/gomega"
 )
 
-func TestReadIntegersFromFile(t *testing.T) {
-	received, err := ReadIntegersFromFile("../test/data/100_000_numbers")
-	if err != nil {
-		t.Log(err)
-	}
-
-	if received[0] != 54044 {
-		t.Errorf("ReadIntegersFromFile(\"../test/data/100_000_numbers\")[0] expected 54044 but got %v", received[0])
-	}
-
-	if received[99999] != 91901 {
-		t.Errorf("ReadIntegersFromFile(\"../test/data/100_000_numbers\")[0] expected 91901 but got %v", received[99999])
-	}
+func TestParseData(t *testing.T) {
+	RegisterFailHandler(Fail)
+	RunSpecs(t, "Stack Suite")
 }
 
-func TestReadIntegersTuppleFromFile(t *testing.T) {
-	received, err := ReadIntegersTuplesFromFile("../test/data/scc")
-	if err != nil {
-		t.Log(err)
-	}
+var _ = Describe("Parse Data", func() {
+	Context("ReadIntegersFromFile", func() {
+		It("does not return an error when the file exists", func() {
+			_, err := ReadIntegersFromFile("../test/data/100_000_numbers")
+			Expect(err).To(BeNil())
+		})
 
-	t.Logf("tuple %v", received[5105042])
+		It("returns an error when the file does not exist", func() {
+			_, err := ReadIntegersFromFile("../../wrong/path")
+			Expect(err).NotTo(BeNil())
+		})
 
-	if received[0][0] != 1 || received[0][1] != 1 {
-		t.Errorf("ReadIntegersFromFile(\"../test/data/scc\")[0] expected [1 1] but got %v", received[0])
-	}
+		It("returns an array with the correct first and last values", func() {
+			arr, _ := ReadIntegersFromFile("../test/data/100_000_numbers")
+			Expect(arr[0]).To(Equal(54044))
+			Expect(arr[99999]).To(Equal(91901))
+		})
+	})
 
-	if received[5105042][0] != 875714 || received[5105042][1] != 542453 {
-		t.Errorf("ReadIntegersFromFile(\"../test/data/scc\")[0] expected [875714 542453] but got %v", received[5105042])
-	}
-}
+	Context("ReadIntegersTuplesFromFile", func() {
+		It("does not return an error when the file exists", func() {
+			_, err := ReadIntegersTuplesFromFile("../test/data/scc")
+			Expect(err).To(BeNil())
+		})
+
+		It("returns an error when the file does not exist", func() {
+			_, err := ReadIntegersTuplesFromFile("../wrong/path")
+			Expect(err).NotTo(BeNil())
+		})
+
+		It("returns an array of tuples with the correct first and last tuples", func() {
+			arr, _ := ReadIntegersTuplesFromFile("../test/data/scc")
+			Expect(arr[0]).To(Equal([2]int{1, 1}))
+			Expect(arr[5105042]).To(Equal([2]int{875714, 542453}))
+		})
+	})
+})
