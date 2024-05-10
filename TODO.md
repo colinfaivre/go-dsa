@@ -1,12 +1,14 @@
 # TODO
 
 ## 💪 Practice
+- ➡️ implement `Heap`
+- ➡️ extract `Kosaraju` from `Graph`
 - ➡️ implement `Dijkstra` naive
 - implement `LinkedList`
 - implement `Queue` with a `LinkedList`
 - implement `Stack` with a `LinkedList`
 - finish `Heap` course
-- implement `Heap`
+- implement `HeapSort`
 - finish `Dijkstra` course notes
 - implement `Dijkstra` using `Heap`
 
@@ -19,6 +21,7 @@
 - use what could be useful in `ts` dsa repo here and delete it
 
 ## 📔 Document
+- add wikipedia links everywhere
 - extract course specific implementation of algo into `problems` directory
     - karger min cut problem
     - count inversions
