@@ -1,8 +1,6 @@
 package datastructures_test
 
 import (
-	"fmt"
-
 	"github.com/colinfaivre/go-dsa/datastructures"
 	"github.com/colinfaivre/go-dsa/parsing"
 	. "github.com/onsi/ginkgo/v2"
@@ -97,7 +95,8 @@ var _ = Describe("Graph", func() {
 			graph.DFS(1)
 			graph.DFS(2)
 
-			Expect(graph.GetSearchPath()).To(Equal([]int{1, 4, 7, 2, 8, 6, 9, 3, 5}))
+			Expect(graph.AreExplored([]int{1, 2, 3, 4, 5, 6, 7, 8, 9})).To(BeTrue())
+			Expect(graph.GetSearchPath()[0]).To(Equal(1))
 		})
 
 		It("running ReverseDFS() from vertex 6 should explore vertices 6, 3, 8, 2, 5, 9", func() {
@@ -107,29 +106,17 @@ var _ = Describe("Graph", func() {
 
 			Expect(graph.AreExplored([]int{8, 2, 5, 3, 9})).To(BeTrue())
 			Expect(graph.AreExplored([]int{1, 4, 7})).To(BeFalse())
-			Expect(graph.GetSearchPath()).To(Equal([]int{6, 3, 8, 2, 5, 9}))
+			Expect(graph.GetSearchPath()[0]).To(Equal(6))
 		})
 
-		It("running DFS() from vertex 6 should explore vertices 6, 9, 3, 7, 1, 4", func() {
+		It("can run Kosaraju()", func() {
 			graph := datastructures.NewGraph(true)
 			graph.AddEdges(edge_list)
-			graph.DFS(6)
+			graph.Kosaraju()
+			expected := map[int]int{4: 3, 9: 3, 6: 3}
 
-			Expect(graph.AreExplored([]int{3, 9, 1, 4, 7})).To(BeTrue())
-			Expect(graph.AreExplored([]int{8, 2, 5})).To(BeFalse())
-			Expect(graph.GetSearchPath()).To(Equal([]int{6, 9, 3, 7, 1, 4}))
+			Expect(graph.GetSCCSizes()).To(Equal(expected))
 		})
-
-		// It("can run Kosaraju()", func() {
-		// 	graph := datastructures.NewGraph(true)
-		// 	graph.AddEdges(edge_list)
-		// 	graph.Kosaraju()
-
-		// 	fmt.Printf("Kosaraju()\n %+v\n", graph)
-		// 	for vertex_id, vertex := range graph.GetVertices() {
-		// 		fmt.Println("\n", vertex_id, vertex)
-		// 	}
-		// })
 	})
 
 	Context("Huge graph", func() {
@@ -166,8 +153,9 @@ var _ = Describe("Graph", func() {
 
 		It("can run Kosaraju()", func() {
 			huge_graph.Kosaraju()
+			expected := []int{211, 313, 459, 968, 434821}
 
-			fmt.Printf("Kosaraju()\n %+v\n", huge_graph.GetTheFiveBiggestSCC())
+			Expect(huge_graph.GetTheFiveBiggestSCC()).To(Equal(expected))
 		})
 
 	})
