@@ -21,3 +21,8 @@ ginko generate packagename
 ```bash
 ginkgo watch -p
 ```
+
+### Running every test suites
+```bash
+ginkgo ../...
+```

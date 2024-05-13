@@ -1,7 +1,6 @@
 # TODO
 
 ## 💪 Practice
-- ➡️ extract `Kosaraju` from `Graph`
 - ➡️ implement `Dijkstra` naive
 - implement `LinkedList`
 - implement `Queue` with a `LinkedList`
