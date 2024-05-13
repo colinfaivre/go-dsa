@@ -80,10 +80,6 @@ func (graph *Graph) AddEdges(edge_list [][2]int) {
 	}
 }
 
-func (graph *Graph) IsExplored(v int) bool {
-	return graph.is_explored[v]
-}
-
 func (graph *Graph) AreExplored(vertices []int) bool {
 	for _, v := range vertices {
 		if !graph.is_explored[v] {
@@ -91,10 +87,6 @@ func (graph *Graph) AreExplored(vertices []int) bool {
 		}
 	}
 	return true
-}
-
-func (graph *Graph) InitSearchOrder() {
-	graph.search_path = []int{}
 }
 
 func (graph *Graph) DFS(start_vertex int) {
