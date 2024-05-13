@@ -68,3 +68,39 @@ func ReadIntegersTuplesFromFile(filename string) ([][2]int, error) {
 
 	return numberTuples, nil
 }
+
+func GetWeightedGraphData(filename string) ([][][2]int, error) {
+	file, err := os.Open(filename)
+	if err != nil {
+		return nil, err
+	}
+	defer file.Close()
+
+	scanner := bufio.NewScanner(file)
+	var result [][][2]int
+
+	for scanner.Scan() {
+		line := scanner.Text()
+		split := strings.Fields(line)
+		second := split[1:]
+		currentLineArr := [][2]int{}
+
+		for _, e := range second {
+			edge := strings.Split(e, ",")
+			v, v_err := strconv.Atoi(edge[0])
+			w, w_err := strconv.Atoi(edge[1])
+			if v_err != nil || w_err != nil {
+				return nil, err
+			}
+			currentLineArr = append(currentLineArr, [2]int{v, w})
+		}
+
+		result = append(result, currentLineArr)
+	}
+
+	if err := scanner.Err(); err != nil {
+		return nil, err
+	}
+
+	return result, nil
+}

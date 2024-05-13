@@ -43,4 +43,22 @@ var _ = Describe("Parse Data", func() {
 			Expect(arr[5105042]).To(Equal([2]int{875714, 542453}))
 		})
 	})
+
+	Context("GetWeightedGraphData", func() {
+		It("does not return an error when the file exists", func() {
+			_, err := parsing.GetWeightedGraphData("../test/data/directed_weighted_graph")
+			Expect(err).To(BeNil())
+		})
+
+		It("returns an error when the file does not exist", func() {
+			_, err := parsing.GetWeightedGraphData("../wrong/path")
+			Expect(err).NotTo(BeNil())
+		})
+
+		It("returns an array of tuples with the correct first and last tuples", func() {
+			arr, _ := parsing.GetWeightedGraphData("../test/data/directed_weighted_graph")
+			expected := [][2]int{{80, 982}, {163, 8164}, {170, 2620}, {145, 648}, {200, 8021}, {173, 2069}, {92, 647}, {26, 4122}, {140, 546}, {11, 1913}, {160, 6461}, {27, 7905}, {40, 9047}, {150, 2183}, {61, 9146}, {159, 7420}, {198, 1724}, {114, 508}, {104, 6647}, {30, 4612}, {99, 2367}, {138, 7896}, {169, 8700}, {49, 2437}, {125, 2909}, {117, 2597}, {55, 6399}}
+			Expect(arr[0]).To(Equal(expected))
+		})
+	})
 })
