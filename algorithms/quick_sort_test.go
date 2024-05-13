@@ -1,22 +1,16 @@
-package algorithms
+package algorithms_test
 
 import (
-	"testing"
-
+	"github.com/colinfaivre/go-dsa/algorithms"
 	"github.com/colinfaivre/go-dsa/parsing"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 )
 
-func TestQuickSort(t *testing.T) {
-	RegisterFailHandler(Fail)
-	RunSpecs(t, "Graph Suite")
-}
-
 var _ = Describe("QuickSort", func() {
 	Context("Sort a 100_000 unique integers array with values from 1 to 100_000", func() {
 		arr, _ := parsing.ReadIntegersFromFile("../test/data/100_000_numbers")
-		sortedArr := QuickSort(arr)
+		sortedArr := algorithms.QuickSort(arr)
 
 		It("has 0 as first value", func() {
 			Expect(sortedArr[0]).To(Equal(1))

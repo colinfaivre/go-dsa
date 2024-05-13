@@ -14,9 +14,9 @@ type Graph struct {
 }
 
 type Vertex struct {
-	leader int
-	next   map[int]bool
-	prev   map[int]bool
+	Leader int
+	Next   map[int]bool
+	Prev   map[int]bool
 }
 
 func NewGraph(is_directed bool) *Graph {
@@ -36,6 +36,14 @@ func (graph *Graph) RestetSearchPath() {
 	graph.search_path = []int{}
 }
 
+func (graph *Graph) GetSearchPath() []int {
+	return graph.search_path
+}
+
+func (graph *Graph) GetSCCSizes() map[int]int {
+	return graph.scc_sizes
+}
+
 func (graph *Graph) GetVertices() map[int]*Vertex {
 	return graph.vertices
 }
@@ -45,9 +53,9 @@ func (graph *Graph) AddVertex(v int) {
 
 	if !ok {
 		graph.vertices[v] = &Vertex{
-			next:   map[int]bool{},
-			prev:   map[int]bool{},
-			leader: 0,
+			Next:   map[int]bool{},
+			Prev:   map[int]bool{},
+			Leader: 0,
 		}
 	}
 }
@@ -56,11 +64,11 @@ func (graph *Graph) AddEdge(v, w int) {
 	graph.AddVertex(v)
 	graph.AddVertex(w)
 
-	graph.vertices[v].next[w] = true
+	graph.vertices[v].Next[w] = true
 	if !graph.is_directed {
-		graph.vertices[w].next[v] = true
+		graph.vertices[w].Next[v] = true
 	} else {
-		graph.vertices[w].prev[v] = true
+		graph.vertices[w].Prev[v] = true
 	}
 }
 
@@ -89,11 +97,11 @@ func (graph *Graph) InitSearchOrder() {
 
 func (graph *Graph) DFS(start_vertex int) {
 	graph.is_explored[start_vertex] = true
-	graph.vertices[start_vertex].leader = graph.curr_leader
+	graph.vertices[start_vertex].Leader = graph.curr_leader
 	graph.scc_sizes[graph.curr_leader]++
 	graph.search_path = append(graph.search_path, start_vertex)
 
-	for v := range graph.vertices[start_vertex].next {
+	for v := range graph.vertices[start_vertex].Next {
 		if !graph.is_explored[v] {
 			graph.DFS(v)
 		}
@@ -104,7 +112,7 @@ func (graph *Graph) ReverseDFS(start_vertex int) {
 	graph.is_explored[start_vertex] = true
 	graph.search_path = append(graph.search_path, start_vertex)
 
-	for v := range graph.vertices[start_vertex].prev {
+	for v := range graph.vertices[start_vertex].Prev {
 		if !graph.is_explored[v] {
 			graph.ReverseDFS(v)
 		}
@@ -121,7 +129,7 @@ func (graph *Graph) BFS(start_vertex int) {
 
 	for !queue.IsEmpty() {
 		v := queue.Dequeue()
-		for w := range graph.vertices[v].next {
+		for w := range graph.vertices[v].Next {
 			if !graph.is_explored[w] {
 				graph.is_explored[w] = true
 				queue.Enqueue(w)
@@ -159,5 +167,5 @@ func (graph *Graph) GetTheFiveBiggestSCC() []int {
 	}
 
 	scc_size_list = algorithms.MergeSort(scc_size_list)
-	return scc_size_list
+	return scc_size_list[len(scc_size_list)-5:]
 }

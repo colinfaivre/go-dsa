@@ -1,20 +1,15 @@
-package datastructures
+package datastructures_test
 
 import (
-	"testing"
+	"github.com/colinfaivre/go-dsa/datastructures"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 )
 
-func TestStack(t *testing.T) {
-	RegisterFailHandler(Fail)
-	RunSpecs(t, "Stack Suite")
-}
-
 var _ = Describe("Stack", func() {
 	Context("Initially", func() {
-		stack := Stack{}
+		stack := datastructures.Stack{}
 
 		It("Has an empty slice of integers", func() {
 			Expect(stack.IsEmpty()).To(Equal(true))
@@ -22,16 +17,16 @@ var _ = Describe("Stack", func() {
 	})
 
 	Context("When Push() is called", func() {
-		stack := Stack{}
+		stack := datastructures.Stack{}
 		stack.Push(42)
 
 		It("adds an item at the end of the stack", func() {
-			Expect(stack.items[len(stack.items)-1]).To(Equal(42))
+			Expect(stack.GetItems()[len(stack.GetItems())-1]).To(Equal(42))
 		})
 	})
 
 	Context("When Pop() is called on a one element stack", func() {
-		stack := Stack{}
+		stack := datastructures.Stack{}
 		stack.Push(42)
 		removed := stack.Pop()
 
@@ -45,7 +40,7 @@ var _ = Describe("Stack", func() {
 	})
 
 	Context("Push and Pop Scenario", func() {
-		stack := Stack{}
+		stack := datastructures.Stack{}
 		stack.Push(1)
 		stack.Push(2)
 		stack.Push(3)
@@ -53,7 +48,7 @@ var _ = Describe("Stack", func() {
 		stack.Pop()
 
 		It("should have 1", func() {
-			Expect(stack.items).To(Equal([]int{1}))
+			Expect(stack.GetItems()).To(Equal([]int{1}))
 		})
 	})
 })

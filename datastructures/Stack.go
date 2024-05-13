@@ -4,6 +4,10 @@ type Stack struct {
 	items []int
 }
 
+func (stack *Stack) GetItems() []int {
+	return stack.items
+}
+
 func (stack *Stack) Push(item int) {
 	stack.items = append(stack.items, item)
 }

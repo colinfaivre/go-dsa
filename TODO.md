@@ -13,15 +13,14 @@
 - implement `Dijkstra` using `Heap`
 
 ## 🏗️ Maintain
-- fix flaky tests (map keys ordering is not reliable in graph traversals)
-- better understand `ginkgo` test architectures and commands
+- ➡️ fix flaky tests (map keys ordering is not reliable in graph traversals)
 - better organise test mocks
 - some sorting algos return the sorted array and others sort the original in place
 - time track function executions: https://coderwall.com/p/cp5fya/measuring-execution-time-in-go
 - use what could be useful in `ts` dsa repo here and delete it
 
 ## 📔 Document
-- add wikipedia links everywhere
+- ➡️ add wikipedia links everywhere
 - extract course specific implementation of algo into `problems` directory
     - karger min cut problem
     - count inversions
