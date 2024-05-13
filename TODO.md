@@ -1,7 +1,7 @@
 # TODO
 
 ## 💪 Practice
-- ➡️ implement `Dijkstra` naive
+- ➡️ implement `Dijkstra` naive (data parser ✅)
 - implement `LinkedList`
 - implement `Queue` with a `LinkedList`
 - implement `Stack` with a `LinkedList`
@@ -20,7 +20,6 @@
 
 ## 📔 Document
 - extract course specific implementation of algo into `problems` directory
-    - karger min cut problem
     - count inversions
     - shortest paths with BFS
     - quicksort with pivot selection or randomization
