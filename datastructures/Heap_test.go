@@ -1,8 +1,6 @@
 package datastructures_test
 
 import (
-	"fmt"
-
 	"github.com/colinfaivre/go-dsa/datastructures"
 
 	. "github.com/onsi/ginkgo/v2"
@@ -25,6 +23,7 @@ var _ = Describe("MaxHeap", func() {
 
 		It("adds an item to the heap", func() {
 			Expect(len(heap.GetArray())).To(Equal(initialHeapLength + 1))
+			Expect(heap.GetArray()[0]).To(Equal(42))
 		})
 	})
 
@@ -45,6 +44,9 @@ var _ = Describe("MaxHeap", func() {
 		heap := datastructures.MaxHeap{}
 		heap.Heapify([]int{10, 20, 30, 40, 50, 60, 70, 80})
 		heap.Extract(0)
-		fmt.Println("heap log", heap)
+
+		It("should have the biggest value as first element", func() {
+			Expect(heap.GetArray()[0]).To(Equal(70))
+		})
 	})
 })

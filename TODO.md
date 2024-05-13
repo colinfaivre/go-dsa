@@ -1,7 +1,6 @@
 # TODO
 
 ## 💪 Practice
-- ➡️ implement `Heap`
 - ➡️ extract `Kosaraju` from `Graph`
 - ➡️ implement `Dijkstra` naive
 - implement `LinkedList`
@@ -18,6 +17,8 @@
 - some sorting algos return the sorted array and others sort the original in place
 - time track function executions: https://coderwall.com/p/cp5fya/measuring-execution-time-in-go
 - use what could be useful in `ts` dsa repo here and delete it
+- use BeforeEach() testing pattern
+- continue exploring ginkgo
 
 ## 📔 Document
 - extract course specific implementation of algo into `problems` directory
