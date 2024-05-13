@@ -2,6 +2,7 @@ package algorithms
 
 import "slices"
 
+// WIKI https://en.wikipedia.org/wiki/Quicksort
 // O(nlogn)
 // The quick sort is probably the most used sorting algorithm
 // It performs better than other nlogn algorithms

@@ -2,8 +2,8 @@ package datastructures
 
 import "fmt"
 
+// WIKI https://en.wikipedia.org/wiki/Heap_(data_structure)
 // https://yuminlee2.medium.com/golang-heap-data-structure-45760f9562dc
-// https://en.wikipedia.org/wiki/Heap_(data_structure)
 // https://www.youtube.com/watch?v=3DYIgTC4T1o
 
 type MaxHeap struct {

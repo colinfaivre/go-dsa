@@ -20,7 +20,6 @@
 - use what could be useful in `ts` dsa repo here and delete it
 
 ## 📔 Document
-- ➡️ add wikipedia links everywhere
 - extract course specific implementation of algo into `problems` directory
     - karger min cut problem
     - count inversions

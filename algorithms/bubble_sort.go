@@ -1,5 +1,6 @@
 package algorithms
 
+// WIKI https://en.wikipedia.org/wiki/Bubble_sort
 // O(n^2)
 // The bubble sort algorithm compares each every two adjacent values
 // and swaps them if the first one is bigger than the second one.
