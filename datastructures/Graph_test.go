@@ -39,49 +39,31 @@ var _ = Describe("Graph", func() {
 
 			expected := map[int]*datastructures.Vertex{
 				1: {
-					Leader: 0,
-					Next:   map[int]bool{4: true},
-					Prev:   map[int]bool{7: true},
+					Next: map[int]bool{4: true},
 				},
 				2: {
-					Leader: 0,
-					Next:   map[int]bool{8: true},
-					Prev:   map[int]bool{5: true},
+					Next: map[int]bool{8: true},
 				},
 				3: {
-					Leader: 0,
-					Next:   map[int]bool{6: true},
-					Prev:   map[int]bool{9: true},
+					Next: map[int]bool{6: true},
 				},
 				4: {
-					Leader: 0,
-					Next:   map[int]bool{7: true},
-					Prev:   map[int]bool{1: true},
+					Next: map[int]bool{7: true},
 				},
 				5: {
-					Leader: 0,
-					Next:   map[int]bool{2: true},
-					Prev:   map[int]bool{8: true},
+					Next: map[int]bool{2: true},
 				},
 				6: {
-					Leader: 0,
-					Next:   map[int]bool{9: true},
-					Prev:   map[int]bool{3: true, 8: true},
+					Next: map[int]bool{9: true},
 				},
 				7: {
-					Leader: 0,
-					Next:   map[int]bool{1: true},
-					Prev:   map[int]bool{4: true, 9: true},
+					Next: map[int]bool{1: true},
 				},
 				8: {
-					Leader: 0,
-					Next:   map[int]bool{6: true, 5: true},
-					Prev:   map[int]bool{2: true},
+					Next: map[int]bool{6: true, 5: true},
 				},
 				9: {
-					Leader: 0,
-					Next:   map[int]bool{3: true, 7: true},
-					Prev:   map[int]bool{6: true},
+					Next: map[int]bool{3: true, 7: true},
 				},
 			}
 			received := graph.GetVertices()
@@ -98,35 +80,15 @@ var _ = Describe("Graph", func() {
 			Expect(graph.AreExplored([]int{1, 2, 3, 4, 5, 6, 7, 8, 9})).To(BeTrue())
 			Expect(graph.GetSearchPath()[0]).To(Equal(1))
 		})
-
-		It("running ReverseDFS() from vertex 6 should explore vertices 6, 3, 8, 2, 5, 9", func() {
-			graph := datastructures.NewGraph(true)
-			graph.AddEdges(edge_list)
-			graph.ReverseDFS(6)
-
-			Expect(graph.AreExplored([]int{8, 2, 5, 3, 9})).To(BeTrue())
-			Expect(graph.AreExplored([]int{1, 4, 7})).To(BeFalse())
-			Expect(graph.GetSearchPath()[0]).To(Equal(6))
-		})
-
-		It("can run Kosaraju()", func() {
-			graph := datastructures.NewGraph(true)
-			graph.AddEdges(edge_list)
-			graph.Kosaraju()
-			expected := map[int]int{4: 3, 9: 3, 6: 3}
-
-			Expect(graph.GetSCCSizes()).To(Equal(expected))
-		})
 	})
 
 	Context("Huge graph", func() {
 		huge_graph := datastructures.NewGraph(true)
-		edge_list, _ := parsing.ReadIntegersTuplesFromFile("../test/data/scc")
+		edge_list, _ := parsing.ReadIntegersTuplesFromFile("../test/data/directed_graph")
 		huge_graph.AddEdges(edge_list)
 
 		It("should compute the last vertex with correct data", func() {
 			expected := &datastructures.Vertex{
-				Leader: 0,
 				Next: map[int]bool{
 					233422: true,
 					233423: true,
@@ -144,19 +106,10 @@ var _ = Describe("Graph", func() {
 					233435: true,
 					233436: true,
 				},
-				Prev: map[int]bool{},
 			}
 			received := huge_graph.GetVertices()[875713]
 
 			Expect(received).To(Equal(expected))
 		})
-
-		It("can run Kosaraju()", func() {
-			huge_graph.Kosaraju()
-			expected := []int{211, 313, 459, 968, 434821}
-
-			Expect(huge_graph.GetTheFiveBiggestSCC()).To(Equal(expected))
-		})
-
 	})
 })
