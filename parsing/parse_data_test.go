@@ -28,7 +28,7 @@ var _ = Describe("Parse Data", func() {
 
 	Context("ReadIntegersTuplesFromFile", func() {
 		It("does not return an error when the file exists", func() {
-			_, err := parsing.ReadIntegersTuplesFromFile("../test/data/scc")
+			_, err := parsing.ReadIntegersTuplesFromFile("../test/data/directed_graph")
 			Expect(err).To(BeNil())
 		})
 
@@ -38,7 +38,7 @@ var _ = Describe("Parse Data", func() {
 		})
 
 		It("returns an array of tuples with the correct first and last tuples", func() {
-			arr, _ := parsing.ReadIntegersTuplesFromFile("../test/data/scc")
+			arr, _ := parsing.ReadIntegersTuplesFromFile("../test/data/directed_graph")
 			Expect(arr[0]).To(Equal([2]int{1, 1}))
 			Expect(arr[5105042]).To(Equal([2]int{875714, 542453}))
 		})
