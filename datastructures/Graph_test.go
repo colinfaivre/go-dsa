@@ -1,7 +1,10 @@
 package datastructures_test
 
 import (
+	"fmt"
+
 	"github.com/colinfaivre/go-dsa/datastructures"
+	"github.com/colinfaivre/go-dsa/parsing"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 )
@@ -49,7 +52,7 @@ var _ = Describe("Graph", func() {
 	})
 
 	Context("Small graph", func() {
-		var adj_list = [][][2]int{{{2, 1}, {3, 4}}, {{3, 2}, {4, 6}}, {{4, 3}}}
+		var adj_list = [][][2]int{{{3, 4}, {2, 1}}, {{4, 6}, {3, 2}}, {{4, 3}}}
 
 		It("should correctly add multiple vertices", func() {
 			graph := datastructures.NewGraph(true)
@@ -82,36 +85,31 @@ var _ = Describe("Graph", func() {
 			Expect(graph.AreExplored([]int{1, 2, 3, 4})).To(BeTrue())
 			Expect(graph.GetSearchPath()[0]).To(Equal(1))
 		})
+
+		It("Dijkstra(1)", func() {
+			graph := datastructures.NewGraph(true)
+			graph.AddEdges(adj_list)
+			graph.Dijkstra(1)
+			fmt.Println("result small", graph.GetShortestPaths())
+			Expect(graph.GetShortestPaths()[4]).To(Equal(6))
+		})
 	})
 
-	// Context("Huge graph", func() {
-	// 	huge_graph := datastructures.NewGraph(true)
-	// 	edge_list, _ := parsing.ReadIntegersTuplesFromFile("../test/data/directed_graph")
-	// 	huge_graph.AddEdges(edge_list)
+	Context("Huge graph", func() {
+		huge_graph := datastructures.NewGraph(true)
+		adj_list, _ := parsing.GetWeightedGraphData("../test/data/directed_weighted_graph")
+		huge_graph.AddEdges(adj_list)
+		// fmt.Println("huge graph", huge_graph)
 
-	// 	It("should compute the last vertex with correct data", func() {
-	// 		expected := &datastructures.Vertex{
-	// 			Next: map[int]bool{
-	// 				233422: true,
-	// 				233423: true,
-	// 				233424: true,
-	// 				233425: true,
-	// 				233426: true,
-	// 				233427: true,
-	// 				233428: true,
-	// 				233429: true,
-	// 				233430: true,
-	// 				233431: true,
-	// 				233432: true,
-	// 				233433: true,
-	// 				233434: true,
-	// 				233435: true,
-	// 				233436: true,
-	// 			},
-	// 		}
-	// 		received := huge_graph.GetVertices()[875713]
+		It("Dijkstra(1)", func() {
+			huge_graph.Dijkstra(1)
+			sp := huge_graph.GetShortestPaths()
 
-	// 		Expect(received).To(Equal(expected))
-	// 	})
-	// })
+			fmt.Println("result huge", huge_graph.GetShortestPaths())
+
+			// 7,37,59,82,99,115,133,165,188,197
+			fmt.Println("result huge", sp[7], sp[37], sp[59], sp[82], sp[99], sp[115], sp[133], sp[165], sp[188], sp[197])
+			// 1st response 4685 2610 6222 2052 6893 2834 2029 4399 2633 4483
+		})
+	})
 })
