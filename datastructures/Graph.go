@@ -10,7 +10,7 @@ type Graph struct {
 }
 
 type Vertex struct {
-	Next map[int]bool
+	Next map[int]int
 }
 
 func NewGraph(is_directed bool) *Graph {
@@ -39,24 +39,26 @@ func (graph *Graph) AddVertex(v int) {
 
 	if !ok {
 		graph.vertices[v] = &Vertex{
-			Next: map[int]bool{},
+			Next: map[int]int{},
 		}
 	}
 }
 
-func (graph *Graph) AddEdge(v, w int) {
+func (graph *Graph) AddEdge(v, w, weight int) {
 	graph.AddVertex(v)
 	graph.AddVertex(w)
 
-	graph.vertices[v].Next[w] = true
+	graph.vertices[v].Next[w] = weight
 	if !graph.is_directed {
-		graph.vertices[w].Next[v] = true
+		graph.vertices[w].Next[v] = weight
 	}
 }
 
-func (graph *Graph) AddEdges(edge_list [][2]int) {
-	for _, edge := range edge_list {
-		graph.AddEdge(edge[0], edge[1])
+func (graph *Graph) AddEdges(adj_list [][][2]int) {
+	for i, edge_list := range adj_list {
+		for _, edge := range edge_list {
+			graph.AddEdge(i+1, edge[0], edge[1])
+		}
 	}
 }
 
