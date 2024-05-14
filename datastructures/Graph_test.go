@@ -93,6 +93,22 @@ var _ = Describe("Graph", func() {
 			fmt.Println("result small", graph.GetShortestPaths())
 			Expect(graph.GetShortestPaths()[4]).To(Equal(6))
 		})
+
+		It("Dijkstra(1) with course test case", func() {
+			var adj_list = [][][2]int{{{2, 1}, {8, 2}}, {{1, 1}, {3, 1}}, {{2, 1}, {4, 1}}, {{3, 1}, {5, 1}}, {{4, 1}, {6, 1}}, {{5, 1}, {7, 1}}, {{6, 1}, {8, 1}}, {{7, 1}, {1, 2}}}
+			graph := datastructures.NewGraph(true)
+			graph.AddEdges(adj_list)
+			graph.Dijkstra(1)
+			Expect(graph.GetShortestPaths()[1]).To(Equal(0))
+			Expect(graph.GetShortestPaths()[2]).To(Equal(1))
+			Expect(graph.GetShortestPaths()[3]).To(Equal(2))
+			Expect(graph.GetShortestPaths()[4]).To(Equal(3))
+			Expect(graph.GetShortestPaths()[5]).To(Equal(4))
+			// next ones failing because of a shortcut by 8
+			Expect(graph.GetShortestPaths()[6]).To(Equal(4))
+			Expect(graph.GetShortestPaths()[7]).To(Equal(3))
+			Expect(graph.GetShortestPaths()[8]).To(Equal(2))
+		})
 	})
 
 	Context("Huge graph", func() {
