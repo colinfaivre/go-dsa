@@ -1,8 +1,6 @@
 package datastructures_test
 
 import (
-	"fmt"
-
 	"github.com/colinfaivre/go-dsa/datastructures"
 	"github.com/colinfaivre/go-dsa/parsing"
 	. "github.com/onsi/ginkgo/v2"
@@ -90,21 +88,19 @@ var _ = Describe("Graph", func() {
 			graph := datastructures.NewGraph(true)
 			graph.AddEdges(adj_list)
 			graph.Dijkstra(1)
-			fmt.Println("result small", graph.GetShortestPaths())
 			Expect(graph.GetShortestPaths()[4]).To(Equal(6))
 		})
 
-		It("Dijkstra(1) with course test case", func() {
-			var adj_list = [][][2]int{{{2, 1}, {8, 2}}, {{1, 1}, {3, 1}}, {{2, 1}, {4, 1}}, {{3, 1}, {5, 1}}, {{4, 1}, {6, 1}}, {{5, 1}, {7, 1}}, {{6, 1}, {8, 1}}, {{7, 1}, {1, 2}}}
+		It("Dijkstra(1) on course test case with big shortcut", func() {
+			var adj_list2 = [][][2]int{{{2, 1}, {8, 2}}, {{1, 1}, {3, 1}}, {{2, 1}, {4, 1}}, {{3, 1}, {5, 1}}, {{4, 1}, {6, 1}}, {{5, 1}, {7, 1}}, {{6, 1}, {8, 1}}, {{7, 1}, {1, 2}}}
 			graph := datastructures.NewGraph(true)
-			graph.AddEdges(adj_list)
+			graph.AddEdges(adj_list2)
 			graph.Dijkstra(1)
 			Expect(graph.GetShortestPaths()[1]).To(Equal(0))
 			Expect(graph.GetShortestPaths()[2]).To(Equal(1))
 			Expect(graph.GetShortestPaths()[3]).To(Equal(2))
 			Expect(graph.GetShortestPaths()[4]).To(Equal(3))
 			Expect(graph.GetShortestPaths()[5]).To(Equal(4))
-			// next ones failing because of a shortcut by 8
 			Expect(graph.GetShortestPaths()[6]).To(Equal(4))
 			Expect(graph.GetShortestPaths()[7]).To(Equal(3))
 			Expect(graph.GetShortestPaths()[8]).To(Equal(2))
@@ -115,17 +111,21 @@ var _ = Describe("Graph", func() {
 		huge_graph := datastructures.NewGraph(true)
 		adj_list, _ := parsing.GetWeightedGraphData("../test/data/directed_weighted_graph")
 		huge_graph.AddEdges(adj_list)
-		// fmt.Println("huge graph", huge_graph)
 
 		It("Dijkstra(1)", func() {
 			huge_graph.Dijkstra(1)
 			sp := huge_graph.GetShortestPaths()
 
-			fmt.Println("result huge", huge_graph.GetShortestPaths())
-
-			// 7,37,59,82,99,115,133,165,188,197
-			fmt.Println("result huge", sp[7], sp[37], sp[59], sp[82], sp[99], sp[115], sp[133], sp[165], sp[188], sp[197])
-			// 1st response 4685 2610 6222 2052 6893 2834 2029 4399 2633 4483
+			Expect(sp[7]).To(Equal(2599))
+			Expect(sp[37]).To(Equal(2610))
+			Expect(sp[59]).To(Equal(2947))
+			Expect(sp[82]).To(Equal(2052))
+			Expect(sp[99]).To(Equal(2367))
+			Expect(sp[115]).To(Equal(2399))
+			Expect(sp[133]).To(Equal(2029))
+			Expect(sp[165]).To(Equal(2442))
+			Expect(sp[188]).To(Equal(2505))
+			Expect(sp[197]).To(Equal(3068))
 		})
 	})
 })

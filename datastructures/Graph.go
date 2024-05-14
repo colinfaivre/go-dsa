@@ -107,28 +107,28 @@ func (graph *Graph) Dijkstra(start_vertex int) {
 
 	for len(graph.shortest_paths) != len(graph.vertices) {
 
-		border := [][3]int{}
+		border := [][4]int{}
 
 		for v := range graph.shortest_paths {
 
 			for w := range graph.vertices[v].Next {
 				_, ok := graph.shortest_paths[w]
 				if !ok {
-					border = append(border, [3]int{v, w, graph.vertices[v].Next[w]})
+					border = append(border, [4]int{v, w, graph.shortest_paths[v], graph.vertices[v].Next[w]})
 				}
 
 			}
 
 		}
 
-		min := [3]int{0, 0, 1000000}
+		min := [4]int{0, 0, 0, 1000000}
 
 		for _, item := range border {
-			if item[2] < min[2] {
+			if item[2]+item[3] < min[2]+min[3] {
 				min = item
 			}
 		}
 
-		graph.shortest_paths[min[1]] = graph.shortest_paths[min[0]] + min[2]
+		graph.shortest_paths[min[1]] = graph.shortest_paths[min[0]] + min[3]
 	}
 }
