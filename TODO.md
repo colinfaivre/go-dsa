@@ -1,18 +1,12 @@
 # TODO
 
 ## 💪 Practice
-- ➡️ `Dijkstra` naive, add weird test cases for small graph:
-    - circular
-    - long shortcut to go to 4 with multiple ones
-    - long shorcut from 1 to 4 with weight less than 6
-    - orphan nodes
-    - test case from week2 discussion by course instructor
+- ➡️ implement `MinHeap`
+- ➡️ solve median_maintenance using `MaxHeap` and `MinHeap`
 - implement `LinkedList`
 - implement `Queue` with a `LinkedList`
 - implement `Stack` with a `LinkedList`
-- finish `Heap` course
 - implement `HeapSort`
-- finish `Dijkstra` course notes
 - implement `Dijkstra` using `Heap`
 
 ## 🏗️ Maintain
