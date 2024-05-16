@@ -3,11 +3,10 @@ package datastructures
 // WIKI https://en.wikipedia.org/wiki/Graph_(abstract_data_type)
 
 type Graph struct {
-	is_directed    bool
-	vertices       map[int]*Vertex
-	search_path    []int
-	is_explored    map[int]bool
-	shortest_paths map[int]int
+	is_directed bool
+	vertices    map[int]*Vertex
+	search_path []int
+	is_explored map[int]bool
 }
 
 type Vertex struct {
@@ -16,16 +15,11 @@ type Vertex struct {
 
 func NewGraph(is_directed bool) *Graph {
 	return &Graph{
-		is_directed:    is_directed,
-		vertices:       map[int]*Vertex{},
-		search_path:    []int{},
-		is_explored:    map[int]bool{},
-		shortest_paths: map[int]int{},
+		is_directed: is_directed,
+		vertices:    map[int]*Vertex{},
+		search_path: []int{},
+		is_explored: map[int]bool{},
 	}
-}
-
-func (graph *Graph) GetShortestPaths() map[int]int {
-	return graph.shortest_paths
 }
 
 func (graph *Graph) GetSearchPath() []int {
@@ -98,37 +92,5 @@ func (graph *Graph) BFS(start_vertex int) {
 				graph.search_path = append(graph.search_path, w)
 			}
 		}
-	}
-}
-
-// https://medium.com/@balajeraam/dijkstra-the-person-algorithm-5016ebe9468
-func (graph *Graph) Dijkstra(start_vertex int) {
-	graph.shortest_paths[start_vertex] = 0
-
-	for len(graph.shortest_paths) != len(graph.vertices) {
-
-		border := [][4]int{}
-
-		for v := range graph.shortest_paths {
-
-			for w := range graph.vertices[v].Next {
-				_, ok := graph.shortest_paths[w]
-				if !ok {
-					border = append(border, [4]int{v, w, graph.shortest_paths[v], graph.vertices[v].Next[w]})
-				}
-
-			}
-
-		}
-
-		min := [4]int{0, 0, 0, 1000000}
-
-		for _, item := range border {
-			if item[2]+item[3] < min[2]+min[3] {
-				min = item
-			}
-		}
-
-		graph.shortest_paths[min[1]] = graph.shortest_paths[min[0]] + min[3]
 	}
 }

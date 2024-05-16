@@ -7,7 +7,7 @@ import (
 	. "github.com/onsi/gomega"
 )
 
-var _ = Describe("Problems", func() {
+var _ = Describe("MedianMaintenance()", func() {
 	Context("MedianMaintenance() on small array", func() {
 		arr := []int{4, 1, 7, 3, 2, 5, 9, 6}
 		median_list := problems.MedianMaintenance(arr)

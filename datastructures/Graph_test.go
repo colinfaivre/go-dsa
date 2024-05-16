@@ -2,7 +2,6 @@ package datastructures_test
 
 import (
 	"github.com/colinfaivre/go-dsa/datastructures"
-	"github.com/colinfaivre/go-dsa/parsing"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 )
@@ -82,50 +81,6 @@ var _ = Describe("Graph", func() {
 
 			Expect(graph.AreExplored([]int{1, 2, 3, 4})).To(BeTrue())
 			Expect(graph.GetSearchPath()[0]).To(Equal(1))
-		})
-
-		It("Dijkstra(1)", func() {
-			graph := datastructures.NewGraph(true)
-			graph.AddEdges(adj_list)
-			graph.Dijkstra(1)
-			Expect(graph.GetShortestPaths()[4]).To(Equal(6))
-		})
-
-		It("Dijkstra(1) on course test case with big shortcut", func() {
-			var adj_list2 = [][][2]int{{{2, 1}, {8, 2}}, {{1, 1}, {3, 1}}, {{2, 1}, {4, 1}}, {{3, 1}, {5, 1}}, {{4, 1}, {6, 1}}, {{5, 1}, {7, 1}}, {{6, 1}, {8, 1}}, {{7, 1}, {1, 2}}}
-			graph := datastructures.NewGraph(true)
-			graph.AddEdges(adj_list2)
-			graph.Dijkstra(1)
-			Expect(graph.GetShortestPaths()[1]).To(Equal(0))
-			Expect(graph.GetShortestPaths()[2]).To(Equal(1))
-			Expect(graph.GetShortestPaths()[3]).To(Equal(2))
-			Expect(graph.GetShortestPaths()[4]).To(Equal(3))
-			Expect(graph.GetShortestPaths()[5]).To(Equal(4))
-			Expect(graph.GetShortestPaths()[6]).To(Equal(4))
-			Expect(graph.GetShortestPaths()[7]).To(Equal(3))
-			Expect(graph.GetShortestPaths()[8]).To(Equal(2))
-		})
-	})
-
-	Context("Huge graph", func() {
-		huge_graph := datastructures.NewGraph(true)
-		adj_list, _ := parsing.GetWeightedGraphData("../test/data/directed_weighted_graph")
-		huge_graph.AddEdges(adj_list)
-
-		It("Dijkstra(1)", func() {
-			huge_graph.Dijkstra(1)
-			sp := huge_graph.GetShortestPaths()
-
-			Expect(sp[7]).To(Equal(2599))
-			Expect(sp[37]).To(Equal(2610))
-			Expect(sp[59]).To(Equal(2947))
-			Expect(sp[82]).To(Equal(2052))
-			Expect(sp[99]).To(Equal(2367))
-			Expect(sp[115]).To(Equal(2399))
-			Expect(sp[133]).To(Equal(2029))
-			Expect(sp[165]).To(Equal(2442))
-			Expect(sp[188]).To(Equal(2505))
-			Expect(sp[197]).To(Equal(3068))
 		})
 	})
 })
