@@ -2,29 +2,27 @@
 
 ## 💪 Practice
 - ➡️ implement `MinHeap`
-- ➡️ solve median_maintenance using `MaxHeap` and `MinHeap`
-- implement `LinkedList`
-- implement `Queue` with a `LinkedList`
-- implement `Stack` with a `LinkedList`
+- ➡️ solve `median_maintenance` using `MaxHeap` and `MinHeap`
+- ➡️ solve `Dijkstra` using `Heap`
 - implement `HeapSort`
-- implement `Dijkstra` using `Heap`
+- implement `LinkedList`
+- 🤔 implement `Queue` with a `LinkedList`
+- 🤔 implement `Stack` with a `LinkedList`
 
 ## 🏗️ Maintain
-- better organise test mocks
 - some sorting algos return the sorted array and others sort the original in place
 - time track function executions: https://coderwall.com/p/cp5fya/measuring-execution-time-in-go
 - use what could be useful in `ts` dsa repo here and delete it
 - use BeforeEach() testing pattern
-- continue exploring ginkgo
+- continue exploring ginkgo: test mocks
 
 ## 📔 Document
-- add Dikstra interview/documentary
 - extract course specific implementation of algo into `problems` directory
     - count inversions
     - shortest paths with BFS
     - quicksort with pivot selection or randomization
 - document applications of data structures and algo
-- find a way to include `stanford dsa course` notes in this repo (`docs` or specific `READMEs`)
+- include `stanford dsa course` notes in this repo
 
 ## 🧗‍♂️Train
 - add tests in `/problems` for sorting problems
