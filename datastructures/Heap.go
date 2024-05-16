@@ -6,23 +6,42 @@ import "fmt"
 // https://yuminlee2.medium.com/golang-heap-data-structure-45760f9562dc
 // https://www.youtube.com/watch?v=3DYIgTC4T1o
 
-type MaxHeap struct {
+type heap struct {
+	isMin bool
 	array []int
 }
 
-func (h *MaxHeap) GetArray() []int {
-	return h.array
+func NewHeap(isMin bool) *heap {
+	return &heap{
+		isMin: isMin,
+		array: []int{},
+	}
 }
 
-func (h *MaxHeap) Insert(key int) {
+func (h *heap) Size() int {
+	return len(h.array)
+}
+
+func (h *heap) Peek() int {
+	if h.isMin {
+		return -h.array[0]
+	}
+
+	return h.array[0]
+}
+
+func (h *heap) Insert(key int) {
+	if h.isMin {
+		key = -key
+	}
 	h.array = append(h.array, key)
 
-	h.HeapifyUp(len(h.array) - 1)
+	h.siftUp(len(h.array) - 1)
 }
 
-func (h *MaxHeap) Extract(key int) int {
+func (h *heap) Extract() int {
 	if len(h.array) == 0 {
-		fmt.Println("impossible to extract item from empty Heap")
+		fmt.Println("impossible to extract item from empty heap")
 		return -1
 	}
 
@@ -32,18 +51,22 @@ func (h *MaxHeap) Extract(key int) int {
 	h.array[0] = h.array[lastIndex]
 	h.array = h.array[:lastIndex]
 
-	h.HeapifyDown(0)
+	h.siftDown(0)
+
+	if h.isMin {
+		return -extracted
+	}
 
 	return extracted
 }
 
-func (h *MaxHeap) HeapifyUp(index int) {
+func (h *heap) siftUp(index int) {
 	for h.array[parent(index)] < h.array[index] {
 		h.swap(parent(index), index)
 	}
 }
 
-func (h *MaxHeap) HeapifyDown(index int) {
+func (h *heap) siftDown(index int) {
 	lastIndex := len(h.array) - 1
 	l, r := left(index), right(index)
 	childToCompare := 0
@@ -69,7 +92,7 @@ func (h *MaxHeap) HeapifyDown(index int) {
 }
 
 // n batched inserts: O(n)
-func (h *MaxHeap) Heapify(arr []int) {
+func (h *heap) Heapify(arr []int) {
 	for _, v := range arr {
 		h.Insert(v)
 	}
@@ -87,6 +110,6 @@ func right(i int) int {
 	return 2*i + 2
 }
 
-func (h *MaxHeap) swap(i1, i2 int) {
+func (h *heap) swap(i1, i2 int) {
 	h.array[i1], h.array[i2] = h.array[i2], h.array[i1]
 }
