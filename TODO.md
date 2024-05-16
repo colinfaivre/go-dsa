@@ -1,7 +1,6 @@
 # TODO
 
 ## 💪 Practice
-- ➡️ implement `MinHeap`
 - ➡️ solve `median_maintenance` using `MaxHeap` and `MinHeap`
 - ➡️ solve `Dijkstra` using `Heap`
 - implement `HeapSort`
