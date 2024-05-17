@@ -1,8 +1,6 @@
 package problems
 
 import (
-	"fmt"
-
 	"github.com/colinfaivre/go-dsa/algorithms"
 	"github.com/colinfaivre/go-dsa/datastructures"
 )
@@ -37,7 +35,7 @@ func HeapMedianMaintenance(number_list []int) []int {
 	h_low := datastructures.NewHeap(false)
 	h_high := datastructures.NewHeap(true)
 
-	for i, v := range number_list {
+	for _, v := range number_list {
 		if h_low.Size() == 0 || v <= h_low.Peek() {
 			h_low.Insert(v)
 		} else {
@@ -45,8 +43,6 @@ func HeapMedianMaintenance(number_list []int) []int {
 		}
 		rebalance(h_low, h_high)
 		median_list = append(median_list, h_low.Peek())
-		fmt.Printf("step %v: h_low %v / h_high %v \n", i, h_low, h_high)
-		// @TODO at step6, siftUp() does not seem to bring 4 to the top of the maxheap
 	}
 
 	return median_list
