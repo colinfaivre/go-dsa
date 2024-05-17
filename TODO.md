@@ -2,7 +2,6 @@
 
 ## 💪 Practice
 - ➡️ solve `Dijkstra` using `Heap`
-- implement `HeapSort`
 - implement `LinkedList`
 - 🤔 implement `Queue` with a `LinkedList`
 - 🤔 implement `Stack` with a `LinkedList`
