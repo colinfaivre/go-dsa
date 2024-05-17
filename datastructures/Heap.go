@@ -6,23 +6,23 @@ import "fmt"
 // https://yuminlee2.medium.com/golang-heap-data-structure-45760f9562dc
 // https://www.youtube.com/watch?v=3DYIgTC4T1o
 
-type heap struct {
+type Heap struct {
 	isMin bool
 	array []int
 }
 
-func NewHeap(isMin bool) *heap {
-	return &heap{
+func NewHeap(isMin bool) *Heap {
+	return &Heap{
 		isMin: isMin,
 		array: []int{},
 	}
 }
 
-func (h *heap) Size() int {
+func (h *Heap) Size() int {
 	return len(h.array)
 }
 
-func (h *heap) Peek() int {
+func (h *Heap) Peek() int {
 	if h.isMin {
 		return -h.array[0]
 	}
@@ -30,7 +30,7 @@ func (h *heap) Peek() int {
 	return h.array[0]
 }
 
-func (h *heap) Insert(key int) {
+func (h *Heap) Insert(key int) {
 	if h.isMin {
 		key = -key
 	}
@@ -39,7 +39,7 @@ func (h *heap) Insert(key int) {
 	h.siftUp(len(h.array) - 1)
 }
 
-func (h *heap) Extract() int {
+func (h *Heap) Extract() int {
 	if len(h.array) == 0 {
 		fmt.Println("impossible to extract item from empty heap")
 		return -1
@@ -60,13 +60,13 @@ func (h *heap) Extract() int {
 	return extracted
 }
 
-func (h *heap) siftUp(index int) {
+func (h *Heap) siftUp(index int) {
 	for h.array[parent(index)] < h.array[index] {
 		h.swap(parent(index), index)
 	}
 }
 
-func (h *heap) siftDown(index int) {
+func (h *Heap) siftDown(index int) {
 	lastIndex := len(h.array) - 1
 	l, r := left(index), right(index)
 	childToCompare := 0
@@ -92,7 +92,7 @@ func (h *heap) siftDown(index int) {
 }
 
 // n batched inserts: O(n)
-func (h *heap) Heapify(arr []int) {
+func (h *Heap) Heapify(arr []int) {
 	for _, v := range arr {
 		h.Insert(v)
 	}
@@ -110,6 +110,6 @@ func right(i int) int {
 	return 2*i + 2
 }
 
-func (h *heap) swap(i1, i2 int) {
+func (h *Heap) swap(i1, i2 int) {
 	h.array[i1], h.array[i2] = h.array[i2], h.array[i1]
 }

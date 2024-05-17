@@ -1,6 +1,11 @@
 package problems
 
-import "github.com/colinfaivre/go-dsa/algorithms"
+import (
+	"fmt"
+
+	"github.com/colinfaivre/go-dsa/algorithms"
+	"github.com/colinfaivre/go-dsa/datastructures"
+)
 
 // Median:
 // Middle value separating the greater and lesser halves of a data set (sorted)
@@ -8,7 +13,7 @@ import "github.com/colinfaivre/go-dsa/algorithms"
 
 // Naive solution O(n * nlogn) solution <=> O(n2)
 // @TODO could be done in O(logn) using MaxHeap and MinHeap
-func MedianMaintenance(number_list []int) []int {
+func NaiveMedianMaintenance(number_list []int) []int {
 	median_list := []int{}
 
 	for i := 0; i < len(number_list); i++ {
@@ -24,6 +29,37 @@ func MedianMaintenance(number_list []int) []int {
 	}
 
 	return median_list
+}
+
+// https://kb.novaordis.com/index.php/The_Median_Maintenance_Problem
+func HeapMedianMaintenance(number_list []int) []int {
+	median_list := []int{}
+	h_low := datastructures.NewHeap(false)
+	h_high := datastructures.NewHeap(true)
+
+	for i, v := range number_list {
+		if h_low.Size() == 0 || v <= h_low.Peek() {
+			h_low.Insert(v)
+		} else {
+			h_high.Insert(v)
+		}
+		rebalance(h_low, h_high)
+		median_list = append(median_list, h_low.Peek())
+		fmt.Printf("step %v: h_low %v / h_high %v \n", i, h_low, h_high)
+		// @TODO at step6, siftUp() does not seem to bring 4 to the top of the maxheap
+	}
+
+	return median_list
+}
+
+func rebalance(h_low, h_high *datastructures.Heap) {
+	diff := h_low.Size() - h_high.Size()
+
+	if diff == 2 {
+		h_high.Insert(h_low.Extract())
+	} else if diff == -1 {
+		h_low.Insert(h_high.Extract())
+	}
 }
 
 func GetResult(median_list []int) int {
