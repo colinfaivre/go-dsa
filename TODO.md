@@ -1,7 +1,6 @@
 # TODO
 
 ## 💪 Practice
-- ➡️ solve `median_maintenance` using `MaxHeap` and `MinHeap`
 - ➡️ solve `Dijkstra` using `Heap`
 - implement `HeapSort`
 - implement `LinkedList`
@@ -23,7 +22,7 @@
 - document applications of data structures and algo
 - include `stanford dsa course` notes in this repo
 
-## 🧗‍♂️Train
+## 🧗 Train
 - add tests in `/problems` for sorting problems
 - add copy_me template for scaffolding an algo from scratch to train
     - space complexity

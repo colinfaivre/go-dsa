@@ -63,6 +63,7 @@ func (h *Heap) Extract() int {
 func (h *Heap) siftUp(index int) {
 	for h.array[parent(index)] < h.array[index] {
 		h.swap(parent(index), index)
+		index = parent(index)
 	}
 }
 
