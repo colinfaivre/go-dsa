@@ -7,11 +7,9 @@
 - 🤔 implement `Stack` with a `LinkedList`
 
 ## 🏗️ Maintain
-- some sorting algos return the sorted array and others sort the original in place
 - time track function executions: https://coderwall.com/p/cp5fya/measuring-execution-time-in-go
 - use what could be useful in `ts` dsa repo here and delete it
-- use BeforeEach() testing pattern
-- continue exploring ginkgo: test mocks
+- continue exploring ginkgo: test mocks / BeforeEach()
 
 ## 📔 Document
 - use https://go.dev/doc/comment
@@ -23,6 +21,7 @@
 - include `stanford dsa course` notes in this repo
 
 ## 🧗 Train
+- ➡️ add two_sum sliding window solution
 - add tests in `/problems` for sorting problems
 - add copy_me template for scaffolding an algo from scratch to train
     - space complexity

@@ -8,19 +8,15 @@ package problems
 // Best solution: use a hashtable
 
 func TwoSum(arr []int, t int) bool {
-	sum_map := map[int]int{}
-
+	sum_map := map[int]bool{}
 	for _, v := range arr {
-		sum_map[v] = v
+		sum_map[v] = true
 	}
 
-	for _, v := range arr {
-		y := t - v
-		_, ok := sum_map[y]
-		if ok {
+	for _, x := range arr {
+		y := t - x
+		if sum_map[y] && x != y {
 			return true
-		} else {
-			sum_map[y] = y
 		}
 	}
 
@@ -28,10 +24,11 @@ func TwoSum(arr []int, t int) bool {
 }
 
 // Returns the right number of distinct 'x+y' in the inclusive interval [-10_000, 10_000]
+// Very slow, try using sliding window technique instead of map
 func GetSolution(arr []int) int {
 	counter := 0
 
-	for k := -10_000; k <= 10_000; k++ {
+	for k := -10000; k <= 10000; k++ {
 		if TwoSum(arr, k) {
 			counter++
 		}

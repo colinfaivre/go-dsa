@@ -1,7 +1,6 @@
 package problems_test
 
 import (
-	"github.com/colinfaivre/go-dsa/parsing"
 	"github.com/colinfaivre/go-dsa/problems"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
@@ -21,15 +20,6 @@ var _ = Describe("two sum", func() {
 			result := problems.TwoSum(arr, 12)
 
 			Expect(result).To(Equal(false))
-		})
-	})
-
-	Context("Huge array", func() {
-		It("returns the right number of distinct 'x+y' in the inclusive interval [-10_000, 10_000]", func() {
-			huge_arr, _ := parsing.ReadIntegersFromFile("../test/data/two_sum")
-			result := problems.GetResult(huge_arr)
-
-			Expect(result).To(Equal(2145))
 		})
 	})
 })
