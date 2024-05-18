@@ -14,6 +14,7 @@
 - continue exploring ginkgo: test mocks
 
 ## 📔 Document
+- use https://go.dev/doc/comment
 - extract course specific implementation of algo into `problems` directory
     - count inversions
     - shortest paths with BFS
