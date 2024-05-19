@@ -1,5 +1,6 @@
 package problems
 
+// @LEETCODE https://leetcode.com/problems/two-sum/description/
 // Given an unsorted array arr and a target t determine whether or not there exists x and y in arr
 // such that x + y = t
 // -----------
@@ -23,6 +24,7 @@ func TwoSum(arr []int, t int) bool {
 	return false
 }
 
+// @LEETCODE https://leetcode.com/problems/count-the-number-of-fair-pairs/
 // Returns the right number of distinct 'x+y' in the inclusive interval [-10_000, 10_000]
 // Very slow, try using sliding window technique instead of map
 func GetSolution(arr []int) int {
