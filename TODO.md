@@ -5,6 +5,7 @@
 - implement `LinkedList`
 - 🤔 implement `Queue` with a `LinkedList`
 - 🤔 implement `Stack` with a `LinkedList`
+- find an easy go implementation for hashmap
 
 ## 🏗️ Maintain
 - time track function executions: https://coderwall.com/p/cp5fya/measuring-execution-time-in-go
@@ -17,6 +18,8 @@
     - count inversions
     - shortest paths with BFS
     - quicksort with pivot selection or randomization
+    - karger min cut
+    - SCCs on directed graph
 - document applications of data structures and algo
 - include `stanford dsa course` notes in this repo
 
