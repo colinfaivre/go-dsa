@@ -5,12 +5,14 @@ import (
 	"github.com/colinfaivre/go-dsa/datastructures"
 )
 
+// @LEETCODE https://leetcode.com/problems/find-median-from-data-stream/description/
+// @MEDIUM https://yuminlee2.medium.com/leetcode-295-find-median-from-data-stream-9d3b4ff5270f
+
 // Median:
 // Middle value separating the greater and lesser halves of a data set (sorted)
 // ex: 1, 2, 2, *3*, 4, 7, 9
 
 // Naive solution O(n * nlogn) solution <=> O(n2)
-// @TODO could be done in O(logn) using MaxHeap and MinHeap
 func NaiveMedianMaintenance(number_list []int) []int {
 	median_list := []int{}
 
