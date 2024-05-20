@@ -2,7 +2,6 @@
 
 ## 💪 Practice
 - ➡️ solve `Dijkstra` using `Heap`
-- implement `LinkedList`
 - 🤔 implement `Queue` with a `LinkedList`
 - 🤔 implement `Stack` with a `LinkedList`
 - find an easy go implementation for hashmap
