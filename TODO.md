@@ -3,6 +3,7 @@
 ## 💪 Practice
 - ➡️ solve `Dijkstra` using `Heap`
 - find an easy `go` implementation for `Hashmap`
+- add an implementation of `BinarySearchTree`
 
 ## 🏗️ Maintain
 - time track function executions: https://coderwall.com/p/cp5fya/measuring-execution-time-in-go
