@@ -4,17 +4,10 @@
 - ➡️ solve `Dijkstra` using `Heap`
 - find an easy `go` implementation for `Hashmap`
 - add an implementation of `BinarySearchTree`
-- compare stack and queue slice based implementation with the LinkedList implementation (https://coderwall.com/p/cp5fya/measuring-execution-time-in-go)
-- extract course specific implementation of algo into `problems` directory
-    - count inversions
-    - shortest paths with BFS
-    - quicksort with pivot selection or randomization
-    - karger min cut
-    - SCCs on directed graph
-    - SCCs on undirected graph
-- use what could be useful in `ts` dsa repo here and delete it
+- quicksort with pivot selection or randomization
 
 ## 🧪 Test
+- compare stack and queue slice based implementation with the LinkedList implementation (https://coderwall.com/p/cp5fya/measuring-execution-time-in-go)
 - continue exploring `ginkgo`
 - mocks
 - BeforeEach()
@@ -34,3 +27,7 @@
     - time complexity
     - applications
     - implementations
+- count inversions
+- shortest paths with BFS
+- SCCs on directed graph
+- SCCs on undirected graph
