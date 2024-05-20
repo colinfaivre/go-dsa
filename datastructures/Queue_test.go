@@ -20,7 +20,7 @@ var _ = Describe("Queue", func() {
 		queue.Enqueue(42)
 
 		It("adds an item at the end of the queue", func() {
-			Expect(queue.GetItems()[len(queue.GetItems())-1]).To(Equal(42))
+			Expect(queue.ToString()).To(Equal("42"))
 		})
 	})
 
@@ -47,7 +47,7 @@ var _ = Describe("Queue", func() {
 		queue.Dequeue()
 
 		It("should have 1", func() {
-			Expect(queue.GetItems()).To(Equal([]int{3}))
+			Expect(queue.ToString()).To(Equal("3"))
 		})
 	})
 })

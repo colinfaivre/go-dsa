@@ -79,12 +79,11 @@ func (l *LinkedList) AddLast(n int) {
 		l.head = node
 		l.tail = node
 		l.size = 1
+	} else {
+		l.tail.next = node
+		l.tail = node
+		l.size++
 	}
-
-	l.tail.next = node
-	l.tail = node
-	l.size++
-
 }
 
 // Retrieves, but does not remove the last element of the linked list

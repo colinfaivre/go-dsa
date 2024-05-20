@@ -2,9 +2,7 @@
 
 ## 💪 Practice
 - ➡️ solve `Dijkstra` using `Heap`
-- 🤔 implement `Queue` with a `LinkedList`
-- 🤔 implement `Stack` with a `LinkedList`
-- find an easy go implementation for hashmap
+- find an easy `go` implementation for `Hashmap`
 
 ## 🏗️ Maintain
 - time track function executions: https://coderwall.com/p/cp5fya/measuring-execution-time-in-go

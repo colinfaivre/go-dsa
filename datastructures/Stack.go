@@ -3,25 +3,25 @@ package datastructures
 // WIKI https://en.wikipedia.org/wiki/Stack_(abstract_data_type)
 
 type Stack struct {
-	items []int
+	items LinkedList
 }
 
-func (stack *Stack) GetItems() []int {
-	return stack.items
+// Returns a string representation of the stack
+func (s *Stack) ToString() string {
+	return s.items.ToString()
 }
 
-func (stack *Stack) Push(item int) {
-	stack.items = append(stack.items, item)
+// O(1): Adds an item on the top of the stack
+func (s *Stack) Push(item int) {
+	s.items.AddFirst(item)
 }
 
-func (stack *Stack) Pop() int {
-	last_idx := len(stack.items) - 1
-	to_remove := stack.items[last_idx]
-	stack.items = stack.items[:last_idx]
-
-	return to_remove
+// O(1): Removes and returns the item on the top of the stack
+func (s *Stack) Pop() int {
+	return s.items.RemoveFirst()
 }
 
-func (stack *Stack) IsEmpty() bool {
-	return len(stack.items) == 0
+// O(1): Returns true if the stack is empty
+func (s *Stack) IsEmpty() bool {
+	return s.items.isEmpty()
 }

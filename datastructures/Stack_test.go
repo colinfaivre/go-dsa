@@ -21,7 +21,7 @@ var _ = Describe("Stack", func() {
 		stack.Push(42)
 
 		It("adds an item at the end of the stack", func() {
-			Expect(stack.GetItems()[len(stack.GetItems())-1]).To(Equal(42))
+			Expect(stack.ToString()).To(Equal("42"))
 		})
 	})
 
@@ -48,7 +48,7 @@ var _ = Describe("Stack", func() {
 		stack.Pop()
 
 		It("should have 1", func() {
-			Expect(stack.GetItems()).To(Equal([]int{1}))
+			Expect(stack.ToString()).To(Equal("1"))
 		})
 	})
 })

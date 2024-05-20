@@ -3,24 +3,25 @@ package datastructures
 // WIKI https://en.wikipedia.org/wiki/Queue_(abstract_data_type)
 
 type Queue struct {
-	items []int
+	items LinkedList
 }
 
-func (queue *Queue) GetItems() []int {
-	return queue.items
+// Returns a string representation of the queue
+func (q *Queue) ToString() string {
+	return q.items.ToString()
 }
 
-func (queue *Queue) Enqueue(item int) {
-	queue.items = append(queue.items, item)
+// O(1): Adds an item at the end of the queue
+func (q *Queue) Enqueue(item int) {
+	q.items.AddLast(item)
 }
 
-func (queue *Queue) Dequeue() int {
-	to_remove := queue.items[0]
-	queue.items = queue.items[1:]
-
-	return to_remove
+// O(1): Removes and returns the item in front of the queue
+func (q *Queue) Dequeue() int {
+	return q.items.RemoveFirst()
 }
 
-func (queue *Queue) IsEmpty() bool {
-	return len(queue.items) == 0
+// O(1): Returns true if the queue is empty
+func (q *Queue) IsEmpty() bool {
+	return q.items.isEmpty()
 }
