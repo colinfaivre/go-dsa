@@ -1,11 +1,17 @@
+/*
+Dikstra algorithm
+@INTERVIEW https://www.youtube.com/watch?v=mLEOZO1GwVc
+@MEDIUM https://medium.com/@balajeraam/dijkstra-the-person-algorithm-5016ebe9468
+*/
+
 package problems
 
 import (
 	"github.com/colinfaivre/go-dsa/datastructures"
 )
 
-// https://medium.com/@balajeraam/dijkstra-the-person-algorithm-5016ebe9468
-func Dijkstra(graph *datastructures.Graph, start_vertex int) map[int]int {
+// O(mn): Computes a map of all shortest path starting from the given vertex
+func DijkstraNaive(graph *datastructures.Graph, start_vertex int) map[int]int {
 	shortest_paths := map[int]int{start_vertex: 0}
 
 	for len(shortest_paths) != len(graph.GetVertices()) {
@@ -34,6 +40,13 @@ func Dijkstra(graph *datastructures.Graph, start_vertex int) map[int]int {
 
 		shortest_paths[min[1]] = shortest_paths[min[0]] + min[3]
 	}
+
+	return shortest_paths
+}
+
+// O(mlogn): Computes a map of all shortest path starting from the given vertex
+func DijkstraHeap(graph *datastructures.Graph, start_vertex int) map[int]int {
+	shortest_paths := map[int]int{start_vertex: 0}
 
 	return shortest_paths
 }

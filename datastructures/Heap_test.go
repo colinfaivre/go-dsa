@@ -43,7 +43,7 @@ var _ = Describe("Heap", func() {
 	Context("MaxHeap Extract()", func() {
 		heap := datastructures.NewHeap(false)
 		heap.Heapify([]int{10, 20, 30, 40, 50, 60, 70, 80})
-		heap.Extract()
+		heap.ExtractTop()
 
 		It("should have the biggest value as first element", func() {
 			Expect(heap.Peek()).To(Equal(70))
@@ -68,7 +68,7 @@ var _ = Describe("Heap", func() {
 		heap.Heapify([]int{10, 20, 30, 40, 50, 60, 70, 80})
 
 		It("should have the smallest value as first element", func() {
-			Expect(heap.Extract()).To(Equal(10))
+			Expect(heap.ExtractTop()).To(Equal(10))
 		})
 	})
 })

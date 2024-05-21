@@ -8,7 +8,7 @@ func HeapSort(arr []int) []int {
 	new_arr := []int{}
 
 	for i := 0; i < len(arr); i++ {
-		new_arr = append(new_arr, heap.Extract())
+		new_arr = append(new_arr, heap.ExtractTop())
 	}
 
 	return new_arr

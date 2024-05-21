@@ -14,7 +14,7 @@ var _ = Describe("Dijkstra", func() {
 			adj_list := [][][2]int{{{3, 4}, {2, 1}}, {{4, 6}, {3, 2}}, {{4, 3}}}
 			graph := datastructures.NewGraph(true)
 			graph.AddEdges(adj_list)
-			shortest_path := problems.Dijkstra(graph, 1)
+			shortest_path := problems.DijkstraNaive(graph, 1)
 
 			Expect(shortest_path[4]).To(Equal(6))
 		})
@@ -23,7 +23,7 @@ var _ = Describe("Dijkstra", func() {
 			adj_list := [][][2]int{{{2, 1}, {8, 2}}, {{1, 1}, {3, 1}}, {{2, 1}, {4, 1}}, {{3, 1}, {5, 1}}, {{4, 1}, {6, 1}}, {{5, 1}, {7, 1}}, {{6, 1}, {8, 1}}, {{7, 1}, {1, 2}}}
 			graph := datastructures.NewGraph(true)
 			graph.AddEdges(adj_list)
-			shortest_path := problems.Dijkstra(graph, 1)
+			shortest_path := problems.DijkstraNaive(graph, 1)
 
 			Expect(shortest_path[1]).To(Equal(0))
 			Expect(shortest_path[2]).To(Equal(1))
@@ -42,7 +42,7 @@ var _ = Describe("Dijkstra", func() {
 		huge_graph.AddEdges(adj_list)
 
 		It("Dijkstra(1)", func() {
-			sortest_path := problems.Dijkstra(huge_graph, 1)
+			sortest_path := problems.DijkstraNaive(huge_graph, 1)
 
 			Expect(sortest_path[7]).To(Equal(2599))
 			Expect(sortest_path[37]).To(Equal(2610))

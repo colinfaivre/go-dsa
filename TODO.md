@@ -1,7 +1,9 @@
 # TODO
 
 ## 🏗️ Build
+- ➡️ implement `ExtractFromMiddle()` on `Heap`
 - ➡️ solve `Dijkstra` using `Heap`
+- extract `DFS` and `BFS` from `Graph`
 - find an easy `go` implementation for `Hashmap`
 - add an implementation of `BinarySearchTree`
 - quicksort with pivot selection or randomization
