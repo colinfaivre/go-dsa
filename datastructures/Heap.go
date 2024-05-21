@@ -1,21 +1,29 @@
+// @GOSTDLIB https://pkg.go.dev/container/heap
 // @WIKI https://en.wikipedia.org/wiki/Heap_(data_structure)
 // @MEDIUM https://yuminlee2.medium.com/golang-heap-data-structure-45760f9562dc
 // @YOUTUBE https://www.youtube.com/watch?v=3DYIgTC4T1o
 
 package datastructures
 
-import "fmt"
+import (
+	"fmt"
+)
+
+type Item struct {
+	id    int
+	Value int
+}
 
 type Heap struct {
 	isMin bool
-	array []int
+	array []Item
 }
 
 // O(1): Builds a minheap or max heap depending on isMin
 func NewHeap(isMin bool) *Heap {
 	return &Heap{
 		isMin: isMin,
-		array: []int{},
+		array: []Item{},
 	}
 }
 
@@ -24,30 +32,36 @@ func (h *Heap) Size() int {
 	return len(h.array)
 }
 
-// O(1): Returns the value at the top of the heap
-func (h *Heap) Peek() int {
+// O(1): Returns the item at the top of the heap
+func (h *Heap) Peek() Item {
 	if h.isMin {
-		return -h.array[0]
+		return Item{
+			id:    h.array[0].id,
+			Value: -h.array[0].Value,
+		}
 	}
 
-	return h.array[0]
+	return Item{
+		id:    h.array[0].id,
+		Value: h.array[0].Value,
+	}
 }
 
-// O(logn): Inserts a new value into the heap
-func (h *Heap) Insert(key int) {
+// O(logn): Inserts a new item into the heap
+func (h *Heap) Insert(i Item) {
 	if h.isMin {
-		key = -key
+		i.Value = -i.Value
 	}
-	h.array = append(h.array, key)
+	h.array = append(h.array, i)
 
 	h.siftUp(len(h.array) - 1)
 }
 
-// O(logn): Extracts the value on the top of the heap
-func (h *Heap) ExtractTop() int {
+// O(logn): Extracts the item on the top of the heap
+func (h *Heap) ExtractTop() Item {
 	if len(h.array) == 0 {
 		fmt.Println("impossible to extract item from empty heap")
-		return -1
+		return Item{}
 	}
 
 	extracted := h.array[0]
@@ -59,45 +73,48 @@ func (h *Heap) ExtractTop() int {
 	h.siftDown(0)
 
 	if h.isMin {
-		return -extracted
+		return Item{
+			id:    extracted.id,
+			Value: -extracted.Value,
+		}
 	}
 
 	return extracted
 }
 
-// O(logn): Extracts a value from the heap
-func (h *Heap) Extract() int {
+// O(logn): Extracts an item from the heap
+func (h *Heap) Extract(id int) Item {
 
-	return 0
+	return Item{}
 }
 
-// Bubbles up a value to maintain the heap property
+// Bubbles up an item to maintain the heap property
 func (h *Heap) siftUp(index int) {
-	for h.array[parent(index)] < h.array[index] {
+	for h.array[parent(index)].Value < h.array[index].Value {
 		h.swap(parent(index), index)
 		index = parent(index)
 	}
 }
 
-// Bubbles down a value to maintain the heap property
+// Bubbles down an item to maintain the heap property
 func (h *Heap) siftDown(index int) {
 	lastIndex := len(h.array) - 1
-	l, r := left(index), right(index)
-	childToCompare := 0
+	li, ri := left(index), right(index)
+	childToCompareIdx := 0
 
-	for l <= lastIndex {
-		if l == lastIndex {
-			childToCompare = l
-		} else if h.array[l] > h.array[r] {
-			childToCompare = l
+	for li <= lastIndex {
+		if li == lastIndex {
+			childToCompareIdx = li
+		} else if h.array[li].Value > h.array[ri].Value {
+			childToCompareIdx = li
 		} else {
-			childToCompare = r
+			childToCompareIdx = ri
 		}
 
-		if h.array[index] < h.array[childToCompare] {
-			h.swap(index, childToCompare)
-			index = childToCompare
-			l, r = left(index), right(index)
+		if h.array[index].Value < h.array[childToCompareIdx].Value {
+			h.swap(index, childToCompareIdx)
+			index = childToCompareIdx
+			li, ri = left(index), right(index)
 		} else {
 			return
 		}
@@ -105,10 +122,10 @@ func (h *Heap) siftDown(index int) {
 
 }
 
-// O(nlogn): Inserts a batch of values into the heap
+// O(nlogn): Inserts a batch of items into the heap
 func (h *Heap) Heapify(arr []int) {
 	for _, v := range arr {
-		h.Insert(v)
+		h.Insert(Item{Value: v})
 	}
 }
 

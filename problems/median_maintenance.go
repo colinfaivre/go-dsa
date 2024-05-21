@@ -38,13 +38,13 @@ func HeapMedianMaintenance(number_list []int) []int {
 	h_high := datastructures.NewHeap(true)
 
 	for _, v := range number_list {
-		if h_low.Size() == 0 || v <= h_low.Peek() {
-			h_low.Insert(v)
+		if h_low.Size() == 0 || v <= h_low.Peek().Value {
+			h_low.Insert(datastructures.Item{Value: v})
 		} else {
-			h_high.Insert(v)
+			h_high.Insert(datastructures.Item{Value: v})
 		}
 		rebalance(h_low, h_high)
-		median_list = append(median_list, h_low.Peek())
+		median_list = append(median_list, h_low.Peek().Value)
 	}
 
 	return median_list
