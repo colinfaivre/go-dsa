@@ -1,6 +1,6 @@
 package algorithms
 
-// WIKI https://en.wikipedia.org/wiki/Selection_sort
+// @WIKI https://en.wikipedia.org/wiki/Selection_sort
 
 func SelectionSort(arr []int) []int {
 	for i := 0; i < len(arr)-1; i++ {

@@ -1,6 +1,6 @@
 package datastructures
 
-// WIKI https://en.wikipedia.org/wiki/Graph_(abstract_data_type)
+// @WIKI https://en.wikipedia.org/wiki/Graph_(abstract_data_type)
 
 type Graph struct {
 	is_directed bool

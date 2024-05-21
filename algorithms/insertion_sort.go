@@ -1,6 +1,6 @@
 package algorithms
 
-// WIKI https://en.wikipedia.org/wiki/Insertion_sort
+// @WIKI https://en.wikipedia.org/wiki/Insertion_sort
 // O(n^2)
 // The insertion sort algorithm builds the final sorted array one value at a time.
 // It assumes that the first element is already sorted.

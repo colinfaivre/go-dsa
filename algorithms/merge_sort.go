@@ -1,6 +1,7 @@
 package algorithms
 
-// WIKI https://en.wikipedia.org/wiki/Merge_sort
+// @GOSTDLIB https://pkg.go.dev/sort
+// @WIKI https://en.wikipedia.org/wiki/Merge_sort
 // O(nlogn)
 // used by firefox Array.prototype.sort
 // The merge sort is a divide and conquer algorithm.

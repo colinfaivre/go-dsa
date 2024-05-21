@@ -2,6 +2,8 @@ package algorithms
 
 import "github.com/colinfaivre/go-dsa/datastructures"
 
+// @GOSTDLIB https://pkg.go.dev/sort
+
 func HeapSort(arr []int) []int {
 	heap := datastructures.NewHeap(true)
 	heap.Heapify(arr)

@@ -1,4 +1,4 @@
-// WIKI https://en.wikipedia.org/wiki/Stack_(abstract_data_type)
+// @WIKI https://en.wikipedia.org/wiki/Stack_(abstract_data_type)
 
 package datastructures
 

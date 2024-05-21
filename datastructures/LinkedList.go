@@ -5,6 +5,7 @@ import (
 	"strconv"
 )
 
+// @GOSTDLIB https://pkg.go.dev/container/list
 // @WIKI https://en.wikipedia.org/wiki/Linked_list
 // @YOUTUBE https://www.youtube.com/watch?v=1S0_-VxPLJo
 

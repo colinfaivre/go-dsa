@@ -1,6 +1,6 @@
 package datastructures
 
-// WIKI https://en.wikipedia.org/wiki/Queue_(abstract_data_type)
+// @WIKI https://en.wikipedia.org/wiki/Queue_(abstract_data_type)
 
 type Queue struct {
 	items LinkedList
