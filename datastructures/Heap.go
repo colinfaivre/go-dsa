@@ -58,19 +58,20 @@ func (h *Heap) Insert(i Item) {
 }
 
 // O(logn): Extracts the item on the top of the heap
-func (h *Heap) ExtractTop() Item {
+func (h *Heap) ExtractFrom(index int) Item {
 	if len(h.array) == 0 {
+		// @TODO return an error instead of empty item?
 		fmt.Println("impossible to extract item from empty heap")
 		return Item{}
 	}
 
-	extracted := h.array[0]
+	extracted := h.array[index]
 
 	lastIndex := len(h.array) - 1
-	h.array[0] = h.array[lastIndex]
+	h.array[index] = h.array[lastIndex]
 	h.array = h.array[:lastIndex]
 
-	h.siftDown(0)
+	h.siftDown(index)
 
 	if h.isMin {
 		return Item{
@@ -82,10 +83,25 @@ func (h *Heap) ExtractTop() Item {
 	return extracted
 }
 
-// O(logn): Extracts an item from the heap
-func (h *Heap) Extract(id int) Item {
+// O(n): Gets the index of the item with a given id
+func (h *Heap) GetIndexFromId(id int) int {
+	// @TODO ids need to be unique
 
-	return Item{}
+	if len(h.array) == 0 {
+		// @TODO return an error instead of -1?
+		fmt.Println("impossible to extract item from empty heap")
+		return -1
+	}
+
+	for i, item := range h.array {
+		if item.id == id {
+			return i
+		}
+	}
+
+	// @TODO return an error instead of -1?
+	fmt.Println("item not found")
+	return -1
 }
 
 // Bubbles up an item to maintain the heap property

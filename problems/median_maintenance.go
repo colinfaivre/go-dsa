@@ -54,9 +54,9 @@ func rebalance(h_low, h_high *datastructures.Heap) {
 	diff := h_low.Size() - h_high.Size()
 
 	if diff == 2 {
-		h_high.Insert(h_low.ExtractTop())
+		h_high.Insert(h_low.ExtractFrom(0))
 	} else if diff == -1 {
-		h_low.Insert(h_high.ExtractTop())
+		h_low.Insert(h_high.ExtractFrom(0))
 	}
 }
 

@@ -1,7 +1,6 @@
 # TODO
 
 ## 🏗️ Build
-- ➡️ implement `ExtractFromMiddle()` on `Heap`
 - ➡️ solve `Dijkstra` using `Heap`
 - extract `DFS` and `BFS` from `Graph`
 - find an easy `go` implementation for `Hashmap`
@@ -9,6 +8,8 @@
 - quicksort with pivot selection or randomization
 
 ## 🧪 Test
+- ➡️ improve error handling in `Heap` (methods should sometimes return errors)
+- improve and test error handling everywhere
 - compare stack and queue slice based implementation with the LinkedList implementation (https://coderwall.com/p/cp5fya/measuring-execution-time-in-go)
 - continue exploring `ginkgo`
 - mocks

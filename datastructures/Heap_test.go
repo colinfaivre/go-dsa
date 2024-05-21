@@ -56,7 +56,7 @@ var _ = Describe("Heap", func() {
 			70,
 			80,
 		})
-		heap.ExtractTop()
+		heap.ExtractFrom(0)
 
 		It("should have the biggest value as first element", func() {
 			Expect(heap.Peek()).To(Equal(datastructures.Item{Value: 70}))
@@ -94,7 +94,7 @@ var _ = Describe("Heap", func() {
 		})
 
 		It("should have the smallest value as first element", func() {
-			Expect(heap.ExtractTop()).To(Equal(datastructures.Item{Value: 10}))
+			Expect(heap.ExtractFrom(0)).To(Equal(datastructures.Item{Value: 10}))
 		})
 	})
 })
