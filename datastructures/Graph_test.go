@@ -73,14 +73,5 @@ var _ = Describe("Graph", func() {
 
 			Expect(expected).To(Equal(received))
 		})
-
-		It("running DFS() from vertex 1 should explore vertices 1, 2, 3, 4", func() {
-			graph := datastructures.NewGraph(true)
-			graph.AddEdges(adj_list)
-			graph.DFS(1)
-
-			Expect(graph.AreExplored([]int{1, 2, 3, 4})).To(BeTrue())
-			Expect(graph.GetSearchPath()[0]).To(Equal(1))
-		})
 	})
 })

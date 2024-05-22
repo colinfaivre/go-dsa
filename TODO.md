@@ -1,13 +1,12 @@
 # TODO
 
 ## 🏗️ Build
-- extract `DFS` and `BFS` from `Graph`
-- find an easy `go` implementation for `Hashmap`
 - add an implementation of `BinarySearchTree`
 - quicksort with pivot selection or randomization
 
 ## 🧪 Test
 - ➡️ improve error handling in `Heap` (methods should sometimes return errors)
+- improve BFS and DFS tests with concrete problems to solve ?
 - `Dijkstra()` should maybe take a copy of the graph instead of the pointer?
 - improve and test error handling everywhere
 - compare stack and queue slice based implementation with the LinkedList implementation (https://coderwall.com/p/cp5fya/measuring-execution-time-in-go)
