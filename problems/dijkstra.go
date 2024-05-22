@@ -1,6 +1,6 @@
 /*
 Dikstra algorithm
-@INTERVIEW https://www.youtube.com/watch?v=mLEOZO1GwVc
+@DOCUMENTARY https://www.youtube.com/watch?v=mLEOZO1GwVc
 @MEDIUM https://medium.com/@balajeraam/dijkstra-the-person-algorithm-5016ebe9468
 */
 
@@ -46,7 +46,25 @@ func DijkstraNaive(graph *datastructures.Graph, start_vertex int) map[int]int {
 
 // O(mlogn): Computes a map of all shortest path starting from the given vertex
 func DijkstraHeap(graph *datastructures.Graph, start_vertex int) map[int]int {
-	shortest_paths := map[int]int{start_vertex: 0}
+	shortest_paths := map[int]int{}
+	for k := range graph.GetVertices() {
+		shortest_paths[k] = 1000000
+	}
+	heap := datastructures.NewHeap(true)
+
+	heap.Insert(datastructures.Item{Id: start_vertex, Value: 0})
+	shortest_paths[start_vertex] = 0
+
+	for heap.Size() > 0 {
+		v := heap.ExtractFrom(0).Id
+
+		for w, weight := range graph.GetVertices()[v].Next {
+			if shortest_paths[w] > shortest_paths[v]+weight {
+				shortest_paths[w] = shortest_paths[v] + weight
+				heap.Insert(datastructures.Item{Id: w, Value: shortest_paths[w]})
+			}
+		}
+	}
 
 	return shortest_paths
 }

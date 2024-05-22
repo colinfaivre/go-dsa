@@ -1,7 +1,6 @@
 # TODO
 
 ## 🏗️ Build
-- ➡️ solve `Dijkstra` using `Heap`
 - extract `DFS` and `BFS` from `Graph`
 - find an easy `go` implementation for `Hashmap`
 - add an implementation of `BinarySearchTree`
@@ -9,6 +8,7 @@
 
 ## 🧪 Test
 - ➡️ improve error handling in `Heap` (methods should sometimes return errors)
+- `Dijkstra()` should maybe take a copy of the graph instead of the pointer?
 - improve and test error handling everywhere
 - compare stack and queue slice based implementation with the LinkedList implementation (https://coderwall.com/p/cp5fya/measuring-execution-time-in-go)
 - continue exploring `ginkgo`

@@ -10,7 +10,7 @@ import (
 )
 
 type Item struct {
-	id    int
+	Id    int
 	Value int
 }
 
@@ -36,13 +36,13 @@ func (h *Heap) Size() int {
 func (h *Heap) Peek() Item {
 	if h.isMin {
 		return Item{
-			id:    h.array[0].id,
+			Id:    h.array[0].Id,
 			Value: -h.array[0].Value,
 		}
 	}
 
 	return Item{
-		id:    h.array[0].id,
+		Id:    h.array[0].Id,
 		Value: h.array[0].Value,
 	}
 }
@@ -75,7 +75,7 @@ func (h *Heap) ExtractFrom(index int) Item {
 
 	if h.isMin {
 		return Item{
-			id:    extracted.id,
+			Id:    extracted.Id,
 			Value: -extracted.Value,
 		}
 	}
@@ -94,7 +94,7 @@ func (h *Heap) GetIndexFromId(id int) int {
 	}
 
 	for i, item := range h.array {
-		if item.id == id {
+		if item.Id == id {
 			return i
 		}
 	}
