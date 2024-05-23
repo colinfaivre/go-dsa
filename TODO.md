@@ -1,6 +1,7 @@
 # TODO
 
 ## 🏗️ Build
+- ➡️ write a parser for `PrimsMST` test data
 - add an implementation of `BinarySearchTree`
 - quicksort with pivot selection or randomization
 
