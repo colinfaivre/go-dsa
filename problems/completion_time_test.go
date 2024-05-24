@@ -27,13 +27,13 @@ var _ = Describe("Completion time", func() {
 	})
 
 	It("computes the assignement right completion time for diffs", func() {
-		jobs, _ := parsing.ReadIntegersTuplesFromFile("../test/data/jobs")
+		jobs, _ := parsing.ReadIntegers2TuplesFromFile("../test/data/jobs")
 		problems.SortByDiff(jobs)
 		Expect(problems.CompletionTime(jobs)).To(Equal(69119377652))
 	})
 
 	It("computes the assignement right completion time for ratios", func() {
-		jobs, _ := parsing.ReadIntegersTuplesFromFile("../test/data/jobs")
+		jobs, _ := parsing.ReadIntegers2TuplesFromFile("../test/data/jobs")
 		problems.SortByRatio(jobs)
 		Expect(problems.CompletionTime(jobs)).To(Equal(67311454237))
 	})

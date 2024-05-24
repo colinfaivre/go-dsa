@@ -39,8 +39,8 @@ func ReadIntegersFromFile(filename string) ([]int, error) {
 	return numbers, nil
 }
 
-// ReadIntegersTuplesFromFile reads integers from a file and returns them as a slice of integer tuples.
-func ReadIntegersTuplesFromFile(filename string) ([][2]int, error) {
+// ReadIntegers2TuplesFromFile reads integers from a file and returns them as a slice of integer tuples.
+func ReadIntegers2TuplesFromFile(filename string) ([][2]int, error) {
 	file, err := os.Open(filename)
 	if err != nil {
 		return nil, err
@@ -60,6 +60,37 @@ func ReadIntegersTuplesFromFile(filename string) ([][2]int, error) {
 		}
 
 		numberTuples = append(numberTuples, [2]int{first, second})
+	}
+
+	if err := scanner.Err(); err != nil {
+		return nil, err
+	}
+
+	return numberTuples, nil
+}
+
+// ReadIntegers3TuplesFromFile reads integers from a file and returns them as a slice of integer tuples.
+func ReadIntegers3TuplesFromFile(filename string) ([][3]int, error) {
+	file, err := os.Open(filename)
+	if err != nil {
+		return nil, err
+	}
+	defer file.Close()
+
+	scanner := bufio.NewScanner(file)
+	var numberTuples [][3]int
+
+	for scanner.Scan() {
+		line := scanner.Text()
+		split := strings.Split(line, " ")
+		first, err_first := strconv.Atoi(split[0])
+		second, err_second := strconv.Atoi(split[1])
+		third, err_third := strconv.Atoi(split[2])
+		if err_first != nil || err_second != nil || err_third != nil {
+			return nil, err
+		}
+
+		numberTuples = append(numberTuples, [3]int{first, second, third})
 	}
 
 	if err := scanner.Err(); err != nil {

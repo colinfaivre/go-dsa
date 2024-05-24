@@ -20,34 +20,40 @@ func NewGraph(is_directed bool) *Graph {
 	}
 }
 
-func (graph *Graph) GetVertices() map[int]*Vertex {
-	return graph.vertices
+func (g *Graph) GetVertices() map[int]*Vertex {
+	return g.vertices
 }
 
-func (graph *Graph) addVertex(v int) {
-	_, ok := graph.vertices[v]
+func (g *Graph) addVertex(v int) {
+	_, ok := g.vertices[v]
 
 	if !ok {
-		graph.vertices[v] = &Vertex{
+		g.vertices[v] = &Vertex{
 			Next: map[int]int{},
 		}
 	}
 }
 
-func (graph *Graph) AddEdge(v, w, weight int) {
-	graph.addVertex(v)
-	graph.addVertex(w)
+func (g *Graph) AddEdge(v, w, weight int) {
+	g.addVertex(v)
+	g.addVertex(w)
 
-	graph.vertices[v].Next[w] = weight
-	if !graph.is_directed {
-		graph.vertices[w].Next[v] = weight
+	g.vertices[v].Next[w] = weight
+	if !g.is_directed {
+		g.vertices[w].Next[v] = weight
 	}
 }
 
-func (graph *Graph) AddEdges(adj_list [][][2]int) {
+func (g *Graph) AddEdges(adj_list [][][2]int) {
 	for i, edge_list := range adj_list {
 		for _, edge := range edge_list {
-			graph.AddEdge(i+1, edge[0], edge[1])
+			g.AddEdge(i+1, edge[0], edge[1])
 		}
+	}
+}
+
+func (g *Graph) Add3TuplesEdges(adj_list [][3]int) {
+	for _, e := range adj_list {
+		g.AddEdge(e[0], e[1], e[2])
 	}
 }

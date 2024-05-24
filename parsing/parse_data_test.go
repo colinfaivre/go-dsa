@@ -26,21 +26,39 @@ var _ = Describe("Parse Data", func() {
 		})
 	})
 
-	Context("ReadIntegersTuplesFromFile", func() {
+	Context("ReadIntegers2TuplesFromFile", func() {
 		It("does not return an error when the file exists", func() {
-			_, err := parsing.ReadIntegersTuplesFromFile("../test/data/directed_graph")
+			_, err := parsing.ReadIntegers2TuplesFromFile("../test/data/directed_graph")
 			Expect(err).To(BeNil())
 		})
 
 		It("returns an error when the file does not exist", func() {
-			_, err := parsing.ReadIntegersTuplesFromFile("../wrong/path")
+			_, err := parsing.ReadIntegers2TuplesFromFile("../wrong/path")
 			Expect(err).NotTo(BeNil())
 		})
 
 		It("returns an array of tuples with the correct first and last tuples", func() {
-			arr, _ := parsing.ReadIntegersTuplesFromFile("../test/data/directed_graph")
+			arr, _ := parsing.ReadIntegers2TuplesFromFile("../test/data/directed_graph")
 			Expect(arr[0]).To(Equal([2]int{1, 1}))
 			Expect(arr[5105042]).To(Equal([2]int{875714, 542453}))
+		})
+	})
+
+	Context("ReadIntegers3TuplesFromFile", func() {
+		It("does not return an error when the file exists", func() {
+			_, err := parsing.ReadIntegers3TuplesFromFile("../test/data/undirected_weighted_graph")
+			Expect(err).To(BeNil())
+		})
+
+		It("returns an error when the file does not exist", func() {
+			_, err := parsing.ReadIntegers3TuplesFromFile("../wrong/path")
+			Expect(err).NotTo(BeNil())
+		})
+
+		It("returns an array of tuples with the correct first and last tuples", func() {
+			arr, _ := parsing.ReadIntegers3TuplesFromFile("../test/data/undirected_weighted_graph")
+			Expect(arr[0]).To(Equal([3]int{1, 2, 6807}))
+			Expect(arr[2183]).To(Equal([3]int{496, 500, -1519}))
 		})
 	})
 
