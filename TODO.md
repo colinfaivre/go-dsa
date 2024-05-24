@@ -1,8 +1,15 @@
 # TODO
 
 ## 🏗️ Build
-- ➡️ add an implementation of `BinarySearchTree`
+- ➡️ continue implementing `BinarySearchTree`:
+  - `inOrderTraversal()`
+  - `preOrderTraversal()`
+  - `postOrderTraversal()`
+  - `min()`
+  - `max()`
+  - `remove(key)`
 - ➡️ solve `PrimsMST`
+- ➡️ add an implementation of the `Trie` datastructure
 - `quicksort` with pivot selection or randomization
 
 ## 🧪 Test
