@@ -5,8 +5,6 @@
   - `inOrderTraversal()`
   - `preOrderTraversal()`
   - `postOrderTraversal()`
-  - `min()`
-  - `max()`
   - `remove(key)`
 - ➡️ solve `PrimsMST` with `heap` based implementation
 - ➡️ add an implementation of the `Trie` datastructure
@@ -26,7 +24,6 @@
 ## 📔 Document
 - use https://go.dev/doc/comment on every file with:
   - applications of data structures and algo
-  - `stanford dsa course` notes
 
 ## 🧗 Train
 - ➡️ add` two_sum` sliding window solution
