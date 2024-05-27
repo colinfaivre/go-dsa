@@ -8,7 +8,7 @@
   - `min()`
   - `max()`
   - `remove(key)`
-- ➡️ solve `PrimsMST`
+- ➡️ solve `PrimsMST` with `heap` based implementation
 - ➡️ add an implementation of the `Trie` datastructure
 - `quicksort` with pivot selection or randomization
 
