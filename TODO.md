@@ -1,19 +1,21 @@
 # TODO
 
 ## 🏗️ Build
-- ➡️ solve `clustering` problem
 - ➡️ continue implementing `BinarySearchTree`:
   - `inOrderTraversal()`
   - `preOrderTraversal()`
   - `postOrderTraversal()`
   - `remove(key)`
+- ➡️ solve `clustering` problem
 - ➡️ solve `PrimsMST` with `heap` based implementation
+- ➡️ solve `KruskalsMST`
 - ➡️ add an implementation of the `Trie` datastructure
 - `quicksort` with pivot selection or randomization
+- add an implementation for `HashTable`
 
 ## 🧪 Test
 - ➡️ improve error handling in `Heap` (methods should sometimes return errors)
-- improve BFS and DFS tests with concrete problems to solve ?
+- improve `BFS` and `DFS` tests with concrete problems to solve ?
 - `Dijkstra()` should maybe take a copy of the graph instead of the pointer?
 - improve and test error handling everywhere
 - compare `stack`, `queue` and `slice` based implementations with the LinkedList implementation (https://coderwall.com/p/cp5fya/measuring-execution-time-in-go)
