@@ -10,20 +10,9 @@ type BSTNode struct {
 	Right *BSTNode
 }
 
+// BST represents a binary search tree
 type BST struct {
 	root *BSTNode
-}
-
-type BSTService interface {
-	Insert(data int)
-	Search(key int) bool
-	GetRoot() *BSTNode
-	InOrderTraversal() string
-	PreOrderTraversal() string
-	PostOrderTraversal() string
-	Min()
-	Max()
-	Remove(key int)
 }
 
 func (t *BST) GetRoot() *BSTNode {
@@ -32,10 +21,9 @@ func (t *BST) GetRoot() *BSTNode {
 
 // O(logn) Returns the minimum value of the tree
 func (t *BST) Min() int {
-	return t.root.min()
+	return t.root.minNode()
 }
-
-func (n BSTNode) min() int {
+func (n BSTNode) minNode() int {
 	for n.Left != nil {
 		n = *n.Left
 	}
@@ -45,10 +33,9 @@ func (n BSTNode) min() int {
 
 // O(logn) Returns the minimum value of the tree
 func (t *BST) Max() int {
-	return t.root.max()
+	return t.root.maxNode()
 }
-
-func (n BSTNode) max() int {
+func (n BSTNode) maxNode() int {
 	for n.Right != nil {
 		n = *n.Right
 	}
@@ -60,42 +47,40 @@ func (n BSTNode) max() int {
 // the key to add should not be already in the tree
 func (t *BST) Insert(k int) {
 	if t.root != nil {
-		t.root.insert(k)
+		t.root.insertNode(k)
 	} else {
 		t.root = &BSTNode{Left: nil, Right: nil, Key: k}
 	}
 }
-
-func (n *BSTNode) insert(k int) {
+func (n *BSTNode) insertNode(k int) {
 	if n.Key < k {
 		if n.Right == nil {
 			n.Right = &BSTNode{Key: k}
 		} else {
-			n.Right.insert(k)
+			n.Right.insertNode(k)
 		}
 	} else {
 		if n.Left == nil {
 			n.Left = &BSTNode{Key: k}
 		} else {
-			n.Left.insert(k)
+			n.Left.insertNode(k)
 		}
 	}
 }
 
 // O(logn): Searches for a key in the tree and returns true if a node has it
 func (t BST) Search(k int) bool {
-	return t.root.search(k)
+	return t.root.searchNode(k)
 }
-
-func (n *BSTNode) search(k int) bool {
+func (n *BSTNode) searchNode(k int) bool {
 	if n == nil {
 		return false
 	}
 
 	if n.Key < k {
-		return n.Right.search(k)
+		return n.Right.searchNode(k)
 	} else if n.Key > k {
-		return n.Left.search(k)
+		return n.Left.searchNode(k)
 	}
 
 	return true
