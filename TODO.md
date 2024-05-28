@@ -1,6 +1,7 @@
 # TODO
 
 ## 🏗️ Build
+- ➡️ solve `clustering` problem
 - ➡️ continue implementing `BinarySearchTree`:
   - `inOrderTraversal()`
   - `preOrderTraversal()`
