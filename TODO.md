@@ -1,11 +1,7 @@
 # TODO
 
 ## 🏗️ Build
-- ➡️ continue implementing `BinarySearchTree`:
-  - `inOrderTraversal()`
-  - `preOrderTraversal()`
-  - `postOrderTraversal()`
-  - `remove(key)`
+- ➡️ continue implementing `BinarySearchTree`: `remove(key)`
 - ➡️ solve `clustering` problem
 - ➡️ solve `PrimsMST` with `heap` based implementation
 - ➡️ solve `KruskalsMST`

@@ -85,3 +85,51 @@ func (n *BSTNode) searchNode(k int) bool {
 
 	return true
 }
+
+func (t *BST) InOrderTraverse(cb func(k int)) {
+	t.root.inOrderTraverseNode(cb)
+}
+
+func (n *BSTNode) inOrderTraverseNode(cb func(k int)) {
+	if n.Left != nil {
+		n.Left.inOrderTraverseNode(cb)
+	}
+
+	cb(n.Key)
+
+	if n.Right != nil {
+		n.Right.inOrderTraverseNode(cb)
+	}
+}
+
+func (t *BST) PreOrderTraverse(cb func(k int)) {
+	t.root.preOrderTraverseNode(cb)
+}
+
+func (n *BSTNode) preOrderTraverseNode(cb func(k int)) {
+	cb(n.Key)
+
+	if n.Left != nil {
+		n.Left.preOrderTraverseNode(cb)
+	}
+
+	if n.Right != nil {
+		n.Right.preOrderTraverseNode(cb)
+	}
+}
+
+func (t *BST) PostOrderTraverse(cb func(k int)) {
+	t.root.postOrderTraverseNode(cb)
+}
+
+func (n *BSTNode) postOrderTraverseNode(cb func(k int)) {
+	if n.Left != nil {
+		n.Left.postOrderTraverseNode(cb)
+	}
+
+	if n.Right != nil {
+		n.Right.postOrderTraverseNode(cb)
+	}
+
+	cb(n.Key)
+}
