@@ -1,7 +1,7 @@
 # TODO
 
 ## 🏗️ Build
-- ➡️ solve `PrimsMST` with `heap` based implementation
+- ➡️ solve `KruskalsMST` brute force
 - ➡️ solve `KruskalsMST`
 - ➡️ solve `clustering` problem
 - ➡️ add an implementation of the `Trie` datastructure

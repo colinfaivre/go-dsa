@@ -6,7 +6,7 @@ import (
 
 const MaxInt = int(^uint(0) >> 1)
 
-// Brute force algo
+// Brute force algo @TODO refactor using min-heap to store vertices
 func PrimsMSTNaive(g *datastructures.Graph) int {
 	mst_cost := 0
 	visited_vertices := map[int]datastructures.Vertex{}
