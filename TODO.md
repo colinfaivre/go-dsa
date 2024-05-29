@@ -1,10 +1,9 @@
 # TODO
 
 ## 🏗️ Build
-- ➡️ continue implementing `BinarySearchTree`: `remove(key)`
-- ➡️ solve `clustering` problem
 - ➡️ solve `PrimsMST` with `heap` based implementation
 - ➡️ solve `KruskalsMST`
+- ➡️ solve `clustering` problem
 - ➡️ add an implementation of the `Trie` datastructure
 - `quicksort` with pivot selection or randomization
 - add an implementation for `HashTable`

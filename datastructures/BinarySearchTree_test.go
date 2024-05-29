@@ -114,4 +114,66 @@ var _ = Describe("BST", func() {
 			Expect(counter).To(Equal("1326875"))
 		})
 	})
+
+	Context("Remove()", func() {
+
+		It("deletes a leaf node", func() {
+			tree := datastructures.BST{}
+			counter = ""
+			tree.Insert(6)
+			tree.Insert(3)
+			tree.Insert(9)
+			tree.Insert(2)
+			tree.Insert(4)
+			tree.Insert(1)
+			tree.Insert(5)
+			tree.Insert(8)
+			tree.Insert(7)
+
+			tree.Remove(1)
+			tree.InOrderTraverse(cb)
+			Expect(tree.GetRoot().Left.Left.Left).To(BeNil())
+			Expect(counter).To(Equal("23456789"))
+		})
+
+		It("deletes a one-child node", func() {
+			tree := datastructures.BST{}
+			counter = ""
+			tree.Insert(6)
+			tree.Insert(3)
+			tree.Insert(9)
+			tree.Insert(2)
+			tree.Insert(4)
+			tree.Insert(1)
+			tree.Insert(5)
+			tree.Insert(8)
+			tree.Insert(7)
+
+			tree.Remove(2)
+			tree.InOrderTraverse(cb)
+			Expect(tree.GetRoot().Left.Left.Key).To(Equal(1))
+			Expect(counter).To(Equal("13456789"))
+		})
+
+		It("deletes a two-children node", func() {
+			tree := datastructures.BST{}
+			counter = ""
+			tree.Insert(6)
+			tree.Insert(3)
+			tree.Insert(9)
+			tree.Insert(2)
+			tree.Insert(4)
+			tree.Insert(1)
+			tree.Insert(5)
+			tree.Insert(8)
+			tree.Insert(7)
+
+			tree.Remove(3)
+			tree.InOrderTraverse(cb)
+			Expect(tree.GetRoot().Left.Key).To(Equal(4))
+			Expect(tree.GetRoot().Left.Left.Key).To(Equal(2))
+			Expect(tree.GetRoot().Left.Right.Key).To(Equal(5))
+			Expect(counter).To(Equal("12456789"))
+		})
+	})
 })

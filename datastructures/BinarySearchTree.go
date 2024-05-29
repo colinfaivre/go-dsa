@@ -21,26 +21,26 @@ func (t *BST) GetRoot() *BSTNode {
 
 // O(logn) Returns the minimum value of the tree
 func (t *BST) Min() int {
-	return t.root.minNode()
+	return t.root.minNode().Key
 }
-func (n BSTNode) minNode() int {
+func (n BSTNode) minNode() BSTNode {
 	for n.Left != nil {
 		n = *n.Left
 	}
 
-	return n.Key
+	return n
 }
 
 // O(logn) Returns the minimum value of the tree
 func (t *BST) Max() int {
-	return t.root.maxNode()
+	return t.root.maxNode().Key
 }
-func (n BSTNode) maxNode() int {
+func (n BSTNode) maxNode() BSTNode {
 	for n.Right != nil {
 		n = *n.Right
 	}
 
-	return n.Key
+	return n
 }
 
 // O(logn): Inserts a node to the tree
@@ -84,6 +84,43 @@ func (n *BSTNode) searchNode(k int) bool {
 	}
 
 	return true
+}
+
+func (t *BST) Remove(k int) {
+	t.root.removeNode(k)
+}
+
+func (n *BSTNode) removeNode(k int) *BSTNode {
+	if n == nil {
+		return nil
+	}
+
+	if k < n.Key && n.Left != nil {
+		n.Left = n.Left.removeNode(k)
+		return n
+	} else if k > n.Key && n.Right != nil {
+		n.Right = n.Right.removeNode(k)
+		return n
+	} else {
+		// remove a leaf node
+		if n.Left == nil && n.Right == nil {
+			n = nil
+			return n
+		}
+		// remove a one-child node
+		if n.Left == nil {
+			n = n.Right
+			return n
+		} else if n.Right == nil {
+			n = n.Left
+			return n
+		}
+		// remove a two-children node
+		aux := n.Right.minNode()
+		n.Key = aux.Key
+		n.Right = n.Right.removeNode(aux.Key)
+		return n
+	}
 }
 
 func (t *BST) InOrderTraverse(cb func(k int)) {
