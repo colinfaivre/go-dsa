@@ -8,6 +8,7 @@ import (
 // @GOSTDLIB https://pkg.go.dev/container/list
 // @WIKI https://en.wikipedia.org/wiki/Linked_list
 // @YOUTUBE https://www.youtube.com/watch?v=1S0_-VxPLJo
+// @LEETCODE https://leetcode.com/problems/add-two-numbers/description/
 
 type LinkedList struct {
 	head *node
