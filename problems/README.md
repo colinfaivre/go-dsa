@@ -11,3 +11,8 @@
   - https://leetcode.com/problems/subarray-product-less-than-k/description/
   - https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
   - https://leetcode.com/problems/repeated-dna-sequences/description/
+
+## ⛓️ Linked list
+- medium problems
+  - https://leetcode.com/problems/add-two-numbers/description/
+  - https://leetcode.com/problems/merge-two-sorted-lists/description/
