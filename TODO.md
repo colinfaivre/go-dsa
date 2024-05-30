@@ -1,9 +1,7 @@
 # TODO
 
 ## 🏗️ Build
-- ➡️ solve `KruskalsMST` brute force
-- ➡️ solve `KruskalsMST`
-- ➡️ solve `clustering` problem
+- ➡️ solve `clustering` problem part 2
 - ➡️ add an implementation of the `Trie` datastructure
 - `quicksort` with pivot selection or randomization
 - add an implementation for `HashTable`
