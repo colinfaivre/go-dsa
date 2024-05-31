@@ -81,4 +81,22 @@ var _ = Describe("Parse Data", func() {
 			Expect(arr[len(arr)-1]).To(Equal(expected_last))
 		})
 	})
+
+	Context("ReadBinIntegersFromFile", func() {
+		It("does not return an error when the file exists", func() {
+			_, err := parsing.ReadBinIntegersFromFile("../test/data/clustering_bg")
+			Expect(err).To(BeNil())
+		})
+
+		It("returns an error when the file does not exist", func() {
+			_, err := parsing.ReadBinIntegersFromFile("../../wrong/path")
+			Expect(err).NotTo(BeNil())
+		})
+
+		It("returns an array with the correct first and last values", func() {
+			arr, _ := parsing.ReadBinIntegersFromFile("../test/data/clustering_bg")
+			Expect(arr[0]).To(Equal(uint64(14734287)))
+			Expect(arr[199999]).To(Equal(uint64(12476686)))
+		})
+	})
 })

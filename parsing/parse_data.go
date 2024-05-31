@@ -39,6 +39,41 @@ func ReadIntegersFromFile(filename string) ([]int, error) {
 	return numbers, nil
 }
 
+// ReadBinIntegersFromFile reads integers from a file and returns them as a slice.
+func ReadBinIntegersFromFile(filename string) ([]uint64, error) {
+	// Open the file
+	file, err := os.Open(filename)
+	if err != nil {
+		return nil, err
+	}
+	defer file.Close()
+
+	// Create a scanner to read the file line by line
+	scanner := bufio.NewScanner(file)
+
+	var numbers []uint64
+
+	// Read each line and parse it as an integer
+	for scanner.Scan() {
+		line := scanner.Text()
+		// remove white spaces
+		line = strings.ReplaceAll(line, " ", "")
+
+		number, err := strconv.ParseUint(line, 2, 32)
+		if err != nil {
+			return nil, err
+		}
+		numbers = append(numbers, number)
+	}
+
+	// Check for errors during scanning
+	if err := scanner.Err(); err != nil {
+		return nil, err
+	}
+
+	return numbers, nil
+}
+
 // ReadIntegers2TuplesFromFile reads integers from a file and returns them as a slice of integer tuples.
 func ReadIntegers2TuplesFromFile(filename string) ([][2]int, error) {
 	file, err := os.Open(filename)
