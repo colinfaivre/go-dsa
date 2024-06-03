@@ -66,7 +66,7 @@ var _ = Describe("clustering", func() {
 			arr, _ := parsing.ReadBinIntegersFromFile("../test/data/clustering_bg")
 			result := problems.GetClusteringResult(arr)
 
-			Expect(result).To(Equal(14518))
+			Expect(result).To(Equal(13306))
 		})
 	})
 })

@@ -1,6 +1,10 @@
 package problems
 
-import "github.com/colinfaivre/go-dsa/datastructures"
+import (
+	"fmt"
+
+	"github.com/colinfaivre/go-dsa/datastructures"
+)
 
 // @COURSERA-DISCUSSION https://www.coursera.org/learn/algorithms-greedy/discussions/forums/N2idJHblEeag2QpBph2LIw/threads/iqd84B0MEe-EcRJB-20IWw
 // @COURSERA-DISCUSSION https://www.coursera.org/learn/algorithms-greedy/discussions/forums/N2idJHblEeag2QpBph2LIw/threads/08WOB8G6Eey8MQpu6643JQ
@@ -49,7 +53,7 @@ func ComplementMap(num uint64) map[uint64]bool {
 
 // Create a master dictionnary such that
 // it takes as key the bit-strings of each vertex and the value is a LIST of vertices with that particular bit-string
-// (this is essential to ensure that if there are duplicate bit-strings, they are recognized as separate vertices)
+// @T0DO ⚠️ this is essential to ensure that if there are duplicate bit-strings, they are recognized as separate vertices
 func ComputeMasterDictionnary(nums []uint64) map[uint64][]uint64 {
 	master_dict := map[uint64][]uint64{}
 
@@ -75,9 +79,10 @@ func ComputeMasterDictionnary(nums []uint64) map[uint64][]uint64 {
 }
 
 func GetClusteringResult(nums []uint64) int {
-	cluster_counter := 200_000
 	not_gathered_counter := 0
 	master_dict := ComputeMasterDictionnary(nums)
+	cluster_counter := len(master_dict)
+	fmt.Println("cluster_counter", cluster_counter) // 198_788 (less than 200_000 so there are duplicates)
 
 	uf := datastructures.NewUnionFind(200_000_000)
 
