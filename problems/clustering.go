@@ -1,13 +1,9 @@
 package problems
 
-import "fmt"
+import "github.com/colinfaivre/go-dsa/datastructures"
 
 // @COURSERA-DISCUSSION https://www.coursera.org/learn/algorithms-greedy/discussions/forums/N2idJHblEeag2QpBph2LIw/threads/iqd84B0MEe-EcRJB-20IWw
 // @COURSERA-DISCUSSION https://www.coursera.org/learn/algorithms-greedy/discussions/forums/N2idJHblEeag2QpBph2LIw/threads/08WOB8G6Eey8MQpu6643JQ
-
-func Clustering(nums []uint64) {
-	fmt.Printf("binary number: %024b", nums[0])
-}
 
 // Switches a bit from 0 to 1 or 1 to 0 at a given position
 func SwitchBit(bin_num uint64, pos int) uint64 {
@@ -53,28 +49,51 @@ func ComplementMap(num uint64) map[uint64]bool {
 
 // Create a master dictionnary such that
 // it takes as key the bit-strings of each vertex and the value is a LIST of vertices with that particular bit-string
-// (this is essential to ensure that if there are duplicate bit-strings, they are recognized as separate vertices.
-// For example, one of the elements of the dictionary could look like {"110101011...1":[4,5,6,...,7] , ...}
-func ComputeMasterDictionnary(nums []uint64) map[uint64][]int {
-	master_dict := map[uint64][]int{}
+// (this is essential to ensure that if there are duplicate bit-strings, they are recognized as separate vertices)
+func ComputeMasterDictionnary(nums []uint64) map[uint64][]uint64 {
+	master_dict := map[uint64][]uint64{}
 
 	for _, num := range nums {
 		_, ok := master_dict[num]
 		if !ok {
-			master_dict[num] = []int{}
+			master_dict[num] = []uint64{}
 		}
 	}
 
-	for i, num := range nums {
+	for _, num := range nums {
 		num_c_map := ComplementMap(num)
 
 		for v := range num_c_map {
 			_, _ok := master_dict[v]
 			if _ok {
-				master_dict[v] = append(master_dict[v], i+1)
+				master_dict[v] = append(master_dict[v], num)
 			}
 		}
 	}
 
 	return master_dict
+}
+
+func GetClusteringResult(nums []uint64) int {
+	cluster_counter := 200_000
+	not_gathered_counter := 0
+	master_dict := ComputeMasterDictionnary(nums)
+
+	uf := datastructures.NewUnionFind(200_000_000)
+
+	for v, edges := range master_dict {
+		for _, w := range edges {
+			if uf.Union(int(v), int(w)) {
+				cluster_counter--
+			}
+		}
+	}
+
+	for _, edges := range master_dict {
+		if len(edges) <= 1 {
+			not_gathered_counter++
+		}
+	}
+
+	return cluster_counter + not_gathered_counter
 }

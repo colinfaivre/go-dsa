@@ -8,7 +8,6 @@ import (
 
 // @MEDIUM https://yuminlee2.medium.com/kruskals-algorithm-minimum-spanning-tree-db96e91d0aed
 
-// @helpful to solve assignment part2 https://www.coursera.org/learn/algorithms-greedy/discussions/forums/N2idJHblEeag2QpBph2LIw/threads/08WOB8G6Eey8MQpu6643JQ
 // Computes the minimum spanning tree cost of given undirected edges
 func KruskalsMST(edges [][3]int, numOfNodes int) (int, [][]int) {
 	sort.Slice(edges, func(i, j int) bool {

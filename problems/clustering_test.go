@@ -49,7 +49,7 @@ var _ = Describe("clustering", func() {
 		It("returns the right complement map", func() {
 			arr, _ := parsing.ReadBinIntegersFromFile("../test/data/clustering_bg")
 
-			Expect(problems.ComputeMasterDictionnary(arr)[7349808]).To(Equal([]int{42201, 62713, 79801, 107785, 179401}))
+			Expect(problems.ComputeMasterDictionnary(arr)[7349808]).To(Equal([]uint64{7415348, 6334000, 7349808, 7349778, 16262704}))
 		})
 	})
 
@@ -58,6 +58,15 @@ var _ = Describe("clustering", func() {
 			arr, _ := parsing.ReadBinIntegersFromFile("../test/data/clustering_bg")
 
 			Expect(arr[0]).To(Equal(uint64(14734287)))
+		})
+	})
+
+	Context("GetResult()", func() {
+		It("returns the right result", func() {
+			arr, _ := parsing.ReadBinIntegersFromFile("../test/data/clustering_bg")
+			result := problems.GetClusteringResult(arr)
+
+			Expect(result).To(Equal(14518))
 		})
 	})
 })
