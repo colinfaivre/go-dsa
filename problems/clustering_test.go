@@ -26,6 +26,33 @@ var _ = Describe("clustering", func() {
 		})
 	})
 
+	Context("MostSignificantBitPosition()", func() {
+		It("returns the msb of a number", func() {
+			bin_num, _ := strconv.ParseUint("1001", 2, 32)
+
+			bin_num2, _ := strconv.ParseUint("1001001", 2, 32)
+
+			Expect(problems.MostSignificantBitPosition(bin_num)).To(Equal(3))
+			Expect(problems.MostSignificantBitPosition(bin_num2)).To(Equal(6))
+		})
+	})
+
+	Context("ComplementMap()", func() {
+		It("returns the right complement map", func() {
+			bin_num, _ := strconv.ParseUint("101", 2, 32)
+
+			Expect(problems.ComplementMap(bin_num)).To(Equal(map[uint64]bool{0: true, 3: true, 5: true, 4: true, 7: true, 1: true, 6: true}))
+		})
+	})
+
+	Context("ComputeMasterDictionnary()", func() {
+		It("returns the right complement map", func() {
+			arr, _ := parsing.ReadBinIntegersFromFile("../test/data/clustering_bg")
+
+			Expect(problems.ComputeMasterDictionnary(arr)[7349808]).To(Equal([]int{42201, 62713, 79801, 107785, 179401}))
+		})
+	})
+
 	Context("Huge array", func() {
 		It("returns a binary numbers slice", func() {
 			arr, _ := parsing.ReadBinIntegersFromFile("../test/data/clustering_bg")
