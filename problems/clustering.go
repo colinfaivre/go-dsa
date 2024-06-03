@@ -8,6 +8,7 @@ import (
 
 // @COURSERA-DISCUSSION https://www.coursera.org/learn/algorithms-greedy/discussions/forums/N2idJHblEeag2QpBph2LIw/threads/iqd84B0MEe-EcRJB-20IWw
 // @COURSERA-DISCUSSION https://www.coursera.org/learn/algorithms-greedy/discussions/forums/N2idJHblEeag2QpBph2LIw/threads/08WOB8G6Eey8MQpu6643JQ
+// @COURSERA-DISCUSSION https://www.coursera.org/learn/algorithms-greedy/discussions/forums/N2idJHblEeag2QpBph2LIw/threads/mSGCyQULEemZUwrw3z8SgA
 
 // Switches a bit from 0 to 1 or 1 to 0 at a given position
 func SwitchBit(bin_num uint64, pos int) uint64 {
