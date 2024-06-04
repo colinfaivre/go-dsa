@@ -1,14 +1,8 @@
 package problems
 
 import (
-	"fmt"
-
 	"github.com/colinfaivre/go-dsa/datastructures"
 )
-
-// @COURSERA-DISCUSSION https://www.coursera.org/learn/algorithms-greedy/discussions/forums/N2idJHblEeag2QpBph2LIw/threads/iqd84B0MEe-EcRJB-20IWw
-// @COURSERA-DISCUSSION https://www.coursera.org/learn/algorithms-greedy/discussions/forums/N2idJHblEeag2QpBph2LIw/threads/08WOB8G6Eey8MQpu6643JQ
-// @COURSERA-DISCUSSION https://www.coursera.org/learn/algorithms-greedy/discussions/forums/N2idJHblEeag2QpBph2LIw/threads/mSGCyQULEemZUwrw3z8SgA
 
 // Switches a bit from 0 to 1 or 1 to 0 at a given position
 func SwitchBit(bin_num uint64, pos int) uint64 {
@@ -27,79 +21,90 @@ func MostSignificantBitPosition(n uint64) int {
 	return bit_pos - 1
 }
 
-// Takes a binary number and returns a map of all possible binary numbers
+// Takes a binary number and returns a list of all possible binary numbers
 // with hamming distance 0, 1 or 2
-func ComplementMap(num uint64) map[uint64]bool {
-	c_map := map[uint64]bool{num: true} // initiate map with 0 hamming distance num
+func ComplementList(num uint64) []uint64 {
+	c_list := []uint64{num} // initiate list with 0 hamming distance num
 	msb_pos := MostSignificantBitPosition(num)
 
 	// add 1 hamming distance numbers to the map
 	for pos := 0; pos <= msb_pos; pos++ {
 		complement_num := SwitchBit(num, pos)
-		c_map[complement_num] = true
+		c_list = append(c_list, complement_num)
 	}
 
 	// add 2 hamming distance numbers to the map
 	for pos1 := 0; pos1 <= msb_pos; pos1++ {
 		complement_num := SwitchBit(num, pos1)
 
+	Inner:
 		for pos2 := 0; pos2 <= msb_pos; pos2++ {
 			complement_num_copy := SwitchBit(complement_num, pos2)
-			c_map[complement_num_copy] = true
+			for _, v := range c_list {
+				if v == complement_num_copy {
+					continue Inner
+				}
+			}
+			c_list = append(c_list, complement_num_copy)
 		}
 	}
 
-	return c_map
+	return c_list
 }
 
-// Create a master dictionnary such that
-// it takes as key the bit-strings of each vertex and the value is a LIST of vertices with that particular bit-string
-// @T0DO ⚠️ this is essential to ensure that if there are duplicate bit-strings, they are recognized as separate vertices
-func ComputeMasterDictionnary(nums []uint64) map[uint64][]uint64 {
-	master_dict := map[uint64][]uint64{}
+func GetNumToIdx(nums []uint64) map[uint64][]int {
+	numToIdx := map[uint64][]int{}
 
-	for _, num := range nums {
-		_, ok := master_dict[num]
-		if !ok {
-			master_dict[num] = []uint64{}
+	for i, num := range nums {
+		_, _ok := numToIdx[num]
+		if !_ok {
+			numToIdx[num] = []int{i + 1}
+		} else {
+			numToIdx[num] = append(numToIdx[num], i+1)
 		}
 	}
 
-	for _, num := range nums {
-		num_c_map := ComplementMap(num)
+	return numToIdx
+}
 
-		for v := range num_c_map {
-			_, _ok := master_dict[v]
-			if _ok {
-				master_dict[v] = append(master_dict[v], num)
+func GetAdjList(nums []uint64) [][]uint64 {
+	adj_list := [][]uint64{}
+
+	v_map := map[uint64]bool{}
+	for _, k := range nums {
+		v_map[k] = true
+	}
+
+	for _, num := range nums {
+		edge_list := []uint64{}
+		for _, v := range ComplementList(num) {
+			if v_map[v] {
+				edge_list = append(edge_list, v)
 			}
 		}
+
+		adj_list = append(adj_list, edge_list)
 	}
 
-	return master_dict
+	return adj_list
 }
 
 func GetClusteringResult(nums []uint64) int {
-	not_gathered_counter := 0
-	master_dict := ComputeMasterDictionnary(nums)
-	cluster_counter := len(master_dict)
-	fmt.Println("cluster_counter", cluster_counter) // 198_788 (less than 200_000 so there are duplicates)
+	adj_list := GetAdjList(nums)
+	cluster_counter := len(nums)
+	num_to_idx := GetNumToIdx(nums)
 
-	uf := datastructures.NewUnionFind(200_000_000)
+	uf := datastructures.NewUnionFind(20_000_000)
 
-	for v, edges := range master_dict {
-		for _, w := range edges {
-			if uf.Union(int(v), int(w)) {
-				cluster_counter--
+	for vi, v := range adj_list {
+		for _, w := range v {
+			for _, wi := range num_to_idx[w] {
+				if uf.Union(vi+1, wi) {
+					cluster_counter--
+				}
 			}
 		}
 	}
 
-	for _, edges := range master_dict {
-		if len(edges) <= 1 {
-			not_gathered_counter++
-		}
-	}
-
-	return cluster_counter + not_gathered_counter
+	return cluster_counter
 }

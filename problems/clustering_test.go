@@ -37,19 +37,27 @@ var _ = Describe("clustering", func() {
 		})
 	})
 
-	Context("ComplementMap()", func() {
-		It("returns the right complement map", func() {
+	Context("ComplementList()", func() {
+		It("returns the right complement list", func() {
 			bin_num, _ := strconv.ParseUint("101", 2, 32)
 
-			Expect(problems.ComplementMap(bin_num)).To(Equal(map[uint64]bool{0: true, 3: true, 5: true, 4: true, 7: true, 1: true, 6: true}))
+			Expect(problems.ComplementList(bin_num)).To(Equal([]uint64{5, 4, 7, 1, 6, 0, 3}))
 		})
 	})
 
-	Context("ComputeMasterDictionnary()", func() {
-		It("returns the right complement map", func() {
+	Context("GetAdjList()", func() {
+		It("returns the right adjacency list", func() {
 			arr, _ := parsing.ReadBinIntegersFromFile("../test/data/clustering_bg")
 
-			Expect(problems.ComputeMasterDictionnary(arr)[7349808]).To(Equal([]uint64{7415348, 6334000, 7349808, 7349778, 16262704}))
+			Expect(problems.GetAdjList(arr)[0]).To(Equal([]uint64{14734287, 14996430, 14734175, 13161423}))
+		})
+	})
+
+	Context("GetNumToIdx()", func() {
+		It("returns the right num to index map", func() {
+			arr, _ := parsing.ReadBinIntegersFromFile("../test/data/clustering_bg")
+
+			Expect(problems.GetNumToIdx(arr)[14734287]).To(Equal([]int{1}))
 		})
 	})
 
@@ -66,7 +74,7 @@ var _ = Describe("clustering", func() {
 			arr, _ := parsing.ReadBinIntegersFromFile("../test/data/clustering_bg")
 			result := problems.GetClusteringResult(arr)
 
-			Expect(result).To(Equal(13306))
+			Expect(result).To(Equal(6118))
 		})
 	})
 })

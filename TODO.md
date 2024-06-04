@@ -1,7 +1,6 @@
 # TODO
 
 ## 🏗️ Build
-- ➡️ solve `clustering` problem part 2 : check dupplicates or try on a very small test set
 - ➡️ add an implementation of the `Trie` datastructure
 - `quicksort` with pivot selection or randomization
 
