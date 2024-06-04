@@ -1,7 +1,6 @@
 # TODO
 
 ## 🏗️ Build
-- ➡️ add an implementation of the `Trie` datastructure
 - `quicksort` with pivot selection or randomization
 
 ## 🧪 Test
