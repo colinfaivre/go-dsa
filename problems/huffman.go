@@ -3,13 +3,16 @@
 
 package problems
 
-import "container/heap"
+import (
+	"container/heap"
+)
 
 type HuffmanNode struct {
 	charIdx int
 	freq    int
-	left    *HuffmanNode
-	right   *HuffmanNode
+	Left    *HuffmanNode
+	Right   *HuffmanNode
+	Depth   int
 }
 
 type PriorityQueue []*HuffmanNode
@@ -46,12 +49,21 @@ func HuffmanCoding(charFreqs []int) *HuffmanNode {
 
 	for pq.Len() > 1 {
 		first := heap.Pop(pq).(*HuffmanNode)
+		first.Depth++
 		second := heap.Pop(pq).(*HuffmanNode)
+		second.Depth++
 
+		max_depth := 0
+		if first.Depth >= second.Depth {
+			max_depth = first.Depth
+		} else {
+			max_depth = second.Depth
+		}
 		parent := &HuffmanNode{
 			freq:  first.freq + second.freq,
-			left:  first,
-			right: second,
+			Left:  first,
+			Right: second,
+			Depth: max_depth,
 		}
 
 		heap.Push(pq, parent)

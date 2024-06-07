@@ -8,10 +8,10 @@ import (
 )
 
 var _ = Describe("HuffmanCoding()", func() {
-	It("returns a Huffman tree", func() {
+	It("returns a Huffman tree with the right depth", func() {
 		char_frequencies, _ := parsing.ReadIntegersFromFile("../test/data/huffman")
 		huffman_tree := problems.HuffmanCoding(char_frequencies)
 
-		Expect(huffman_tree).NotTo(BeNil())
+		Expect(huffman_tree.Depth).To(Equal(19))
 	})
 })
