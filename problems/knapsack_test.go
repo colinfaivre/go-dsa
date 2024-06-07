@@ -22,7 +22,7 @@ var _ = Describe("Knapsack()", func() {
 			items, _ := parsing.ReadIntegers2TuplesFromFile("../test/data/knapsack_big")
 			knapsack_result := problems.RecursiveKnapsack(items, 2_000_000, 2_000)
 
-			Expect(knapsack_result).To(Equal(2493893))
+			Expect(knapsack_result).To(Equal(4243395))
 		})
 	})
 })

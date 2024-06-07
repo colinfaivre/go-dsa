@@ -1,5 +1,7 @@
 package problems
 
+import "strconv"
+
 func kkmax(x, y int) int {
 	if x > y {
 		return x
@@ -27,15 +29,23 @@ func Knapsack(items [][2]int, w, n int) int {
 	return A[n][w]
 }
 
-// @MEDIUM helpful article https://medium.com/swlh/0-1-knapsack-problem-memoized-day-42-python-f0562f38293e
+var memo = map[string]int{}
+
 func RecursiveKnapsack(items [][2]int, w, n int) int {
 	if n == 0 || w == 0 {
 		return 0
 	}
 
+	v, ok := memo[strconv.Itoa(w)+"-"+strconv.Itoa(n)]
+	if ok {
+		return v
+	}
+
 	if items[n-1][1] > w {
-		return RecursiveKnapsack(items, w, n-1)
+		memo[strconv.Itoa(w)+"-"+strconv.Itoa(n)] = RecursiveKnapsack(items, w, n-1)
+		return memo[strconv.Itoa(w)+"-"+strconv.Itoa(n)]
 	} else {
-		return kkmax(items[n-1][0]+RecursiveKnapsack(items, w-items[n-1][1], n-1), RecursiveKnapsack(items, w, n-1))
+		memo[strconv.Itoa(w)+"-"+strconv.Itoa(n)] = kkmax(items[n-1][0]+RecursiveKnapsack(items, w-items[n-1][1], n-1), RecursiveKnapsack(items, w, n-1))
+		return memo[strconv.Itoa(w)+"-"+strconv.Itoa(n)]
 	}
 }
