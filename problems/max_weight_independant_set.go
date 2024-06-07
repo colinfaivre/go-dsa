@@ -16,7 +16,7 @@ func MaxWeightIndependantSet(weightList []int) (map[int]bool, int) {
 	maxWeightList = append(maxWeightList, weightList[0])
 
 	for i := 2; i <= len(weightList); i++ {
-		maxWeightList = append(maxWeightList, max(maxWeightList[i-1], maxWeightList[i-2]+weightList[i-1]))
+		maxWeightList = append(maxWeightList, kkmax(maxWeightList[i-1], maxWeightList[i-2]+weightList[i-1]))
 	}
 
 	i := len(maxWeightList) - 1

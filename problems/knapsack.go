@@ -1,6 +1,6 @@
 package problems
 
-func max(x, y int) int {
+func kkmax(x, y int) int {
 	if x > y {
 		return x
 	} else {
@@ -19,7 +19,7 @@ func Knapsack(items [][2]int, w, n int) int {
 			if items[i-1][1] > x {
 				A[i][x] = A[i-1][x]
 			} else {
-				A[i][x] = max(A[i-1][x], A[i-1][x-items[i-1][1]]+items[i-1][0])
+				A[i][x] = kkmax(A[i-1][x], A[i-1][x-items[i-1][1]]+items[i-1][0])
 			}
 		}
 	}
@@ -36,6 +36,6 @@ func RecursiveKnapsack(items [][2]int, w, n int) int {
 	if items[n-1][1] > w {
 		return RecursiveKnapsack(items, w, n-1)
 	} else {
-		return max(items[n-1][0]+RecursiveKnapsack(items, w-items[n-1][1], n-1), RecursiveKnapsack(items, w, n-1))
+		return kkmax(items[n-1][0]+RecursiveKnapsack(items, w-items[n-1][1], n-1), RecursiveKnapsack(items, w, n-1))
 	}
 }
