@@ -1,5 +1,7 @@
 package training
 
+import "sort"
+
 // 1.5 `M` Top K Frequent Elements
 
 /*** @LEETCODE https://leetcode.com/problems/top-k-frequent-elements/
@@ -42,62 +44,62 @@ O(n) solution - hashmap/bucketsort
 
 // O(nlogn) solution - hashmap/sort
 type Item struct {
-    num int
-    freq int
+	num  int
+	freq int
 }
-func topKFrequentOnlogn(nums []int, k int) []int {
-    freqMap := map[int]int{}
-    freqArr := []Item{}
-    result := []int{}
 
-    for _, v := range nums {
-        freqMap[v]++
-    }
+func TopKFrequentOnlogn(nums []int, k int) []int {
+	freqMap := map[int]int{}
+	freqArr := []Item{}
+	result := []int{}
 
-    for key, value := range freqMap {
-        freqArr = append(freqArr, Item{num: key, freq: value})
-    }
+	for _, v := range nums {
+		freqMap[v]++
+	}
 
-    sort.Slice(freqArr, func(i, j int) bool {
-  		return freqArr[i].freq > freqArr[j].freq
-  	})
+	for key, value := range freqMap {
+		freqArr = append(freqArr, Item{num: key, freq: value})
+	}
 
-    for i:=1; i <= k; i++ {
-        biggestFreq := freqArr[0]
-        freqArr = freqArr[1:]
-        result = append(result, biggestFreq.num)
-    }
+	sort.Slice(freqArr, func(i, j int) bool {
+		return freqArr[i].freq > freqArr[j].freq
+	})
 
-    return result
+	for i := 1; i <= k; i++ {
+		biggestFreq := freqArr[0]
+		freqArr = freqArr[1:]
+		result = append(result, biggestFreq.num)
+	}
+
+	return result
 }
 
 // O(n) solution - hashmap/bucketsort
-func topKFrequentOn(nums []int, k int) []int {
-    freqMap := map[int]int{}
-    freqArr := [][]int{}
-    for i := 0; i <= len(nums); i++ {
-        freqArr = append(freqArr, []int{})
-    }
+func TopKFrequentOn(nums []int, k int) []int {
+	freqMap := map[int]int{}
+	freqArr := [][]int{}
+	for i := 0; i <= len(nums); i++ {
+		freqArr = append(freqArr, []int{})
+	}
 
-    result := []int{}
+	result := []int{}
 
-    for _, v := range nums {
-        freqMap[v]++
-    }
+	for _, v := range nums {
+		freqMap[v]++
+	}
 
-    for num, count := range freqMap {
-        freqArr[count] = append(freqArr[count], num)
-    }
+	for num, count := range freqMap {
+		freqArr[count] = append(freqArr[count], num)
+	}
 
-    for i:=len(freqArr)-1; i >= 0; i-- {
-        for _, n := range freqArr[i] {
-            result = append(result, n)
-            if len(result) == k {
-                return result
-            }
-        }
-    }
+	for i := len(freqArr) - 1; i >= 0; i-- {
+		for _, n := range freqArr[i] {
+			result = append(result, n)
+			if len(result) == k {
+				return result
+			}
+		}
+	}
 
-    return result
+	return result
 }
-
