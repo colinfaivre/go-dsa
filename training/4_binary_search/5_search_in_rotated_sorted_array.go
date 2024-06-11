@@ -1,9 +1,9 @@
 package training
 
-// ?.? `difficulty` Title
+// 4.5 `M` Search In Rotated Sorted Array
 
-/*** @LEETCODE leetcodeURL
+/*** @LEETCODE https://leetcode.com/problems/search-in-rotated-sorted-array/
 ***/
 
-/*** @SOLUTION youtubeURL
+/*** @SOLUTION https://www.youtube.com/watch?v=U8XENwh8Oy8
 ***/

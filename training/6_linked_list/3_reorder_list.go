@@ -1,9 +1,9 @@
 package training
 
-// ?.? `difficulty` Title
+// 6.3 `M` Reorder List
 
-/*** @LEETCODE leetcodeURL
+/*** @LEETCODE https://leetcode.com/problems/reorder-list/
 ***/
 
-/*** @SOLUTION youtubeURL
+/*** @SOLUTION https://www.youtube.com/watch?v=S5bfdUTrKLM
 ***/

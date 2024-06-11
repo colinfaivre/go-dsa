@@ -1,9 +1,9 @@
 package training
 
-// ?.? `difficulty` Title
+// 5.4 `M` Permutation In String
 
-/*** @LEETCODE leetcodeURL
+/*** @LEETCODE https://leetcode.com/problems/permutation-in-string/
 ***/
 
-/*** @SOLUTION youtubeURL
+/*** @SOLUTION https://www.youtube.com/watch?v=UbyhOgBN834
 ***/

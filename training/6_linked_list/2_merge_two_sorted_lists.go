@@ -1,9 +1,9 @@
 package training
 
-// ?.? `difficulty` Title
+// 6.2 `E` Merge Two Sorted Lists
 
-/*** @LEETCODE leetcodeURL
+/*** @LEETCODE https://leetcode.com/problems/merge-two-sorted-lists/
 ***/
 
-/*** @SOLUTION youtubeURL
+/*** @SOLUTION https://www.youtube.com/watch?v=XIdigk956u0
 ***/

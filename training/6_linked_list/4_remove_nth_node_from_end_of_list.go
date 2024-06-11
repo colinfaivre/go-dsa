@@ -1,9 +1,9 @@
 package training
 
-// ?.? `difficulty` Title
+// 6.4 `M` Remove Nth Node From End of List
 
-/*** @LEETCODE leetcodeURL
+/*** @LEETCODE https://leetcode.com/problems/remove-nth-node-from-end-of-list/
 ***/
 
-/*** @SOLUTION youtubeURL
+/*** @SOLUTION https://www.youtube.com/watch?v=XVuQxVej6y8
 ***/

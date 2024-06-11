@@ -1,9 +1,9 @@
 package training
 
-// ?.? `difficulty` Title
+// 6.7 `E` Linked List Cycle
 
-/*** @LEETCODE leetcodeURL
+/*** @LEETCODE https://leetcode.com/problems/linked-list-cycle/
 ***/
 
-/*** @SOLUTION youtubeURL
+/*** @SOLUTION https://www.youtube.com/watch?v=gBTe7lFR3vc
 ***/

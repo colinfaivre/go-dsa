@@ -1,9 +1,9 @@
 package training
 
-// ?.? `difficulty` Title
+// 6.11 `H` Reverse Nodes In K Group
 
-/*** @LEETCODE leetcodeURL
+/*** @LEETCODE https://leetcode.com/problems/reverse-nodes-in-k-group/
 ***/
 
-/*** @SOLUTION youtubeURL
+/*** @SOLUTION https://www.youtube.com/watch?v=1UOPsfP85V4
 ***/

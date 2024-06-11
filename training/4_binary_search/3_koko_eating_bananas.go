@@ -1,9 +1,9 @@
 package training
 
-// ?.? `difficulty` Title
+// 4.3 `M` Koko Eating Bananas
 
-/*** @LEETCODE leetcodeURL
+/*** @LEETCODE https://leetcode.com/problems/koko-eating-bananas/
 ***/
 
-/*** @SOLUTION youtubeURL
+/*** @SOLUTION https://www.youtube.com/watch?v=U2SozAs9RzA
 ***/

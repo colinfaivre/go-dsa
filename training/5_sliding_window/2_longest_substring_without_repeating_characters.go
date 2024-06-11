@@ -1,9 +1,9 @@
 package training
 
-// ?.? `difficulty` Title
+// 5.2 `M` Longest Substring Without Repeating Characters
 
-/*** @LEETCODE leetcodeURL
+/*** @LEETCODE https://leetcode.com/problems/longest-substring-without-repeating-characters/
 ***/
 
-/*** @SOLUTION youtubeURL
+/*** @SOLUTION https://www.youtube.com/watch?v=wiGpQwVHdE0
 ***/

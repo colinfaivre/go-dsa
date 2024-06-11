@@ -1,9 +1,9 @@
 package training
 
-// ?.? `difficulty` Title
+// 6.1 `E` Reverse Linked List
 
-/*** @LEETCODE leetcodeURL
+/*** @LEETCODE https://leetcode.com/problems/reverse-linked-list/
 ***/
 
-/*** @SOLUTION youtubeURL
+/*** @SOLUTION https://www.youtube.com/watch?v=G0_I-ZF0S38
 ***/

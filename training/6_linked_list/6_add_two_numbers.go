@@ -1,9 +1,9 @@
 package training
 
-// ?.? `difficulty` Title
+// 6.6 `M` Add Two Numbers
 
-/*** @LEETCODE leetcodeURL
+/*** @LEETCODE https://leetcode.com/problems/add-two-numbers/
 ***/
 
-/*** @SOLUTION youtubeURL
+/*** @SOLUTION https://www.youtube.com/watch?v=wgFPrzTjm7s
 ***/

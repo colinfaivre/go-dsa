@@ -1,9 +1,9 @@
 package training
 
-// ?.? `difficulty` Title
+// 5.1 `E` Best Time to Buy And Sell Stock
 
-/*** @LEETCODE leetcodeURL
+/*** @LEETCODE https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
 ***/
 
-/*** @SOLUTION youtubeURL
+/*** @SOLUTION https://www.youtube.com/watch?v=1pkOgXD63yU
 ***/

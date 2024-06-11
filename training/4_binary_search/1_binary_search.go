@@ -1,9 +1,9 @@
 package training
 
-// ?.? `difficulty` Title
+// 4.1 `E` Binary Search
 
-/*** @LEETCODE leetcodeURL
+/*** @LEETCODE https://leetcode.com/problems/binary-search/
 ***/
 
-/*** @SOLUTION youtubeURL
+/*** @SOLUTION https://www.youtube.com/watch?v=s4DPM8ct1pI
 ***/

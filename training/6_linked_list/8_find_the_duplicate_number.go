@@ -1,9 +1,9 @@
 package training
 
-// ?.? `difficulty` Title
+// 6.8 `M` Find The Duplicate Number
 
-/*** @LEETCODE leetcodeURL
+/*** @LEETCODE https://leetcode.com/problems/find-the-duplicate-number/
 ***/
 
-/*** @SOLUTION youtubeURL
+/*** @SOLUTION https://www.youtube.com/watch?v=wjYnzkAhcNk
 ***/

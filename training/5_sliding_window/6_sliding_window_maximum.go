@@ -1,9 +1,9 @@
 package training
 
-// ?.? `difficulty` Title
+// 5.6 `H` Sliding Window Maximum
 
-/*** @LEETCODE leetcodeURL
+/*** @LEETCODE https://leetcode.com/problems/sliding-window-maximum/
 ***/
 
-/*** @SOLUTION youtubeURL
+/*** @SOLUTION https://www.youtube.com/watch?v=DfljaUwZsOk
 ***/

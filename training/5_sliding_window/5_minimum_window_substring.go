@@ -1,9 +1,9 @@
 package training
 
-// ?.? `difficulty` Title
+// 5.5 `H` Minimum Window Substring
 
-/*** @LEETCODE leetcodeURL
+/*** @LEETCODE https://leetcode.com/problems/minimum-window-substring/
 ***/
 
-/*** @SOLUTION youtubeURL
+/*** @SOLUTION https://www.youtube.com/watch?v=jSto0O4AJbM
 ***/
