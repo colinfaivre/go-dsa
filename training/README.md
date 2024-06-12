@@ -12,7 +12,7 @@
 
 ### Watch solution (10min)
 
-### Write solution (10min)
+### Write solution (30min)
 - code implementation
 - time complexity
 - space complexity
