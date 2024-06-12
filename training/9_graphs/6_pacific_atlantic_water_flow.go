@@ -1,9 +1,9 @@
 package training
 
-// ?.? `difficulty` Title
+// 9.6 `M` Pacific Atlantic Water Flow
 
-/*** @LEETCODE leetcodeURL
+/*** @LEETCODE https://leetcode.com/problems/pacific-atlantic-water-flow/
 ***/
 
-/*** @SOLUTION youtubeURL
+/*** @SOLUTION https://www.youtube.com/watch?v=s-VkcjHqkGI
 ***/

@@ -1,9 +1,9 @@
 package training
 
-// ?.? `difficulty` Title
+// 9.10 `M` Graph Valid Tree
 
-/*** @LEETCODE leetcodeURL
+/*** @LEETCODE https://leetcode.com/problems/graph-valid-tree/
 ***/
 
-/*** @SOLUTION youtubeURL
+/*** @SOLUTION https://www.youtube.com/watch?v=bXsUuownnoQ
 ***/

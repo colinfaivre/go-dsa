@@ -1,9 +1,9 @@
 package training
 
-// ?.? `difficulty` Title
+// 8.6 `M` Design Twitter
 
-/*** @LEETCODE leetcodeURL
+/*** @LEETCODE https://leetcode.com/problems/design-twitter/
 ***/
 
-/*** @SOLUTION youtubeURL
+/*** @SOLUTION https://www.youtube.com/watch?v=pNichitDD2E
 ***/

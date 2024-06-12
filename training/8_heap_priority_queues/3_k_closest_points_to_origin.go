@@ -1,9 +1,9 @@
 package training
 
-// ?.? `difficulty` Title
+// 8.3 `M` K Closest Points to Origin
 
-/*** @LEETCODE leetcodeURL
+/*** @LEETCODE https://leetcode.com/problems/k-closest-points-to-origin/
 ***/
 
-/*** @SOLUTION youtubeURL
+/*** @SOLUTION https://www.youtube.com/watch?v=rI2EBUEMfTk
 ***/

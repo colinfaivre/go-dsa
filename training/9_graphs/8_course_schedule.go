@@ -1,9 +1,9 @@
 package training
 
-// ?.? `difficulty` Title
+// 9.8 `M` Course Schedule
 
-/*** @LEETCODE leetcodeURL
+/*** @LEETCODE https://leetcode.com/problems/course-schedule/
 ***/
 
-/*** @SOLUTION youtubeURL
+/*** @SOLUTION https://www.youtube.com/watch?v=EgI5nU9etnU
 ***/

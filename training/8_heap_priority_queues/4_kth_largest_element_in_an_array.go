@@ -1,9 +1,9 @@
 package training
 
-// ?.? `difficulty` Title
+// 8.4 `M` Kth Largest Element In An Array
 
-/*** @LEETCODE leetcodeURL
+/*** @LEETCODE https://leetcode.com/problems/kth-largest-element-in-an-array/
 ***/
 
-/*** @SOLUTION youtubeURL
+/*** @SOLUTION https://www.youtube.com/watch?v=XEmy13g1Qxc
 ***/

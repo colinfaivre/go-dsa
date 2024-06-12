@@ -1,9 +1,9 @@
 package training
 
-// ?.? `difficulty` Title
+// 8.1 `E` Kth Largest Element In a Stream
 
-/*** @LEETCODE leetcodeURL
+/*** @LEETCODE https://leetcode.com/problems/kth-largest-element-in-a-stream/
 ***/
 
-/*** @SOLUTION youtubeURL
+/*** @SOLUTION https://www.youtube.com/watch?v=hOjcdrqMoQ8
 ***/

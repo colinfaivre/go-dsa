@@ -1,9 +1,9 @@
 package training
 
-// ?.? `difficulty` Title
+// 8.5 `M` Task Scheduler
 
-/*** @LEETCODE leetcodeURL
+/*** @LEETCODE https://leetcode.com/problems/task-scheduler/
 ***/
 
-/*** @SOLUTION youtubeURL
+/*** @SOLUTION https://www.youtube.com/watch?v=s8p8ukTyA2I
 ***/

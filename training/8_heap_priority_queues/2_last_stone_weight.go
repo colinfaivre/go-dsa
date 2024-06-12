@@ -1,9 +1,9 @@
 package training
 
-// ?.? `difficulty` Title
+// 8.2 `E` Last Stone Weight
 
-/*** @LEETCODE leetcodeURL
+/*** @LEETCODE https://leetcode.com/problems/last-stone-weight/
 ***/
 
-/*** @SOLUTION youtubeURL
+/*** @SOLUTION https://www.youtube.com/watch?v=B-QCq79-Vfw
 ***/

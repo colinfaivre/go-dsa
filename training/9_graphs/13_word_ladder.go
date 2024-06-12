@@ -1,9 +1,9 @@
 package training
 
-// ?.? `difficulty` Title
+// 9.13 `H` Word Ladder
 
-/*** @LEETCODE leetcodeURL
+/*** @LEETCODE https://leetcode.com/problems/word-ladder/
 ***/
 
-/*** @SOLUTION youtubeURL
+/*** @SOLUTION https://www.youtube.com/watch?v=h9iTnkgv05E
 ***/

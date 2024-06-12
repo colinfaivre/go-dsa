@@ -1,9 +1,9 @@
 package training
 
-// ?.? `difficulty` Title
+// 8.7 `H` Find Median From Data Stream
 
-/*** @LEETCODE leetcodeURL
+/*** @LEETCODE https://leetcode.com/problems/find-median-from-data-stream/
 ***/
 
-/*** @SOLUTION youtubeURL
+/*** @SOLUTION https://www.youtube.com/watch?v=itmhHWaHupI
 ***/
