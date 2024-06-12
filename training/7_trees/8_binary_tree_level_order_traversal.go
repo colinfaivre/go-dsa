@@ -1,9 +1,9 @@
 package training
 
-// ?.? `difficulty` Title
+// 7.8 `M` Binary Tree Level Order Traversal
 
-/*** @LEETCODE leetcodeURL
+/*** @LEETCODE https://leetcode.com/problems/binary-tree-level-order-traversal/
 ***/
 
-/*** @SOLUTION youtubeURL
+/*** @SOLUTION https://www.youtube.com/watch?v=6ZnyEApgFYg
 ***/

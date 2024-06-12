@@ -1,9 +1,9 @@
 package training
 
-// ?.? `difficulty` Title
+// 7.6 `E` Subtree of Another Tree
 
-/*** @LEETCODE leetcodeURL
+/*** @LEETCODE https://leetcode.com/problems/subtree-of-another-tree/
 ***/
 
-/*** @SOLUTION youtubeURL
+/*** @SOLUTION https://www.youtube.com/watch?v=E36O5SWp-LE
 ***/

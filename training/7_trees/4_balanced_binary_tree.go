@@ -1,9 +1,9 @@
 package training
 
-// ?.? `difficulty` Title
+// 7.4 `E` Balanced Binary Tree
 
-/*** @LEETCODE leetcodeURL
+/*** @LEETCODE https://leetcode.com/problems/balanced-binary-tree/
 ***/
 
-/*** @SOLUTION youtubeURL
+/*** @SOLUTION https://www.youtube.com/watch?v=QfJsau0ItOY
 ***/

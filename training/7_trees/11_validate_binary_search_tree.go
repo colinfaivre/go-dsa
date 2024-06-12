@@ -1,9 +1,9 @@
 package training
 
-// ?.? `difficulty` Title
+// 7.11 `M` Validate Binary Search Tree
 
-/*** @LEETCODE leetcodeURL
+/*** @LEETCODE https://leetcode.com/problems/validate-binary-search-tree/
 ***/
 
-/*** @SOLUTION youtubeURL
+/*** @SOLUTION https://www.youtube.com/watch?v=s6ATEkipzow
 ***/

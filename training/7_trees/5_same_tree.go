@@ -1,9 +1,9 @@
 package training
 
-// ?.? `difficulty` Title
+// 7.5 `E` Same Tree
 
-/*** @LEETCODE leetcodeURL
+/*** @LEETCODE https://leetcode.com/problems/same-tree/
 ***/
 
-/*** @SOLUTION youtubeURL
+/*** @SOLUTION https://www.youtube.com/watch?v=vRbbcKXCxOw
 ***/

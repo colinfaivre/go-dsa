@@ -1,9 +1,9 @@
 package training
 
-// ?.? `difficulty` Title
+// 7.7 `M` Lowest Common Ancestor of a Binary Search Tree
 
-/*** @LEETCODE leetcodeURL
+/*** @LEETCODE https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
 ***/
 
-/*** @SOLUTION youtubeURL
+/*** @SOLUTION https://www.youtube.com/watch?v=gs2LMfuOR9ks
 ***/

@@ -1,9 +1,9 @@
 package training
 
-// ?.? `difficulty` Title
+// 7.12 `M` Kth Smallest Element In a Bst
 
-/*** @LEETCODE leetcodeURL
+/*** @LEETCODE https://leetcode.com/problems/kth-smallest-element-in-a-bst/
 ***/
 
-/*** @SOLUTION youtubeURL
+/*** @SOLUTION https://www.youtube.com/watch?v=5LUXSvjmGCw
 ***/

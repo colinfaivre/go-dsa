@@ -1,9 +1,9 @@
 package training
 
-// ?.? `difficulty` Title
+// 7.14 `H` Binary Tree Maximum Path Sum
 
-/*** @LEETCODE leetcodeURL
+/*** @LEETCODE https://leetcode.com/problems/binary-tree-maximum-path-sum/
 ***/
 
-/*** @SOLUTION youtubeURL
+/*** @SOLUTION https://www.youtube.com/watch?v=Hr5cWUld4vU
 ***/

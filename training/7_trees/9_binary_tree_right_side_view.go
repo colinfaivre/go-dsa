@@ -1,9 +1,9 @@
 package training
 
-// ?.? `difficulty` Title
+// 7.9 `M` Binary Tree Right Side View
 
-/*** @LEETCODE leetcodeURL
+/*** @LEETCODE https://leetcode.com/problems/binary-tree-right-side-view/
 ***/
 
-/*** @SOLUTION youtubeURL
+/*** @SOLUTION https://www.youtube.com/watch?v=d4zLyf32e3I
 ***/
