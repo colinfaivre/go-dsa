@@ -7,15 +7,16 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 > - ❌: partially solved
 > - ✅: solved
 > - X': solving time in minutes
+> - 🔒: leetcode premium
 
 ## 1. Arrays / Hashing (9)
-1. ✅`E` [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/) - [solution](https://www.youtube.com/watch?v=3OamzN90kPg)
-2. ✅`E` [Valid Anagram](https://leetcode.com/problems/valid-anagram/) - [solution](https://www.youtube.com/watch?v=9UtInBqnCgA)
-3. ✅`E` [Two Sum](https://leetcode.com/problems/two-sum/) - [solution](https://www.youtube.com/watch?v=KLlXCFG5TnA)
+1. ✅30'`E` [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/) - [solution](https://www.youtube.com/watch?v=3OamzN90kPg)
+2. ✅30'`E` [Valid Anagram](https://leetcode.com/problems/valid-anagram/) - [solution](https://www.youtube.com/watch?v=9UtInBqnCgA)
+3. ✅30'`E` [Two Sum](https://leetcode.com/problems/two-sum/) - [solution](https://www.youtube.com/watch?v=KLlXCFG5TnA)
 4. ❌45'`M` [Group Anagrams](https://leetcode.com/problems/group-anagrams/) - [solution](https://www.youtube.com/watch?v=vzdNOK2oB2E)
 5. ❌32'`M` [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/) - [solution](https://www.youtube.com/watch?v=YPTqKIgVk-k)
-6. `M` [Encode and Decode Strings](https://leetcode.com/problems/encode-and-decode-strings/) - [solution](https://www.youtube.com/watch?v=B1k_sxOSgv8)
-7. `M` [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/) - [solution](https://www.youtube.com/watch?v=bNvIQI2wAjk)
+6. 🔒`M` [Encode and Decode Strings](https://leetcode.com/problems/encode-and-decode-strings/) - [solution](https://www.youtube.com/watch?v=B1k_sxOSgv8)
+7. ❌60'`M` [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/) - [solution](https://www.youtube.com/watch?v=bNvIQI2wAjk)
 8. `M` [Valid Sudoku](https://leetcode.com/problems/valid-sudoku/) - [solution](https://www.youtube.com/watch?v=TjFXEUCMqI8)
 9. `M` [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/) - [solution](https://www.youtube.com/watch?v=P6RZZMu_maU)
 
