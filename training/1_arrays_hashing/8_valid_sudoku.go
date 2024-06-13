@@ -45,4 +45,42 @@ board[i][j] is a digit 1-9 or '.'.
 ***/
 
 /*** @SOLUTION https://www.youtube.com/watch?v=TjFXEUCMqI8
+O(9^2) solution - hashmaps
+- create hashmaps of hashmaps for rows, cols and squares
+- loop in board matrix:
+  - return false if the char is already in one of the hashmaps
+  - add the char to each hashmap
 ***/
+
+func IsValidSudoku(board [][]byte) bool {
+    rows := make(map[int]map[byte]bool)
+    for r := range 9 {
+        rows[r] = make(map[byte]bool)
+    }
+    cols := make(map[int]map[byte]bool)
+    for c := range 9 {
+        cols[c] = make(map[byte]bool)
+    }
+    squares := make(map[[2]int]map[byte]bool)
+    for r := range 3 {
+        for c := range 3 {
+            squares[[2]int{r, c}] = make(map[byte]bool)
+        }
+    }
+
+    for r := range 9 {
+        for c := range 9 {
+            if board[r][c] == '.' {
+                continue
+            }
+            if rows[r][board[r][c]] || cols[c][board[r][c]] || squares[[2]int{r/3, c/3}][board[r][c]] {
+                return false
+            }
+            rows[r][board[r][c]] = true
+            cols[c][board[r][c]] = true
+            squares[[2]int{r/3, c/3}][board[r][c]] = true
+        }
+    }
+
+    return true
+}
