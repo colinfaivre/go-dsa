@@ -18,7 +18,7 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 6. 🔒`M` [Encode and Decode Strings](https://leetcode.com/problems/encode-and-decode-strings/) - [solution](https://www.youtube.com/watch?v=B1k_sxOSgv8)
 7. ❌40'`M` [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/) - [solution](https://www.youtube.com/watch?v=bNvIQI2wAjk)
 8. ❌45'`M` [Valid Sudoku](https://leetcode.com/problems/valid-sudoku/) - [solution](https://www.youtube.com/watch?v=TjFXEUCMqI8)
-9. `M` [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/) - [solution](https://www.youtube.com/watch?v=P6RZZMu_maU)
+9. ❌45'`M` [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/) - [solution](https://www.youtube.com/watch?v=P6RZZMu_maU)
 
 ## 2. Two Pointers (5)
 1. `E` [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) - [solution](https://www.youtube.com/watch?v=jJXJ16kPFWg)
