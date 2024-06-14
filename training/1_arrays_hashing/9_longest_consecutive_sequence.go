@@ -32,22 +32,22 @@ TC:O(n)/SC:O(n) solution - set
 ***/
 
 func LongestConsecutive(nums []int) int {
-    numMap := make(map[int]bool)
-    for _, num := range nums {
-        numMap[num] = true
-    }
-    maxLength := 0
+	numMap := make(map[int]bool)
+	for _, num := range nums {
+		numMap[num] = true
+	}
+	maxLength := 0
 
-    for n := range numMap {
-        if !numMap[n-1] {
-            length := 0
-            for numMap[n+length] {
-                length++
-            }
-            if length > maxLength {
-                maxLength = length
-            }
-        }
-    }
-    return maxLength
+	for n := range numMap {
+		if !numMap[n-1] {
+			length := 0
+			for numMap[n+length] {
+				length++
+			}
+			if length > maxLength {
+				maxLength = length
+			}
+		}
+	}
+	return maxLength
 }
