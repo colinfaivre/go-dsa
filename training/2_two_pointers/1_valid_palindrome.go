@@ -29,3 +29,21 @@ s consists only of printable ASCII characters.
 
 /*** @SOLUTION https://www.youtube.com/watch?v=jJXJ16kPFWg
 ***/
+
+func IsPalindrome(s string) bool {
+    reg, _ := regexp.Compile("[^a-zA-Z0-9]+")
+    s = reg.ReplaceAllString(s, "")
+    s = strings.ToLower(s)
+    l, r := 0, len(s) - 1
+    fmt.Println(s)
+
+    for l <= r {
+        if s[l] != s[r] {
+            return false
+        }
+        l++
+        r--
+    }
+
+    return true
+}
