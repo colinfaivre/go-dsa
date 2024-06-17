@@ -32,4 +32,32 @@ The tests are generated such that there is exactly one solution.
 ***/
 
 /*** @SOLUTION https://www.youtube.com/watch?v=cQ1Oz4ckceM
+O(n^2) solution - brute fore
+- loop in nums
+  - loop in nums
+    return the two pointers if sum equals target
+O(n) solution - 2 pointers
+- initiate left and right pointer at the first and last indexes of the array
+- loop while left is less than right
+  - if the sum is greater than target decrement right
+  - if the sum is less than target increment left
+  - if the sum equals target return the two pointers
 ***/
+
+func TwoSumOn(numbers []int, target int) []int {
+    l, r := 0, len(numbers) - 1
+
+    for l < r {
+        currSum := numbers[l]+numbers[r]
+
+        if currSum > target {
+            r--
+        } else if currSum < target {
+            l++
+        } else {
+            return []int{l+1, r+1}
+        }
+    }
+
+    return []int{}
+}
