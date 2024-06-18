@@ -5,7 +5,6 @@
 >  - [algorithms](algorithms/README.md)
 >  - [problems](problems/README.md)
 >  - [test](test/README.md)
->  - [parsing](parsing/README.md)
 
 ## Useful resources
 ### 📕 Books:
