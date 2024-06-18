@@ -33,4 +33,52 @@ Constraints:
 ***/
 
 /*** @SOLUTION https://www.youtube.com/watch?v=jzZsG8n2R9A.io%2F
+O(n^3) solution - brute force
+- loop in nums
+  - loop in nums
+    - loop in nums
+     - add the three numbers to res if they add up to zero
+O(n^2) solution - 2 pointers
+- sort nums
+- loop in nums
+  - if the value is the same as in the previous iteration skip this one
+  - init left and right pointers
+  - loop while left < right
+    - init threesum
+    - decrement right if threesum > 0
+    - increment left if threesum < 0
+    - add num triplet to res if threesum == 0
+    - increment left
+    - inrement left while value is the same as previous
 ***/
+
+func ThreeSum(nums []int) [][]int {
+    res := [][]int{}
+    sort.Slice(nums, func(i, j int) bool {
+        return nums[i] < nums[j]
+    })
+
+    for i, v := range nums {
+        if i > 0 && v == nums[i-1] {
+            continue
+        }
+
+        l, r := i+1, len(nums)-1
+        for l < r {
+            sum := v + nums[l] + nums[r]
+            if sum > 0 {
+                r--
+            } else if sum < 0 {
+                l++
+            } else {
+                res = append(res, []int{v, nums[l], nums[r]})
+                l++
+                for nums[l] == nums[l-1] && l<r {
+                    l++
+                }
+            }
+        }
+    }
+
+    return res
+}
