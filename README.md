@@ -14,3 +14,6 @@
 
 ### 🧑‍🎓 Courses:
 - [Coursera - algorithms](https://www.coursera.org/specializations/algorithms)
+
+### 📋 interview prep
+google: https://techdevguide.withgoogle.com/paths/interview/
