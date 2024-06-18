@@ -10,7 +10,8 @@ import (
 	"github.com/colinfaivre/go-dsa/datastructures"
 )
 
-// O(mn): Computes a map of all shortest path starting from the given vertex
+// O(mn): Computes a map of all shortest paths starting from the given vertex
+// works with positive edge costs
 func DijkstraNaive(graph *datastructures.Graph, start_vertex int) map[int]int {
 	shortest_paths := map[int]int{start_vertex: 0}
 
