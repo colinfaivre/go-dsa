@@ -26,4 +26,37 @@ n == height.length
 ***/
 
 /*** @SOLUTION https://www.youtube.com/watch?v=UuiTKBwPgAo
+O(n^2) solution - brute force
+- init res to 0
+- loop in height with l
+	- loop in height with r
+		- set area to min of height at l and height at r times r minus l
+		- set res to max of area and res
+O(n) solution - 2 pointers
+- init res to 0
+- init l and r pointers on both sides of height
+- loop in height while l < r
+	- set area to min of height at l and height at r times r minus l
+	- set res to max of area and res
+	- if height at l less than or equals height at r
+		- increment l
+	- else decrement r
 ***/
+
+func MaxAreaOn(height []int) int {
+	l := 0
+	r := len(height) - 1
+	res := 0
+
+	for l < r {
+		area := min(height[l], height[r]) * (r - l)
+		res = max(area, res)
+		if height[l] <= height[r] {
+			l++
+		} else {
+			r--
+		}
+	}
+
+	return res
+}
