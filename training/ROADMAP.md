@@ -28,7 +28,7 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 5. `H` [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/) - [solution](https://www.youtube.com/watch?v=ZI2z5pq0TqA)
 
 ## 3. Stack (7)
-1. `E` [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/) - [solution](https://www.youtube.com/watch?v=WTzjTskDFMg)
+1. ✅30`E` [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/) - [solution](https://www.youtube.com/watch?v=WTzjTskDFMg)
 2. `M` [Min Stack](https://leetcode.com/problems/min-stack/) - [solution](https://www.youtube.com/watch?v=qkLl7nAwDPo)
 3. `M` [Evaluate Reverse Polish Notation](https://leetcode.com/problems/evaluate-reverse-polish-notation/) - [solution](https://www.youtube.com/watch?v=iu0082c4HDE)
 4. `M` [Generate Parentheses](https://leetcode.com/problems/generate-parentheses/) - [solution](https://www.youtube.com/watch?v=s9fokUqJ76A)
