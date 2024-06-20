@@ -27,4 +27,56 @@ s consists of parentheses only '()[]{}'.
 ***/
 
 /*** @SOLUTION https://www.youtube.com/watch?v=WTzjTskDFMg
+O(n) solution
+- init charMap with opening parentheses as keys and closing as values
+- init stack
+- loop in s
+  - if stack is empty or its last parenthesis does not match the current iteration char
+    - push the current char on the top of the stack
+  - else pop the last item from the stack
+- return true if the stack is empty
 ***/
+
+type Stack struct {
+    items []rune
+}
+
+func (s *Stack) peek() rune {
+    res := s.items[len(s.items) - 1]
+
+    return res
+}
+
+func (s *Stack) push(item rune) {
+    s.items = append(s.items, item)
+}
+
+func (s *Stack) pop() rune {
+    removedItem := s.items[len(s.items) - 1]
+    s.items = s.items[:len(s.items) - 1]
+
+    return removedItem
+}
+
+func (s *Stack) isEmpty() bool {
+    return len(s.items) == 0
+}
+
+func isValid(s string) bool {
+    charMap := map[rune] rune{
+        '{': '}',
+        '(': ')',
+        '[': ']', 
+    }
+    stack := Stack{}
+
+    for _, v := range s {
+        if stack.isEmpty() || charMap[stack.peek()] != v {
+            stack.push(v)
+        } else {
+            stack.pop()
+        }
+    }
+
+    return stack.isEmpty()
+}
