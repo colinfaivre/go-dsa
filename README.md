@@ -18,3 +18,6 @@
 - google: https://techdevguide.withgoogle.com/paths/interview/
 - mock interviews
 - coach
+
+### 📰 Cheat Sheets
+- slices tricks: https://ueokande.github.io/go-slice-tricks/
