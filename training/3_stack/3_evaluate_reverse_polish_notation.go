@@ -1,5 +1,7 @@
 package training
 
+import "strconv"
+
 // 3.3 `M` Evaluate Reverse Polish Notation
 
 /*** @LEETCODE https://leetcode.com/problems/evaluate-reverse-polish-notation/
@@ -40,4 +42,51 @@ tokens[i] is either an operator: "+", "-", "*", or "/", or an integer in the ran
 ***/
 
 /*** @SOLUTION https://www.youtube.com/watch?v=iu0082c4HDE
+O(n) solution:
+- init a stack
+- loop in tokens
+	- if the current value is a number push it into the stack
+	- else pop two values from the stack and push back the result of the operation
 ***/
+
+type NumStack struct {
+	items []int
+}
+
+func (s *NumStack) Push(val int) {
+	s.items = append(s.items, val)
+}
+
+func (s *NumStack) Pop() int {
+	removed := s.items[len(s.items)-1]
+	s.items = s.items[:len(s.items)-1]
+
+	return removed
+}
+
+func (s *NumStack) Peek() int {
+	return s.items[0]
+}
+
+func EvalRPN(tokens []string) int {
+	stack := NumStack{items: []int{}}
+
+	for _, v := range tokens {
+		if v == "+" {
+			stack.Push(stack.Pop() + stack.Pop())
+		} else if v == "*" {
+			stack.Push(stack.Pop() * stack.Pop())
+		} else if v == "/" {
+			a, b := stack.Pop(), stack.Pop()
+			stack.Push(b / a)
+		} else if v == "-" {
+			a, b := stack.Pop(), stack.Pop()
+			stack.Push(b - a)
+		} else {
+			num, _ := strconv.Atoi(v)
+			stack.Push(num)
+		}
+	}
+
+	return stack.Peek()
+}
