@@ -1,5 +1,7 @@
 package training
 
+import "strings"
+
 // 3.4 `M` Generate Parentheses
 
 /*** @LEETCODE https://leetcode.com/problems/generate-parentheses/
@@ -19,3 +21,34 @@ Constraints:
 
 /*** @SOLUTION https://www.youtube.com/watch?v=s9fokUqJ76A
 ***/
+
+func GenerateParenthesis(n int) []string {
+	// only add open parentheses if open < n
+	// only add closing parentheses if closed < open
+	// valid IIF if open == closed == n
+
+	stack := []string{}
+	res := []string{}
+
+	backtrack(0, 0, &stack, &res, n)
+	return res
+}
+
+func backtrack(openN, closedN int, stack *[]string, res *[]string, n int) {
+	if openN == closedN && openN == n {
+		*res = append(*res, strings.Join(*stack, ""))
+		return
+	}
+
+	if openN < n {
+		*stack = append(*stack, "(")
+		backtrack(openN+1, closedN, stack, res, n)
+		*stack = (*stack)[:len(*stack)-1]
+	}
+
+	if closedN < openN {
+		*stack = append(*stack, ")")
+		backtrack(openN, closedN+1, stack, res, n)
+		*stack = (*stack)[:len(*stack)-1]
+	}
+}
