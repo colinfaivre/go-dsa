@@ -38,45 +38,45 @@ O(n) solution
 ***/
 
 type Stack struct {
-    items []rune
+	items []rune
 }
 
-func (s *Stack) peek() rune {
-    res := s.items[len(s.items) - 1]
+func (s *Stack) Peek() rune {
+	res := s.items[len(s.items)-1]
 
-    return res
+	return res
 }
 
-func (s *Stack) push(item rune) {
-    s.items = append(s.items, item)
+func (s *Stack) Push(item rune) {
+	s.items = append(s.items, item)
 }
 
-func (s *Stack) pop() rune {
-    removedItem := s.items[len(s.items) - 1]
-    s.items = s.items[:len(s.items) - 1]
+func (s *Stack) Pop() rune {
+	removedItem := s.items[len(s.items)-1]
+	s.items = s.items[:len(s.items)-1]
 
-    return removedItem
+	return removedItem
 }
 
-func (s *Stack) isEmpty() bool {
-    return len(s.items) == 0
+func (s *Stack) IsEmpty() bool {
+	return len(s.items) == 0
 }
 
-func isValid(s string) bool {
-    charMap := map[rune] rune{
-        '{': '}',
-        '(': ')',
-        '[': ']', 
-    }
-    stack := Stack{}
+func IsValid(s string) bool {
+	charMap := map[rune]rune{
+		'{': '}',
+		'(': ')',
+		'[': ']',
+	}
+	stack := Stack{}
 
-    for _, v := range s {
-        if stack.isEmpty() || charMap[stack.peek()] != v {
-            stack.push(v)
-        } else {
-            stack.pop()
-        }
-    }
+	for _, v := range s {
+		if stack.IsEmpty() || charMap[stack.Peek()] != v {
+			stack.Push(v)
+		} else {
+			stack.Pop()
+		}
+	}
 
-    return stack.isEmpty()
+	return stack.IsEmpty()
 }
