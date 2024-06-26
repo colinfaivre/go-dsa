@@ -25,4 +25,41 @@ Constraints:
 ***/
 
 /*** @SOLUTION https://www.youtube.com/watch?v=cTBiBSnjO3c
+O(n^2) solution - brute force:
+- init res array of integers
+- loop in temperatures with i
+	- loop in temperatures with j
+		- if temp at j > temp at i
+			- append j-i to res
+			- go to outer loop
+	- append 0 to res
+- return res
+
+O(n) solution - stack:
+- init res array of integers filled with zeros
+- init stack of integer couples
+- loop in temperatures (i, t)
+	- while stack is not empty and t > top temp from stack
+		- pop from the stack
+		- set res at popped temp index to i - popped temp index
+	- push the couple (t, i) on top of the stack
 ***/
+
+func DailyTemperatures(temperatures []int) []int {
+	res := []int{}
+	for i := 0; i < len(temperatures); i++ {
+		res = append(res, 0)
+	}
+	stack := [][2]int{}
+
+	for i, t := range temperatures {
+		for len(stack) != 0 && t > stack[len(stack)-1][0] {
+			stackInd := stack[len(stack)-1][1]
+			stack = stack[:len(stack)-1]
+			res[stackInd] = i - stackInd
+		}
+		stack = append(stack, [2]int{t, i})
+	}
+
+	return res
+}
