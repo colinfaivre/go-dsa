@@ -1,5 +1,7 @@
 package training
 
+import "sort"
+
 // 3.6 `M` Car Fleet
 
 /*** @LEETCODE https://leetcode.com/problems/car-fleet/
@@ -41,4 +43,42 @@ All the values of position are unique.
 ***/
 
 /*** @SOLUTION https://www.youtube.com/watch?v=Pr6T-3yB9RM
+O(nlogn) solution - sort and stack
+- store (position, speed) pairs in an array
+- sort posSpeedPairs by increasing order of positions
+- init a stack to store time to destination
+- loop in posSpeedPairs in reverse order
+	- push current car time to destination in stack (target-position)/speed
+	- if current car time to destination is less than previous
+		- pop current from the stack
+- return stack length
 ***/
+
+func CarFleet(target int, position []int, speed []int) int {
+	posSpeedPairs := [][2]int{}
+	for i := 0; i < len(position); i++ {
+		currPair := [2]int{position[i], speed[i]}
+		posSpeedPairs = append(posSpeedPairs, currPair)
+	}
+	// sort posSpeedPairs by increasing order of positions
+	sort.Slice(posSpeedPairs, func(i, j int) bool {
+		return posSpeedPairs[i][0] < posSpeedPairs[j][0]
+	})
+
+	// init a stack to store time to destination
+	stack := []float64{}
+
+	for i := len(posSpeedPairs) - 1; i >= 0; i-- {
+		position := float64(posSpeedPairs[i][0])
+		speed := float64(posSpeedPairs[i][1])
+		stack = append(stack, (float64(target)-position)/speed)
+
+		// if the current car time to destination is less than the previous
+		// two cars are at the same place, keep the slowest
+		if len(stack) >= 2 && stack[len(stack)-1] <= stack[len(stack)-2] {
+			stack = stack[:len(stack)-1]
+		}
+	}
+
+	return len(stack)
+}
