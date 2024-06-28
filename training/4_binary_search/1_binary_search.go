@@ -25,4 +25,32 @@ nums is sorted in ascending order.
 ***/
 
 /*** @SOLUTION https://www.youtube.com/watch?v=s4DPM8ct1pI
+O(logn) solution: lo|hi pointers
+- init lo and hi pointers
+- loop in nums
+	- set mid
+	- if nums at mid is target return mid
+	- else if nums at mid is less than target
+		- set lo to mid+1
+	- else set hi to mid - 1
+- return -1
 ***/
+
+func Search(nums []int, target int) int {
+	lo := 0
+	hi := len(nums) - 1
+
+	for lo <= hi {
+		mid := lo + (hi-lo)/2
+
+		if nums[mid] == target {
+			return mid
+		} else if nums[mid] < target {
+			lo = mid + 1
+		} else {
+			hi = mid - 1
+		}
+	}
+
+	return -1
+}
