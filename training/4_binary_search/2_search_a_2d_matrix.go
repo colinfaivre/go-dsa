@@ -25,4 +25,46 @@ n == matrix[i].length
 ***/
 
 /*** @SOLUTION https://www.youtube.com/watch?v=Ber2pi2C0j0
+O(mn) solution: brute force
+- loop in rows
+  - loop in cols
+    - return true if matrix[row][col] == target
+- return false
+
+O(mlogn) solution: binary search every row
+- loop in rows
+  - binary search the target value
+
+O(logmn) solution: binary search row then col
+- binary search the row containing target
+- binary search the col containing target
 ***/
+
+func SearchMatrix(matrix [][]int, target int) bool {
+    top, bot := 0, len(matrix) - 1
+    for top <= bot {
+        row := (top + bot) / 2
+        if target > matrix[row][len(matrix[0]) - 1] {
+            top = row + 1
+        } else if target < matrix[row][0] {
+            bot = row - 1
+        } else {
+            break
+        }
+    }
+
+    row := (top + bot) / 2
+    l, r := 0, len(matrix[0]) - 1
+    for l <= r {
+        m := (r + l) / 2
+        if target > matrix[row][m] {
+            l = m + 1
+        } else if target < matrix[row][m] {
+            r = m - 1
+        } else {
+            return true
+        }
+    }
+
+    return false
+}
