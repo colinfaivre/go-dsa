@@ -24,4 +24,29 @@ Constraints:
 ***/
 
 /*** @SOLUTION https://www.youtube.com/watch?v=1pkOgXD63yU
+O(n): sliding window
+- init left and right pointers at 0 and 1
+- init max profit at 0
+- loop in prices while right pointes is less than profits length
+  - if the transaction is profitable (prices[l] < prices[r])
+    - update max profit
+  - else set left pointer to right pointer value
+  - increment right pointer
 ***/
+
+func MaxProfit(prices []int) int {
+    l, r := 0, 1
+    maxP := 0
+
+    for r < len(prices) {
+        if prices[l] < prices[r] {
+            profit := prices[r] - prices[l]
+            maxP = max(maxP, profit)
+        } else {
+            l = r
+        }
+        r++
+    }
+
+    return maxP
+}
