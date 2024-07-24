@@ -46,7 +46,7 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 7. `H` Median of Two Sorted Arrays [leetcode](https://leetcode.com/problems/median-of-two-sorted-arrays/) - [solution](https://www.youtube.com/watch?v=q6IEA26hvXc)
 
 ## 5. Sliding Window (0/4)
-1. `E` Best Time to Buy And Sell Stock [leetcode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) - [solution](https://www.youtube.com/watch?v=1pkOgXD63yU)
+1. ❌30'`E` Best Time to Buy And Sell Stock [leetcode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) - [solution](https://www.youtube.com/watch?v=1pkOgXD63yU)
 2. `M` Longest Substring Without Repeating Characters [leetcode](https://leetcode.com/problems/longest-substring-without-repeating-characters/) - [solution](https://www.youtube.com/watch?v=wiGpQwVHdE0)
 3. `M` Longest Repeating Character Replacement [leetcode](https://leetcode.com/problems/longest-repeating-character-replacement/) - [solution](https://www.youtube.com/watch?v=gqXU1UyA8pk)
 4. `M` Permutation In String [leetcode](https://leetcode.com/problems/permutation-in-string/) - [solution](https://www.youtube.com/watch?v=UbyhOgBN834)
