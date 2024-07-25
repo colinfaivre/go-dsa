@@ -27,4 +27,40 @@ s consists of English letters, digits, symbols and spaces.
 ***/
 
 /*** @SOLUTION https://www.youtube.com/watch?v=wiGpQwVHdE0
+O(n^2) brute-force solution:
+- set res to 0
+- loop in s with l
+  - loop in s from l with r
+    - if no repeating char
+      - update res to max of res and r-l+1
+- return res
+
+O(n) sliding window solution:
+- init charSet to a set of chars
+- init l to 0
+- init res to 0
+- loop in s with r
+  - while s[r] is in set
+    - remove s[l] from charSet
+    - increment l
+  - set charSet at s[r] to true
+  - set res to max of res and r-l+1
+- return res
 ***/
+
+func LengthOfLongestSubstring(s string) int {
+    charSet := make(map [byte]bool)
+    l := 0
+    res := 0
+
+    for r := range s {
+        for charSet[s[r]] {
+            delete(charSet, s[l])
+            l++
+        }
+        charSet[s[r]] = true
+        res = max(res, r-l+1)
+    }
+
+    return res
+}
