@@ -23,4 +23,33 @@ Constraints:
 ***/
 
 /*** @SOLUTION https://www.youtube.com/watch?v=3OamzN90kPg
+bruteforce: O(n^2)
+- loop in nums with i
+  - loop in nums with j
+    - return true if nums[i] == nums[j]
+- return false
+
+sorting: O(nlogn)
+- sort nums
+- loop in nums
+  - return true if consecutive items are equal
+- return false
+
+hashset: O(n)
+- init hashset
+- loop in nums with i
+  - return true if nums[i] is in hashset
+  - set hashset[nums[i]] to true
+- return false
 ***/
+
+func ContainsDuplicate(nums []int) bool {
+    numsSet := map[int] bool {}
+    for i := range nums {
+        if numsSet[nums[i]] {
+            return true
+        }
+        numsSet[nums[i]] = true
+    }
+    return false
+}
