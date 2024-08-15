@@ -28,4 +28,26 @@ Only one valid answer exists.
 ***/
 
 /*** @SOLUTION https://www.youtube.com/watch?v=KLlXCFG5TnA
+brute-force solution: O(n^2)
+- loop in nums w/ i
+  - loop in nums w/ j > i
+    - if nums[i] + nums[j] == target return [i, j]
+hashmap solution: O(n)
+- init hashmap
+- loop in nums w/ i
+  - if nums[i] key in hashmap return [i, hashmap[arr[i]]]
+  - set hashmap[t-arr[i]] to i
 ***/
+
+func TwoSum(nums []int, target int) []int {
+    hashMap := map[int] int {}
+
+    for i, v := range nums {
+        if _, ok := hashMap[v]; ok {
+            return []int {i, hashMap[v]}
+        }
+        hashMap[target - v] = i
+    }
+
+    return []int {0, 0} // default return
+}
