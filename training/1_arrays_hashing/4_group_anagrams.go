@@ -25,4 +25,36 @@ strs[i] consists of lowercase English letters.
 ***/
 
 /*** @SOLUTION https://www.youtube.com/watch?v=vzdNOK2oB2E
+hashmap solution: O(mn) (m: str avg length)
+- init hashMap as:
+  - key: arr 26 char counts (positioned by charcodes from 0->a to 26->z)
+  - value: arr of strings containing anagrams
+- init res as arr of arrs of strings containing anagrams
+- loop in strs with value str
+  - init charCount as an arr of 26 char counts
+  - loop in str with value char
+    - increment charCount at char - 'a'
+  - append str to hashMap at charCount
+- loop in hashmap with value anagrams
+  - append anagrams to res
+- return res
 ***/
+
+func GroupAnagrams(strs []string) [][]string {
+    hashMap := map[[26]int] []string {}
+    res := [][]string {}
+
+    for _, str := range strs {
+        charCount := [26]int {}
+        for _, char := range str {
+            charCount[char - 'a']++
+        }
+        hashMap[charCount] = append(hashMap[charCount], str)
+    }
+
+    for _, anagrams := range hashMap {
+        res = append(res, anagrams)
+    }
+
+    return res
+}
