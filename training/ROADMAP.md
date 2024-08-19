@@ -16,7 +16,7 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 4. ❌✅30'`M` Group Anagrams [leetcode](https://leetcode.com/problems/group-anagrams/) - [solution](https://www.youtube.com/watch?v=vzdNOK2oB2E)
 5. ❌✅40'`M` Top K Frequent Elements [leetcode](https://leetcode.com/problems/top-k-frequent-elements/) - [solution](https://www.youtube.com/watch?v=YPTqKIgVk-k) // try again with max-heap
 6. 🔒`M` Encode and Decode Strings [leetcode](https://leetcode.com/problems/encode-and-decode-strings/) - [solution](https://www.youtube.com/watch?v=B1k_sxOSgv8)
-7. ❌40'`M` Product of Array Except Self [leetcode](https://leetcode.com/problems/product-of-array-except-self/) - [solution](https://www.youtube.com/watch?v=bNvIQI2wAjk)
+7. ❌✅40'`M` Product of Array Except Self [leetcode](https://leetcode.com/problems/product-of-array-except-self/) - [solution](https://www.youtube.com/watch?v=bNvIQI2wAjk)
 8. ❌45'`M` Valid Sudoku [leetcode](https://leetcode.com/problems/valid-sudoku/) - [solution](https://www.youtube.com/watch?v=TjFXEUCMqI8)
 9. ❌45'`M` Longest Consecutive Sequence [leetcode](https://leetcode.com/problems/longest-consecutive-sequence/) - [solution](https://www.youtube.com/watch?v=P6RZZMu_maU)
 
