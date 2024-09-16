@@ -48,37 +48,36 @@ board[i][j] is a digit 1-9 or '.'.
 O(9^2) solution - hashmaps
 - create hashmaps of hashmaps for rows, cols and squares
 - loop in board matrix:
+  - ignore dots
   - return false if the char is already in one of the hashmaps
   - add the char to each hashmap
 ***/
 
 func IsValidSudoku(board [][]byte) bool {
-    rows := make(map[int]map[byte]bool)
-    for r := range 9 {
-        rows[r] = make(map[byte]bool)
-    }
-    cols := make(map[int]map[byte]bool)
-    for c := range 9 {
-        cols[c] = make(map[byte]bool)
-    }
-    squares := make(map[[2]int]map[byte]bool)
-    for r := range 3 {
-        for c := range 3 {
-            squares[[2]int{r, c}] = make(map[byte]bool)
+    rowMap := make(map[int]map[byte]bool)
+    colMap := make(map[int]map[byte]bool)
+    squareMap := make(map[[2]int]map[byte]bool)
+    for i := range 9 {
+        rowMap[i] = make(map[byte]bool)
+        colMap[i] = make(map[byte]bool)
+        for j := range 9 {
+            squareMap[[2]int{i/3, j/3}] = make(map[byte]bool)
         }
     }
 
-    for r := range 9 {
-        for c := range 9 {
-            if board[r][c] == '.' {
+    for i, row := range board {
+        for j, val := range row {
+            if val == '.' {
                 continue
             }
-            if rows[r][board[r][c]] || cols[c][board[r][c]] || squares[[2]int{r/3, c/3}][board[r][c]] {
+
+            if rowMap[i][val] || colMap[j][val] || squareMap[[2]int {i/3, j/3}][val]  {
                 return false
             }
-            rows[r][board[r][c]] = true
-            cols[c][board[r][c]] = true
-            squares[[2]int{r/3, c/3}][board[r][c]] = true
+
+            rowMap[i][val] = true
+            colMap[j][val] = true
+            squareMap[[2]int {i/3, j/3}][val] = true
         }
     }
 
