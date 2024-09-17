@@ -6,7 +6,7 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 > - `H`: hard
 > - ❌: partially solved
 > - ✅: solved
-> - X': solving time in minutes
+> - X': best solving time
 > - 🔒: leetcode premium
 
 ## 1. Arrays / Hashing (8/8)
@@ -18,7 +18,7 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 6. 🔒`M` Encode and Decode Strings [leetcode](https://leetcode.com/problems/encode-and-decode-strings/) - [solution](https://www.youtube.com/watch?v=B1k_sxOSgv8)
 7. ❌✅40'`M` Product of Array Except Self [leetcode](https://leetcode.com/problems/product-of-array-except-self/) - [solution](https://www.youtube.com/watch?v=bNvIQI2wAjk)
 8. ❌✅50'`M` Valid Sudoku [leetcode](https://leetcode.com/problems/valid-sudoku/) - [solution](https://www.youtube.com/watch?v=TjFXEUCMqI8)
-9. ❌45'`M` Longest Consecutive Sequence [leetcode](https://leetcode.com/problems/longest-consecutive-sequence/) - [solution](https://www.youtube.com/watch?v=P6RZZMu_maU)
+9. ❌✅30'`M` Longest Consecutive Sequence [leetcode](https://leetcode.com/problems/longest-consecutive-sequence/) - [solution](https://www.youtube.com/watch?v=P6RZZMu_maU)
 
 ## 2. Two Pointers (4/4)
 1. ✅30'`E` Valid Palindrome [leetcode](https://leetcode.com/problems/valid-palindrome/) - [solution](https://www.youtube.com/watch?v=jJXJ16kPFWg)
