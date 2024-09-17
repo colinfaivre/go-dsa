@@ -22,32 +22,33 @@ Constraints:
 
 /*** @SOLUTION https://www.youtube.com/watch?v=P6RZZMu_maU
 TC:O(n)/SC:O(n) solution - set
-- initialize maxlength to 0
+- initialize longest to 0
 - loop in nums to create a set containing each num
-- loop in set
+- loop in set with value
   - check if n-1 is not in set // start of sequence
   - initialize length to 0
-  - loop in map while n+length exists incrementing length
-  - set maxlength to max between length and itself
+  - loop in set while value+length exists incrementing length
+  - set longest to max between length and itself
 ***/
 
-func LongestConsecutive(nums []int) int {
-	numMap := make(map[int]bool)
-	for _, num := range nums {
-		numMap[num] = true
-	}
-	maxLength := 0
+func longestConsecutive(nums []int) int {
+    numSet := map[int]bool{}
+    longest := 0
 
-	for n := range numMap {
-		if !numMap[n-1] {
-			length := 0
-			for numMap[n+length] {
-				length++
-			}
-			if length > maxLength {
-				maxLength = length
-			}
-		}
-	}
-	return maxLength
+    for _, v := range nums {
+        numSet[v] = true
+    }
+    for v := range numSet {
+        if !numSet[v-1] {
+            length := 0
+            for numSet[v+length] {
+                length++
+            }
+            if length > longest {
+                longest = length
+            }
+        }
+    }
+
+    return longest
 }
