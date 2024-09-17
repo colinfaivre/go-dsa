@@ -21,7 +21,7 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 9. ❌✅30'`M` Longest Consecutive Sequence [leetcode](https://leetcode.com/problems/longest-consecutive-sequence/) - [solution](https://www.youtube.com/watch?v=P6RZZMu_maU)
 
 ## 2. Two Pointers (4/4)
-1. ✅30'`E` Valid Palindrome [leetcode](https://leetcode.com/problems/valid-palindrome/) - [solution](https://www.youtube.com/watch?v=jJXJ16kPFWg)
+1. ✅✅20'`E` Valid Palindrome [leetcode](https://leetcode.com/problems/valid-palindrome/) - [solution](https://www.youtube.com/watch?v=jJXJ16kPFWg)
 2. ✅25'`M` Two Sum II Input Array Is Sorted [leetcode](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/) - [solution](https://www.youtube.com/watch?v=cQ1Oz4ckceM)
 3. ❌40'`M` 3Sum [leetcode](https://leetcode.com/problems/3sum/) - [solution](https://www.youtube.com/watch?v=jzZsG8n2R9A.io%2F)
 4. ❌40'`M` Container With Most Water [leetcode](https://leetcode.com/problems/container-with-most-water/) - [solution](https://www.youtube.com/watch?v=UuiTKBwPgAo)
