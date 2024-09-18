@@ -44,19 +44,14 @@ O(n) solution - 2 pointers
   - if the sum equals target return the two pointers
 ***/
 
-func TwoSumOn(numbers []int, target int) []int {
+func TwoSum(numbers []int, target int) []int {
     l, r := 0, len(numbers) - 1
 
     for l < r {
-        currSum := numbers[l]+numbers[r]
-
-        if currSum > target {
-            r--
-        } else if currSum < target {
-            l++
-        } else {
-            return []int{l+1, r+1}
-        }
+        sum := numbers[l] + numbers[r]
+        if sum < target { l++ }
+        if sum > target { r-- }
+        if sum == target { return []int{l+1, r+1} }
     }
 
     return []int{}
