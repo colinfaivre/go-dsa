@@ -23,7 +23,7 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 ## 2. Two Pointers (4/4)
 1. ✅✅20'`E` Valid Palindrome [leetcode](https://leetcode.com/problems/valid-palindrome/) - [solution](https://www.youtube.com/watch?v=jJXJ16kPFWg)
 2. ✅✅20'`M` Two Sum II Input Array Is Sorted [leetcode](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/) - [solution](https://www.youtube.com/watch?v=cQ1Oz4ckceM)
-3. ❌40'`M` 3Sum [leetcode](https://leetcode.com/problems/3sum/) - [solution](https://www.youtube.com/watch?v=jzZsG8n2R9A.io%2F)
+3. ❌✅35'`M` 3Sum [leetcode](https://leetcode.com/problems/3sum/) - [solution](https://www.youtube.com/watch?v=jzZsG8n2R9A.io%2F)
 4. ❌40'`M` Container With Most Water [leetcode](https://leetcode.com/problems/container-with-most-water/) - [solution](https://www.youtube.com/watch?v=UuiTKBwPgAo)
 5. `H` Trapping Rain Water [leetcode](https://leetcode.com/problems/trapping-rain-water/) - [solution](https://www.youtube.com/watch?v=ZI2z5pq0TqA)
 
