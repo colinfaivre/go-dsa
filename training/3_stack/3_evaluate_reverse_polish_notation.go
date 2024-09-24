@@ -47,6 +47,7 @@ O(n) solution:
 - loop in tokens
 	- if the current value is a number push it into the stack
 	- else pop two values from the stack and push back the result of the operation
+- return last value from stack
 ***/
 
 type NumStack struct {
