@@ -32,7 +32,7 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 2. ❌✅20'`M` Min Stack [leetcode](https://leetcode.com/problems/min-stack/) - [solution](https://www.youtube.com/watch?v=qkLl7nAwDPo)
 3. ❌✅25'`M` Evaluate Reverse Polish Notation [leetcode](https://leetcode.com/problems/evaluate-reverse-polish-notation/) - [solution](https://www.youtube.com/watch?v=iu0082c4HDE)
 4. ❌60'`M` Generate Parentheses [leetcode](https://leetcode.com/problems/generate-parentheses/) - [solution](https://www.youtube.com/watch?v=s9fokUqJ76A)
-5. ❌15'`M` Daily Temperatures [leetcode](https://leetcode.com/problems/daily-temperatures/) - [solution](https://www.youtube.com/watch?v=cTBiBSnjO3c)
+5. ❌✅55'`M` Daily Temperatures [leetcode](https://leetcode.com/problems/daily-temperatures/) - [solution](https://www.youtube.com/watch?v=cTBiBSnjO3c)
 6. ❌15'`M` Car Fleet [leetcode](https://leetcode.com/problems/car-fleet/) - [solution](https://www.youtube.com/watch?v=Pr6T-3yB9RM)
 7. `H` Largest Rectangle In Histogram [leetcode](https://leetcode.com/problems/largest-rectangle-in-histogram/) - [solution](https://www.youtube.com/watch?v=zx5Sw9130L0&source_ve_path=OTY3MTQ)
 
