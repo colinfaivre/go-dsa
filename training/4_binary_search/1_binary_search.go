@@ -27,8 +27,8 @@ nums is sorted in ascending order.
 /*** @SOLUTION https://www.youtube.com/watch?v=s4DPM8ct1pI
 O(logn) solution: lo|hi pointers
 - init lo and hi pointers
-- loop in nums
-	- set mid
+- loop in nums while lo is less or equal to hi
+	- set mid as lo + (hi - lo) / 2
 	- if nums at mid is target return mid
 	- else if nums at mid is less than target
 		- set lo to mid+1
