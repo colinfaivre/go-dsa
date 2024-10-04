@@ -38,7 +38,7 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 
 ## 4. Binary Search (3/6)
 1. ✅✅20`E` Binary Search [leetcode](https://leetcode.com/problems/binary-search/) - [solution](https://www.youtube.com/watch?v=s4DPM8ct1pI)
-2. ❌40'`M` Search a 2D Matrix [leetcode](https://leetcode.com/problems/search-a-2d-matrix/) - [solution](https://www.youtube.com/watch?v=Ber2pi2C0j0)
+2. ❌✅55'`M` Search a 2D Matrix [leetcode](https://leetcode.com/problems/search-a-2d-matrix/) - [solution](https://www.youtube.com/watch?v=Ber2pi2C0j0)
 3. ❌40'`M` Koko Eating Bananas [leetcode](https://leetcode.com/problems/koko-eating-bananas/) - [solution](https://www.youtube.com/watch?v=U2SozAs9RzA)
 4. `M` Find Minimum In Rotated Sorted Array [leetcode](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/) - [solution](https://www.youtube.com/watch?v=nIVW4P8b1VA)
 5. `M` Search In Rotated Sorted Array [leetcode](https://leetcode.com/problems/search-in-rotated-sorted-array/) - [solution](https://www.youtube.com/watch?v=U8XENwh8Oy8)
