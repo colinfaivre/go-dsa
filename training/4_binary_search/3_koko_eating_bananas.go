@@ -31,6 +31,7 @@ piles.length <= h <= 10^9
 /*** @SOLUTION https://www.youtube.com/watch?v=U2SozAs9RzA
 O(max*n) solution: brute force
 - init max to max value of piles
+- init res to max
 - loop with k from 1 to max
   - init hours to 0
   - loop in piles incrementing hours by (current pile / k)
