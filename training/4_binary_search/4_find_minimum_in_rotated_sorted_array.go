@@ -35,4 +35,44 @@ nums is sorted and rotated between 1 and n times.
 ***/
 
 /*** @SOLUTION https://www.youtube.com/watch?v=nIVW4P8b1VA
+O(n) Solution:
+- init min to arbitrary value in nums
+- loop in nums setting min to min of min and current value
+- return min
+
+O(logn) Solution:
+- init lo and hi to 0 and length of nums - 1
+- init res to arbitrary value in nums
+- loop while lo is less or equal to hi
+  - if nums at lo is less than nums at hi
+    - set res to min between min and nums at lo
+    - break out of the loop
+  - set mid to (lo+hi)/2
+  - set res to min between res and nums at mid
+  - if nums at mid is greater or equal to nums at hi
+    - set lo to mid + 1
+  - else set hi to mid - 1
+- return res
 ***/
+
+func FindMin(nums []int) int {
+    lo, hi := 0, len(nums) - 1
+    res := 50001
+
+    for lo <= hi {
+        if nums[lo] < nums[hi] {
+            res = min(res, nums[lo])
+            break
+        }
+
+        mid := (lo + hi) / 2
+        res = min(res, nums[mid])
+        
+        if nums[mid] >= nums[hi] {
+            lo = mid + 1
+        } else {
+            hi = mid - 1
+        }
+    }
+    return res
+}
