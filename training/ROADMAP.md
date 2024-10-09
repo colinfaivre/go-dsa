@@ -1,4 +1,4 @@
-# 🗺️ Roadmap (24/65) 37%
+# 🗺️ Roadmap (26/65) 40%
 subset of [neetcode roadmap](https://neetcode.io/roadmap)
 
 > - `E`: easy
@@ -36,12 +36,12 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 6. ❌✅55'`M` Car Fleet [leetcode](https://leetcode.com/problems/car-fleet/) - [solution](https://www.youtube.com/watch?v=Pr6T-3yB9RM)
 7. `H` Largest Rectangle In Histogram [leetcode](https://leetcode.com/problems/largest-rectangle-in-histogram/) - [solution](https://www.youtube.com/watch?v=zx5Sw9130L0&source_ve_path=OTY3MTQ)
 
-## 4. Binary Search (3/6)
+## 4. Binary Search (5/6)
 1. ✅✅20`E` Binary Search [leetcode](https://leetcode.com/problems/binary-search/) - [solution](https://www.youtube.com/watch?v=s4DPM8ct1pI)
 2. ❌✅55'`M` Search a 2D Matrix [leetcode](https://leetcode.com/problems/search-a-2d-matrix/) - [solution](https://www.youtube.com/watch?v=Ber2pi2C0j0)
 3. ❌❌60'`M` Koko Eating Bananas [leetcode](https://leetcode.com/problems/koko-eating-bananas/) - [solution](https://www.youtube.com/watch?v=U2SozAs9RzA)
 4. ❌60'`M` Find Minimum In Rotated Sorted Array [leetcode](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/) - [solution](https://www.youtube.com/watch?v=nIVW4P8b1VA)
-5. `M` Search In Rotated Sorted Array [leetcode](https://leetcode.com/problems/search-in-rotated-sorted-array/) - [solution](https://www.youtube.com/watch?v=U8XENwh8Oy8)
+5. ❌25'`M` Search In Rotated Sorted Array [leetcode](https://leetcode.com/problems/search-in-rotated-sorted-array/) - [solution](https://www.youtube.com/watch?v=U8XENwh8Oy8)
 6. `M` Time Based Key Value Store [leetcode](https://leetcode.com/problems/time-based-key-value-store/) - [solution](https://www.youtube.com/watch?v=fu2cD_6E8Hw)
 7. `H` Median of Two Sorted Arrays [leetcode](https://leetcode.com/problems/median-of-two-sorted-arrays/) - [solution](https://www.youtube.com/watch?v=q6IEA26hvXc)
 
