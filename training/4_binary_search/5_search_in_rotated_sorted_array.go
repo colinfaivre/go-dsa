@@ -32,4 +32,47 @@ nums is an ascending array that is possibly rotated.
 ***/
 
 /*** @SOLUTION https://www.youtube.com/watch?v=U8XENwh8Oy8
+O(n) solution:
+- loop in nums w/ i and val:
+  - return i when val equals target
+- return - 1
+O(logn) solution:
+- init l and r pointers to 0 and nums length - 1
+- loop while l is less or equal to r:
+  - init m to (l+r)/2
+  - return m if nums at m equals target
+  - if nums at l is less or equal to nums at m --> left sorted portion
+    - if target is greater than nums at m or target is less than nums at l
+      - set l to m+1
+    - else set r to m-1
+  - else --> right sorted portion
+    - if target is less than nums at m or target is greater than nums at r
+      - set r to m-1
+    - else set l to m+1
+- return -1
 ***/
+
+func Search(nums []int, target int) int {
+    l, r := 0, len(nums) - 1
+    for l <= r {
+        m := (l+r)/2
+        if nums[m] == target {
+            return m
+        }
+
+        if nums[l] <= nums[m] { // left sorted portion
+            if target > nums[m] || target < nums[l] {
+                l = m+1
+            } else {
+                r = m-1
+            }
+        } else { // right sorted portion
+            if target < nums[m] || target > nums[r] {
+                r = m-1
+            } else {
+                l = m+1
+            }
+        }
+    }
+    return -1
+}
