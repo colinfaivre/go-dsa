@@ -35,3 +35,42 @@ At most 2 * 10^5 calls will be made to set and get.
 
 /*** @SOLUTION https://www.youtube.com/watch?v=fu2cD_6E8Hw
 ***/
+
+type TimeVal struct {
+    time  int
+    value string
+}
+
+type TimeMap struct {
+    store map[string][]TimeVal
+}
+
+func Constructor() TimeMap {
+    return TimeMap{store: make(map[string][]TimeVal)}
+}
+
+func (this *TimeMap) Set(key string, value string, timestamp int)  {
+    if _, ok := this.store[key]; !ok {
+        this.store[key] = make([]TimeVal, 0)
+    }
+    this.store[key] = append(this.store[key], TimeVal{timestamp, value})
+}
+
+func (this *TimeMap) Get(key string, timestamp int) string {
+    var res string
+    var values []TimeVal
+    if _, ok := this.store[key]; ok {
+        values = this.store[key]
+    }
+    l, r := 0, len(values)-1
+    for l <= r {
+        mid := l + (r-l)/2
+        if values[mid].time <= timestamp {
+            res = values[mid].value
+            l = mid + 1
+        } else {
+            r = mid - 1
+        }
+    }
+    return res
+}
