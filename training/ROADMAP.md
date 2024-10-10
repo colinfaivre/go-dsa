@@ -42,7 +42,7 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 3. ❌❌60'`M` Koko Eating Bananas [leetcode](https://leetcode.com/problems/koko-eating-bananas/) - [solution](https://www.youtube.com/watch?v=U2SozAs9RzA)
 4. ❌60'`M` Find Minimum In Rotated Sorted Array [leetcode](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/) - [solution](https://www.youtube.com/watch?v=nIVW4P8b1VA)
 5. ❌25'`M` Search In Rotated Sorted Array [leetcode](https://leetcode.com/problems/search-in-rotated-sorted-array/) - [solution](https://www.youtube.com/watch?v=U8XENwh8Oy8)
-6. `M` Time Based Key Value Store [leetcode](https://leetcode.com/problems/time-based-key-value-store/) - [solution](https://www.youtube.com/watch?v=fu2cD_6E8Hw)
+6. ❌35'`M` Time Based Key Value Store [leetcode](https://leetcode.com/problems/time-based-key-value-store/) - [solution](https://www.youtube.com/watch?v=fu2cD_6E8Hw)
 7. `H` Median of Two Sorted Arrays [leetcode](https://leetcode.com/problems/median-of-two-sorted-arrays/) - [solution](https://www.youtube.com/watch?v=q6IEA26hvXc)
 
 ## 5. Sliding Window (3/4)
