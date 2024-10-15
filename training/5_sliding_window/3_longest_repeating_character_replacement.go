@@ -28,3 +28,26 @@ s consists of only uppercase English letters.
 
 /*** @SOLUTION https://www.youtube.com/watch?v=gqXU1UyA8pk
 ***/
+
+func CharacterReplacement(s string, k int) int {
+    res := 0
+    l := 0
+    charCount := map[byte]int{}
+
+    for r := 0; r < len(s); r++ {
+        if _, ok := charCount[s[r]]; ok {
+            charCount[s[r]]++
+        } else {
+            charCount[s[r]] = 1
+        }
+
+        for (r - l + 1) - slices.Max(slices.Collect(maps.Values(charCount))) > k {
+            charCount[s[l]]--
+            l++
+        }
+
+        res = max(res, r - l + 1)
+    }
+
+    return res
+}
