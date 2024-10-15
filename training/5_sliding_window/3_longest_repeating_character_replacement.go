@@ -27,6 +27,18 @@ s consists of only uppercase English letters.
 ***/
 
 /*** @SOLUTION https://www.youtube.com/watch?v=gqXU1UyA8pk
+O(26*n) Solution:
+- init res at 0
+- init l pointer at 0
+- init charCount as an empty map from chars to integers
+- loop in s w/ r pointer
+    - if charCount at s[r] exists increment it
+    - else init charCount at s[r] to 1
+    - loop while window size minus max count from charMap is greater than k
+        - decrement charCount at s[r]
+        - increment l pointer
+    - set res to max of res and window size
+- return res
 ***/
 
 func CharacterReplacement(s string, k int) int {
