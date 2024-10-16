@@ -34,23 +34,21 @@ O(26n) solution:
 ***/
 
 func CheckInclusion(s1 string, s2 string) bool {
-    l1, l2 := len(s1), len(s2)
-
+    	l1, l2 := len(s1), len(s2)
 	if l1 > l2 {
 		return false
 	}
-
+	
 	var cnt1, cnt2 [26]int
-
+	
 	for i, ch := range s1 {
 		cnt1[ch-'a']++
 		cnt2[s2[i]-'a']++
 	}
-
 	if cnt1 == cnt2 {
 		return true
 	}
-    
+	
 	for i := l1; i < l2; i++ {
 		cnt2[s2[i]-'a']++
 		cnt2[s2[i-l1]-'a']--
@@ -58,6 +56,6 @@ func CheckInclusion(s1 string, s2 string) bool {
 			return true
 		}
 	}
-
+	
 	return false
 }
