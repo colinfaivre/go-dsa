@@ -24,3 +24,24 @@ The number of nodes in the list is the range [0, 5000].
 
 /*** @SOLUTION https://www.youtube.com/watch?v=G0_I-ZF0S38
 ***/
+
+/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */
+func IterativeReverseList(head *ListNode) *ListNode {
+    var prev *ListNode
+    curr := head
+
+    for curr != nil {
+        next := curr.Next
+        curr.Next = prev
+        prev = curr
+        curr = next
+    }
+
+    return prev
+}
