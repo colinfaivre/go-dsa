@@ -26,6 +26,20 @@ Both list1 and list2 are sorted in non-decreasing order.
 ***/
 
 /*** @SOLUTION https://www.youtube.com/watch?v=XIdigk956u0
+O(n) solution:
+- init a dummy ListNode ref
+- init tail with dummy
+- loop while list1 and list2 exist:
+    - if list1.Val < list2.Val:    
+        - set tail.Next to list1
+        - set list1 to list1.Next
+    - else:
+        - set tail.Next to list2
+        - set list2 to list2.Next
+    - set tail to tail.Next
+    - if list1 exists set tail.Next to list1
+    - if list2 exists set tail.Next to list2
+    - return dummy.Next
 ***/
 
 func MergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
