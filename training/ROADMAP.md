@@ -54,7 +54,7 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 6. `H` Sliding Window Maximum [leetcode](https://leetcode.com/problems/sliding-window-maximum/) - [solution](https://www.youtube.com/watch?v=DfljaUwZsOk)
 
 ## 6. Linked List (3/9)
-1. ❌25'`E` Reverse Linked List [leetcode](https://leetcode.com/problems/reverse-linked-list/) - [solution](https://www.youtube.com/watch?v=G0_I-ZF0S38)
+1. ❌✅15'`E` Reverse Linked List [leetcode](https://leetcode.com/problems/reverse-linked-list/) - [solution](https://www.youtube.com/watch?v=G0_I-ZF0S38)
 2. ❌30'`E` Merge Two Sorted Lists [leetcode](https://leetcode.com/problems/merge-two-sorted-lists/) - [solution](https://www.youtube.com/watch?v=XIdigk956u0)
 3. ❌40'`M` Reorder List [leetcode](https://leetcode.com/problems/reorder-list/) - [solution](https://www.youtube.com/watch?v=S5bfdUTrKLM)
 4. `M` Remove Nth Node From End of List [leetcode](https://leetcode.com/problems/remove-nth-node-from-end-of-list/) - [solution](https://www.youtube.com/watch?v=XVuQxVej6y8)
