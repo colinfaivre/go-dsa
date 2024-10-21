@@ -24,3 +24,38 @@ The number of nodes in the list is in the range [1, 5 * 104].
 
 /*** @SOLUTION https://www.youtube.com/watch?v=S5bfdUTrKLM
 ***/
+
+/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */
+func ReorderList(head *ListNode)  {
+    // find middle
+    slow, fast := head, head.Next
+    for fast != nil && fast.Next != nil {
+        slow = slow.Next
+        fast = fast.Next.Next
+    }
+    // reverse second half
+    second := slow.Next
+    var prev *ListNode = nil
+    slow.Next = nil
+    for second != nil {
+        tmp := second.Next
+        second.Next = prev
+        prev = second
+        second = tmp
+    }
+    // merge 2 halfs
+    first := head
+    second = prev
+    for second != nil {
+        tmp1, tmp2 := first.Next, second.Next
+        first.Next = second
+        second.Next = tmp1
+        first, second = tmp1, tmp2
+    }
+}
