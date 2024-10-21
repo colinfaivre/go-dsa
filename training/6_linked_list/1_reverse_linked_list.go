@@ -27,10 +27,10 @@ Iterative T:O(n) S:O(1) solution:
 - declare prev as a pointer to a ListNode
 - set curr at head
 - loop while curr exists:
-    - set next to curr.Next
+    - set temp to curr.Next
     - set curr.Next to prev
     - set prev to curr
-    - set curr to next
+    - set curr to temp
 - return prev
 ***/
 
@@ -46,10 +46,10 @@ func IterativeReverseList(head *ListNode) *ListNode {
     curr := head
 
     for curr != nil {
-        next := curr.Next
+        temp := curr.Next
         curr.Next = prev
         prev = curr
-        curr = next
+        curr = temp
     }
 
     return prev
