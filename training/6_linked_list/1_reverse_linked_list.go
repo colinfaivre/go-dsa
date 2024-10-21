@@ -24,23 +24,16 @@ The number of nodes in the list is the range [0, 5000].
 
 /*** @SOLUTION https://www.youtube.com/watch?v=G0_I-ZF0S38
 Iterative T:O(n) S:O(1) solution:
-- declare prev as a pointer to a ListNode
-- set curr at head
-- loop while curr exists:
-    - set temp to curr.Next
-    - set curr.Next to prev
-    - set prev to curr
-    - set curr to temp
+- declare res as a pointer to a ListNode
+- set pointer at head
+- loop while pointer exists:
+    - set temp to pointer.Next
+    - set pointer.Next to res
+    - set res to pointer
+    - set pointer to temp
 - return prev
 ***/
 
-/**
- * Definition for singly-linked list.
- * type ListNode struct {
- *     Val int
- *     Next *ListNode
- * }
- */
 /**
  * Definition for singly-linked list.
  * type ListNode struct {
