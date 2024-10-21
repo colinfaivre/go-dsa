@@ -41,16 +41,23 @@ Iterative T:O(n) S:O(1) solution:
  *     Next *ListNode
  * }
  */
-func IterativeReverseList(head *ListNode) *ListNode {
-    var prev *ListNode
-    curr := head
+/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */
+func ReverseList(head *ListNode) *ListNode {
+    var res *ListNode
+    pointer := head
 
-    for curr != nil {
-        temp := curr.Next
-        curr.Next = prev
-        prev = curr
-        curr = temp
+    for pointer != nil {
+        temp := pointer.Next
+        pointer.Next = res
+        res = pointer
+        pointer = temp
     }
 
-    return prev
+    return res
 }
