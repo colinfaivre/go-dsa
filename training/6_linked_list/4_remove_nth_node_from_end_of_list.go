@@ -26,3 +26,34 @@ The number of nodes in the list is sz.
 
 /*** @SOLUTION https://www.youtube.com/watch?v=XVuQxVej6y8
 ***/
+
+/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */
+func removeNthFromEnd(head *ListNode, n int) *ListNode {
+    listLength := 0
+    countPointer := head
+    for countPointer != nil {
+        listLength++
+        countPointer = countPointer.Next
+    }
+    toRemove := listLength - n
+
+    if toRemove > 0 {
+        pointer := head
+        for i := 0; i < toRemove - 1; i++ {
+            pointer = pointer.Next
+        }
+        pointer.Next = pointer.Next.Next
+    } else if listLength == 1 && n == 1{
+        head = nil
+    } else if listLength == n {
+        head = head.Next
+    }
+
+    return head
+}
