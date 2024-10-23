@@ -37,6 +37,20 @@ Node.random is null or is pointing to some node in the linked list.
 ***/
 
 /*** @SOLUTION https://www.youtube.com/watch?v=5Y2EiZST97Y
+O(n) Solution - Hashmap and 2 passes:
+- init a oldToNew hashmap mapping from old node pointers to new node pointers
+- init curr as head
+- loop while curr exists:
+    - init copy as a node containing the curr value
+    - add curr to the hashmap and map it to copy
+    - update curr to curr.Next
+- set curr to head
+- loop while curr exists:
+    - init copy as oldToNew[curr]
+    - set copy.Next to oldToNew[curr.Next]
+    - set copy.Random to oldToNew[curr.Random]
+    - update curr to curr.Next
+- return oldToNew[head]
 ***/
 
 /**
@@ -47,7 +61,6 @@ Node.random is null or is pointing to some node in the linked list.
  *     Random *Node
  * }
  */
-
 func CopyRandomList(head *Node) *Node {
     oldToNew := map[*Node]*Node{}
     curr := head
