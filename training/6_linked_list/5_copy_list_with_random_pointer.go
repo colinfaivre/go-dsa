@@ -38,3 +38,34 @@ Node.random is null or is pointing to some node in the linked list.
 
 /*** @SOLUTION https://www.youtube.com/watch?v=5Y2EiZST97Y
 ***/
+
+/**
+ * Definition for a Node.
+ * type Node struct {
+ *     Val int
+ *     Next *Node
+ *     Random *Node
+ * }
+ */
+
+func CopyRandomList(head *Node) *Node {
+    oldToNew := map[*Node]*Node{}
+    curr := head
+
+    for curr != nil {
+        copy := &Node{Val: curr.Val}
+        oldToNew[curr] = copy
+        curr = curr.Next
+    }
+
+    curr = head
+
+    for curr != nil {
+        copy := oldToNew[curr]
+        copy.Next = oldToNew[curr.Next]
+        copy.Random = oldToNew[curr.Random]
+        curr = curr.Next
+    }
+
+    return oldToNew[head]
+}
