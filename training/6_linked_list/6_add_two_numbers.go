@@ -29,3 +29,51 @@ It is guaranteed that the list represents a number that does not have leading ze
 
 /*** @SOLUTION https://www.youtube.com/watch?v=wgFPrzTjm7s
 ***/
+
+/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */
+func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
+    dummy := &ListNode{}
+    curr := dummy
+    mem := 0
+
+    for l1 != nil || l2 != nil {
+        curr.Next = &ListNode{}
+        curr = curr.Next
+
+        var sum int
+        if l1 == nil {
+            sum = l2.Val + mem
+        } else if l2 == nil {
+            sum = l1.Val + mem
+        } else {
+            sum = l1.Val + l2.Val + mem
+        }
+
+        if sum < 10 {
+            curr.Val = sum
+            mem = 0
+        } else {
+            curr.Val = sum - 10
+            mem = 1
+        }
+
+        if l1 != nil {
+            l1 = l1.Next
+        }
+        if l2 != nil {
+            l2 = l2.Next
+        }
+    }
+
+    if mem == 1 {
+        curr.Next = &ListNode{Val: 1}
+    }
+
+    return dummy.Next
+}
