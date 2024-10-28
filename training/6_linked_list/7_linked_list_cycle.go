@@ -31,4 +31,40 @@ pos is -1 or a valid index in the linked-list.
 ***/
 
 /*** @SOLUTION https://www.youtube.com/watch?v=gBTe7lFR3vc
+O(n) solution - HashSet:
+- init hashSet to store visited ListNode pointers
+- loop while head exists:
+  - if hashSet[head] exists return true
+  - else add head to hashSet
+  - update head to head.Next
+- return false
+
+O(1) solution - Two pointers:
+- init slow and fast to head
+- loop while fast and fast.Next exist:
+  - set slow to slow.Next
+  - set fast to fast.Next.Next
+  if slow equals fast return true
+- return false
 ***/
+
+/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */
+func HasCycle(head *ListNode) bool {
+    hashSet := map[*ListNode]bool{}
+    for head != nil {
+        if hashSet[head] {
+            return true
+        } else {
+            hashSet[head] = true
+        }
+        head = head.Next
+    }
+
+    return false
+}
