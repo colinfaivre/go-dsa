@@ -38,3 +38,57 @@ At most 2 * 10^5 calls will be made to get and put.
 
 /*** @SOLUTION https://www.youtube.com/watch?v=7ABFKPK2hD4
 ***/
+
+type Node struct {
+    key  int
+    val  int
+    prev *Node
+    next *Node
+}
+type LRUCache struct {
+    cap   int
+    cache map[int]*Node
+    left  *Node
+    right *Node
+}
+
+func Constructor(capacity int) LRUCache {
+    res := LRUCache{ cap: capacity, right: &Node{}, left: &Node{}, cache: map[int]*Node{} }
+    res.left.next = res.right
+    res.right.prev = res.left
+    return res
+}
+
+func (lru *LRUCache) remove(node *Node) {
+    prev, next := node.prev, node.next
+    prev.next, next.prev = next, prev
+}
+
+func (lru *LRUCache) insert(node *Node) {
+    prev, next := lru.right.prev, lru.right
+    prev.next = node
+    next.prev = node
+    node.next, node.prev = next, prev
+}
+
+func (lru *LRUCache) Get(key int) int {
+    if _, ok := lru.cache[key]; ok {
+        lru.remove(lru.cache[key])
+        lru.insert(lru.cache[key])
+        return lru.cache[key].val 
+    }
+    return -1
+}
+
+func (lru *LRUCache) Put(key int, value int) {
+    if _, ok := lru.cache[key]; ok {
+        lru.remove(lru.cache[key])
+    }
+    lru.cache[key] = &Node{key: key, val: value}
+    lru.insert(lru.cache[key])
+    if len(lru.cache) > lru.cap {
+        LRU := lru.left.next
+        lru.remove(LRU)
+        delete(lru.cache, LRU.key)
+    }
+}
