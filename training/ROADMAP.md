@@ -1,4 +1,4 @@
-# 🗺️ Roadmap (35/64) 55%
+# 🗺️ Roadmap (36/64) 56%
 subset of [neetcode roadmap](https://neetcode.io/roadmap)
 
 > - `E`: easy
@@ -53,7 +53,7 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 5. `H` Minimum Window Substring [leetcode](https://leetcode.com/problems/minimum-window-substring/) - [solution](https://www.youtube.com/watch?v=jSto0O4AJbM)
 6. `H` Sliding Window Maximum [leetcode](https://leetcode.com/problems/sliding-window-maximum/) - [solution](https://www.youtube.com/watch?v=DfljaUwZsOk)
 
-## 6. Linked List (7/8)
+## 6. Linked List (8/8)
 1. ❌✅✅10'`E` Reverse Linked List [leetcode](https://leetcode.com/problems/reverse-linked-list/) - [solution](https://www.youtube.com/watch?v=G0_I-ZF0S38)
 2. ❌✅15'`E` Merge Two Sorted Lists [leetcode](https://leetcode.com/problems/merge-two-sorted-lists/) - [solution](https://www.youtube.com/watch?v=XIdigk956u0)
 3. ❌40'`M` Reorder List [leetcode](https://leetcode.com/problems/reorder-list/) - [solution](https://www.youtube.com/watch?v=S5bfdUTrKLM)
@@ -62,7 +62,7 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 6. ✅45'`M` Add Two Numbers [leetcode](https://leetcode.com/problems/add-two-numbers/) - [solution](https://www.youtube.com/watch?v=wgFPrzTjm7s)
 7. ✅5'`E` Linked List Cycle [leetcode](https://leetcode.com/problems/linked-list-cycle/) - [solution](https://www.youtube.com/watch?v=gBTe7lFR3vc)
 8. `H` Find The Duplicate Number [leetcode](https://leetcode.com/problems/find-the-duplicate-number/) - [solution](https://www.youtube.com/watch?v=wjYnzkAhcNk)
-9. `M` LRU Cache [leetcode](https://leetcode.com/problems/lru-cache/) - [solution](https://www.youtube.com/watch?v=7ABFKPK2hD4)
+9. ❌0'`M` LRU Cache [leetcode](https://leetcode.com/problems/lru-cache/) - [solution](https://www.youtube.com/watch?v=7ABFKPK2hD4)
 10. `H` Merge K Sorted Lists [leetcode](https://leetcode.com/problems/merge-k-sorted-lists/) - [solution](https://www.youtube.com/watch?v=q5a5OiGbT6Q)
 11. `H` Reverse Nodes In K Group [leetcode](https://leetcode.com/problems/reverse-nodes-in-k-group/) - [solution](https://www.youtube.com/watch?v=1UOPsfP85V4)
 
