@@ -1,4 +1,4 @@
-# 🗺️ Roadmap (36/64) 56%
+# 🗺️ Roadmap (37/64) 57%
 subset of [neetcode roadmap](https://neetcode.io/roadmap)
 
 > - `E`: easy
@@ -66,8 +66,8 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 10. `H` Merge K Sorted Lists [leetcode](https://leetcode.com/problems/merge-k-sorted-lists/) - [solution](https://www.youtube.com/watch?v=q5a5OiGbT6Q)
 11. `H` Reverse Nodes In K Group [leetcode](https://leetcode.com/problems/reverse-nodes-in-k-group/) - [solution](https://www.youtube.com/watch?v=1UOPsfP85V4)
 
-## 7. Trees (0/13)
-1. `E` Invert Binary Tree [leetcode](https://leetcode.com/problems/invert-binary-tree/) - [solution](https://www.youtube.com/watch?v=OnSn2XEQ4MY)
+## 7. Trees (1/13)
+1. ✅20'`E` Invert Binary Tree [leetcode](https://leetcode.com/problems/invert-binary-tree/) - [solution](https://www.youtube.com/watch?v=OnSn2XEQ4MY)
 2. `E` Maximum Depth of Binary Tree [leetcode](https://leetcode.com/problems/maximum-depth-of-binary-tree/) - [solution](https://www.youtube.com/watch?v=hTM3phVI6YQ)
 3. `E` Diameter of Binary Tree [leetcode](https://leetcode.com/problems/diameter-of-binary-tree/) - [solution](https://www.youtube.com/watch?v=bkxqA8Rfv04)
 4. `E` Balanced Binary Tree [leetcode](https://leetcode.com/problems/balanced-binary-tree/) - [solution](https://www.youtube.com/watch?v=QfJsau0ItOY)
