@@ -68,7 +68,7 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 
 ## 7. Trees (1/13)
 1. ✅20'`E` Invert Binary Tree [leetcode](https://leetcode.com/problems/invert-binary-tree/) - [solution](https://www.youtube.com/watch?v=OnSn2XEQ4MY)
-2. `E` Maximum Depth of Binary Tree [leetcode](https://leetcode.com/problems/maximum-depth-of-binary-tree/) - [solution](https://www.youtube.com/watch?v=hTM3phVI6YQ)
+2. ❌25'`E` Maximum Depth of Binary Tree [leetcode](https://leetcode.com/problems/maximum-depth-of-binary-tree/) - [solution](https://www.youtube.com/watch?v=hTM3phVI6YQ)
 3. `E` Diameter of Binary Tree [leetcode](https://leetcode.com/problems/diameter-of-binary-tree/) - [solution](https://www.youtube.com/watch?v=bkxqA8Rfv04)
 4. `E` Balanced Binary Tree [leetcode](https://leetcode.com/problems/balanced-binary-tree/) - [solution](https://www.youtube.com/watch?v=QfJsau0ItOY)
 5. `E` Same Tree [leetcode](https://leetcode.com/problems/same-tree/) - [solution](https://www.youtube.com/watch?v=vRbbcKXCxOw)
