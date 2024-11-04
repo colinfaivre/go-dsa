@@ -21,3 +21,16 @@ The number of nodes in the tree is in the range [0, 10^4].
 
 /*** @SOLUTION https://www.youtube.com/watch?v=hTM3phVI6YQ
 ***/
+
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+func maxDepth(root *TreeNode) int {
+    if root == nil { return 0 }
+    return 1 + max(maxDepth(root.Left), maxDepth(root.Right))
+}
