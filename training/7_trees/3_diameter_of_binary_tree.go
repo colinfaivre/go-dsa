@@ -24,3 +24,31 @@ The number of nodes in the tree is in the range [1, 10^4].
 
 /*** @SOLUTION https://www.youtube.com/watch?v=bkxqA8Rfv04
 ***/
+
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+func diameterOfBinaryTree(root *TreeNode) int {
+    if root == nil {
+        return 0
+    }
+    currDiam := depth(root.Left) + depth(root.Right)
+    leftDiam := diameterOfBinaryTree(root.Left)
+    rightDiam := diameterOfBinaryTree(root.Right)
+    return max(currDiam, leftDiam, rightDiam)
+}
+
+func depth(root *TreeNode) int {
+    if root == nil {
+        return 0
+    }
+    depthLeft := depth(root.Left)
+    depthRight := depth(root.Right)
+
+    return 1 + max(depthLeft, depthRight)
+}
