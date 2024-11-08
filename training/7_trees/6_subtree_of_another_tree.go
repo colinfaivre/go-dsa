@@ -25,3 +25,32 @@ The number of nodes in the subRoot tree is in the range [1, 1000].
 
 /*** @SOLUTION https://www.youtube.com/watch?v=E36O5SWp-LE
 ***/
+
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+func isSubtree(root *TreeNode, subRoot *TreeNode) bool {
+    if root == nil { return false }
+
+    isSame := isSameTree(root, subRoot)
+    isSameLeft := isSameTree(root.Left, subRoot)
+    isSameRight := isSameTree(root.Right, subRoot)
+    isSubLeft := isSubtree(root.Left, subRoot)
+    isSubRight := isSubtree(root.Right, subRoot)
+    return isSameLeft || isSameRight || isSubLeft || isSubRight || isSame
+}
+
+func isSameTree(p *TreeNode, q *TreeNode) bool {
+    if p == nil && q == nil { return true }
+    if p == nil || q == nil { return false }
+    if p.Val != q.Val { return false }
+
+    isSameLeft := isSameTree(p.Left, q.Left)
+    isSameRight := isSameTree(p.Right, q.Right)
+    return isSameLeft && isSameRight
+}
