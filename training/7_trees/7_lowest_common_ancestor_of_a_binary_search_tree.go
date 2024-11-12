@@ -32,3 +32,48 @@ p and q will exist in the BST.
 
 /*** @SOLUTION https://www.youtube.com/watch?v=gs2LMfuOR9ks
 ***/
+
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val   int
+ *     Left  *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+
+func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
+    if root == nil || !isSubtree(root, p) || !isSubtree(root, q) { return nil }
+
+    lowestLeft := lowestCommonAncestor(root.Left, p, q)
+    lowestRight := lowestCommonAncestor(root.Right, p, q)
+
+    if lowestLeft != nil {
+        return lowestLeft
+    } else if lowestRight != nil {
+        return lowestRight
+    } else {
+        return root
+    }
+}
+
+func isSubtree(root *TreeNode, subRoot *TreeNode) bool {
+    if root == nil { return false }
+
+    isSame := isSameTree(root, subRoot)
+    isSameLeft := isSameTree(root.Left, subRoot)
+    isSameRight := isSameTree(root.Right, subRoot)
+    isSubLeft := isSubtree(root.Left, subRoot)
+    isSubRight := isSubtree(root.Right, subRoot)
+    return isSameLeft || isSameRight || isSubLeft || isSubRight || isSame
+}
+
+func isSameTree(p *TreeNode, q *TreeNode) bool {
+    if p == nil && q == nil { return true }
+    if p == nil || q == nil { return false }
+    if p.Val != q.Val { return false }
+
+    isSameLeft := isSameTree(p.Left, q.Left)
+    isSameRight := isSameTree(p.Right, q.Right)
+    return isSameLeft && isSameRight
+}
