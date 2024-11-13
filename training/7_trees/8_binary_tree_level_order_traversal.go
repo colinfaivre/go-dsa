@@ -25,3 +25,35 @@ The number of nodes in the tree is in the range [0, 2000].
 
 /*** @SOLUTION https://www.youtube.com/watch?v=6ZnyEApgFYg
 ***/
+
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+func levelOrder(root *TreeNode) [][]int {
+    if root == nil {
+        return [][]int{}
+    }
+    var result [][]int
+    queue := []*TreeNode{root}
+
+    for len(queue) > 0 {
+        levelSize := len(queue)
+        var level []int
+        for i := 0; i < levelSize; i++ {
+            node := queue[0]
+            queue = queue[1:]
+            level = append(level, node.Val)
+            
+            if node.Left != nil { queue = append(queue, node.Left) }
+            if node.Right != nil { queue = append(queue, node.Right) }
+        }
+        result = append(result, level)
+    }
+
+    return result
+}
