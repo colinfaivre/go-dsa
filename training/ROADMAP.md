@@ -1,4 +1,4 @@
-# 🗺️ Roadmap (43/64) 67%
+# 🗺️ Roadmap (44/64) 69%
 subset of [neetcode roadmap](https://neetcode.io/roadmap)
 
 > - `E`: easy
@@ -66,7 +66,7 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 10. `H` Merge K Sorted Lists [leetcode](https://leetcode.com/problems/merge-k-sorted-lists/) - [solution](https://www.youtube.com/watch?v=q5a5OiGbT6Q)
 11. `H` Reverse Nodes In K Group [leetcode](https://leetcode.com/problems/reverse-nodes-in-k-group/) - [solution](https://www.youtube.com/watch?v=1UOPsfP85V4)
 
-## 7. Trees (7/13)
+## 7. Trees (8/13)
 1. ✅20'`E` Invert Binary Tree [leetcode](https://leetcode.com/problems/invert-binary-tree/) - [solution](https://www.youtube.com/watch?v=OnSn2XEQ4MY)
 2. ❌25'`E` Maximum Depth of Binary Tree [leetcode](https://leetcode.com/problems/maximum-depth-of-binary-tree/) - [solution](https://www.youtube.com/watch?v=hTM3phVI6YQ)
 3. ✅25'`E` Diameter of Binary Tree [leetcode](https://leetcode.com/problems/diameter-of-binary-tree/) - [solution](https://www.youtube.com/watch?v=bkxqA8Rfv04)
@@ -74,7 +74,7 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 5. ✅30'`E` Same Tree [leetcode](https://leetcode.com/problems/same-tree/) - [solution](https://www.youtube.com/watch?v=vRbbcKXCxOw)
 6. ✅40'`E` Subtree of Another Tree [leetcode](https://leetcode.com/problems/subtree-of-another-tree/) - [solution](https://www.youtube.com/watch?v=E36O5SWp-LE)
 7. ✅50'`M` Lowest Common Ancestor of a Binary Search Tree [leetcode](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/) - [solution](https://www.youtube.com/watch?v=gs2LMfuOR9ks)
-8. `M` Binary Tree Level Order Traversal [leetcode](https://leetcode.com/problems/binary-tree-level-order-traversal/) - [solution](https://www.youtube.com/watch?v=6ZnyEApgFYg)
+8. ❌60'`M` Binary Tree Level Order Traversal [leetcode](https://leetcode.com/problems/binary-tree-level-order-traversal/) - [solution](https://www.youtube.com/watch?v=6ZnyEApgFYg)
 9. `M` Binary Tree Right Side View [leetcode](https://leetcode.com/problems/binary-tree-right-side-view/) - [solution](https://www.youtube.com/watch?v=d4zLyf32e3I)
 10. `M` Count Good Nodes In Binary Tree [leetcode](https://leetcode.com/problems/count-good-nodes-in-binary-tree/) - [solution](https://www.youtube.com/watch?v=7cp5imvDzl4)
 11. `M` Validate Binary Search Tree [leetcode](https://leetcode.com/problems/validate-binary-search-tree/) - [solution](https://www.youtube.com/watch?v=s6ATEkipzow)
