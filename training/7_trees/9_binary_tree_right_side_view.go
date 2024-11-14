@@ -23,5 +23,43 @@ The number of nodes in the tree is in the range [0, 100].
 -100 <= Node.val <= 100
 ***/
 
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+func rightSideView(root *TreeNode) []int {
+    if root == nil { return []int{} }
+    var res []int
+    queue := []*TreeNode{root}
+
+    for len(queue) > 0 {
+        levelSize := len(queue)
+        var level []int
+
+        for i := 0; i < levelSize; i++ {
+            // dequeue node
+            node := queue[0]
+            queue = queue[1:]
+            level = append(level, node.Val)
+            if node.Left != nil {
+                // enqueue node.Left
+                queue = append(queue, node.Left)
+            }
+            if node.Right != nil {
+                // enqueue node.Right
+                queue = append(queue, node.Right)
+            }
+        }
+
+        res = append(res, level[len(level) - 1])
+    }
+
+    return res
+}
+
 /*** @SOLUTION https://www.youtube.com/watch?v=d4zLyf32e3I
 ***/
