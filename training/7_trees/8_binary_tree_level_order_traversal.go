@@ -35,9 +35,7 @@ The number of nodes in the tree is in the range [0, 2000].
  * }
  */
 func levelOrder(root *TreeNode) [][]int {
-    if root == nil {
-        return [][]int{}
-    }
+    if root == nil { return [][]int{} }
     var result [][]int
     queue := []*TreeNode{root}
 
@@ -45,12 +43,13 @@ func levelOrder(root *TreeNode) [][]int {
         levelSize := len(queue)
         var level []int
         for i := 0; i < levelSize; i++ {
+            // dequeue node to append it to level
             node := queue[0]
             queue = queue[1:]
             level = append(level, node.Val)
             
-            if node.Left != nil { queue = append(queue, node.Left) }
-            if node.Right != nil { queue = append(queue, node.Right) }
+            if node.Left != nil { queue = append(queue, node.Left) } // enqueue node.Left
+            if node.Right != nil { queue = append(queue, node.Right) } // enqueue node.Right
         }
         result = append(result, level)
     }
