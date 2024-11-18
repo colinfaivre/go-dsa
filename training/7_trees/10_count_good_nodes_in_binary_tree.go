@@ -32,3 +32,31 @@ Each node's value is between [-10^4, 10^4].
 
 /*** @SOLUTION https://www.youtube.com/watch?v=7cp5imvDzl4
 ***/
+
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+func goodNodes(root *TreeNode) int {
+    return countGoodNodes(root, root.Val)
+}
+
+func countGoodNodes(root *TreeNode, currMax int) int {
+    if root == nil { return 0 }
+
+    var res int
+    if root.Val >= currMax {
+        res = 1
+    } else {
+        res = 0
+    }
+    currMax = max(currMax, root.Val)
+    res += countGoodNodes(root.Left, currMax)
+    res += countGoodNodes(root.Right, currMax)
+
+    return res
+}
