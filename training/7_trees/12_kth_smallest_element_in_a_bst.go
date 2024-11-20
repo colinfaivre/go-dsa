@@ -22,3 +22,24 @@ The number of nodes in the tree is n.
 
 /*** @SOLUTION https://www.youtube.com/watch?v=5LUXSvjmGCw
 ***/
+
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+func kthSmallest(root *TreeNode, k int) int {
+    var values []int
+    inOrderTraverse(root, &values)
+    return values[k-1]
+}
+
+func inOrderTraverse(root *TreeNode, values *[]int) {
+    if root == nil { return }
+    inOrderTraverse(root.Left, values)
+    *values = append(*values, root.Val)
+    inOrderTraverse(root.Right, values)
+}
