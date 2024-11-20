@@ -1,4 +1,4 @@
-# 🗺️ Roadmap (47/64) 73%
+# 🗺️ Roadmap (48/64) 75%
 subset of [neetcode roadmap](https://neetcode.io/roadmap)
 
 > - `E`: easy
@@ -66,7 +66,7 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 10. `H` Merge K Sorted Lists [leetcode](https://leetcode.com/problems/merge-k-sorted-lists/) - [solution](https://www.youtube.com/watch?v=q5a5OiGbT6Q)
 11. `H` Reverse Nodes In K Group [leetcode](https://leetcode.com/problems/reverse-nodes-in-k-group/) - [solution](https://www.youtube.com/watch?v=1UOPsfP85V4)
 
-## 7. Trees (11/13)
+## 7. Trees (12/13)
 1. ✅20'`E` Invert Binary Tree [leetcode](https://leetcode.com/problems/invert-binary-tree/) - [solution](https://www.youtube.com/watch?v=OnSn2XEQ4MY)
 2. ❌25'`E` Maximum Depth of Binary Tree [leetcode](https://leetcode.com/problems/maximum-depth-of-binary-tree/) - [solution](https://www.youtube.com/watch?v=hTM3phVI6YQ)
 3. ✅25'`E` Diameter of Binary Tree [leetcode](https://leetcode.com/problems/diameter-of-binary-tree/) - [solution](https://www.youtube.com/watch?v=bkxqA8Rfv04)
@@ -78,7 +78,7 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 9. ✅35'`M` Binary Tree Right Side View [leetcode](https://leetcode.com/problems/binary-tree-right-side-view/) - [solution](https://www.youtube.com/watch?v=d4zLyf32e3I)
 10. ❌35'`M` Count Good Nodes In Binary Tree [leetcode](https://leetcode.com/problems/count-good-nodes-in-binary-tree/) - [solution](https://www.youtube.com/watch?v=7cp5imvDzl4)
 11. ❌40'`M` Validate Binary Search Tree [leetcode](https://leetcode.com/problems/validate-binary-search-tree/) - [solution](https://www.youtube.com/watch?v=s6ATEkipzow)
-12. `M` Kth Smallest Element In a Bst [leetcode](https://leetcode.com/problems/kth-smallest-element-in-a-bst/) - [solution](https://www.youtube.com/watch?v=5LUXSvjmGCw)
+12. ✅15'`M` Kth Smallest Element In a Bst [leetcode](https://leetcode.com/problems/kth-smallest-element-in-a-bst/) - [solution](https://www.youtube.com/watch?v=5LUXSvjmGCw)
 13. `M` Construct Binary Tree From Preorder And Inorder Traversal [leetcode](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/) - [solution](https://www.youtube.com/watch?v=ihj4IQGZ2zc)
 14. `H` Binary Tree Maximum Path Sum [leetcode](https://leetcode.com/problems/binary-tree-maximum-path-sum/) - [solution](https://www.youtube.com/watch?v=Hr5cWUld4vU)
 15. `H` Serialize And Deserialize Binary Tree [leetcode](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/) - [solution](https://www.youtube.com/watch?v=u4JAi2JJhI8)
