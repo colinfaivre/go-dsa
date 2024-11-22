@@ -34,3 +34,47 @@ It is guaranteed that there will be at least k elements in the array when you se
 
 /*** @SOLUTION https://www.youtube.com/watch?v=hOjcdrqMoQ8
 ***/
+
+import "container/heap"
+
+type MinHeap []int
+func (h MinHeap) Len() int           { return len(h) }
+func (h MinHeap) Less(i, j int) bool { return h[i] < h[j] }
+func (h MinHeap) Swap(i, j int)      { h[i], h[j] = h[j], h[i] }
+
+func (h *MinHeap) Push(x interface{}) { 
+	*h = append(*h, x.(int))
+}
+
+func (h *MinHeap) Pop() interface{} {
+	old := *h
+	n := len(old)
+	x := old[n-1]
+	*h = old[:n-1]
+	return x
+}
+
+type KthLargest struct {
+	minHeap MinHeap
+	k       int
+}
+
+func Constructor(k int, nums []int) KthLargest {
+	kl := KthLargest{
+		minHeap: MinHeap{},
+		k:       k,
+	}
+	heap.Init(&kl.minHeap)
+	for _, num := range nums {
+		kl.Add(num)
+	}
+	return kl
+}
+
+func (kl *KthLargest) Add(val int) int {
+	heap.Push(&kl.minHeap, val)
+	if kl.minHeap.Len() > kl.k {
+		heap.Pop(&kl.minHeap) // Remove the smallest element to maintain size k
+	}
+	return kl.minHeap[0] // Return the kth largest element
+}
