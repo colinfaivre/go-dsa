@@ -29,3 +29,58 @@ Constraints:
 
 /*** @SOLUTION https://www.youtube.com/watch?v=rI2EBUEMfTk
 ***/
+
+import (
+	"container/heap"
+)
+
+type Point struct {
+	coords   []int
+	distance int
+}
+
+// Creates a new Point with calculated distance from origin
+func New(coords []int) Point {
+	xSquared := coords[0] * coords[0]
+	ySquared := coords[1] * coords[1]
+
+	return Point{
+		coords:   coords,
+		distance: xSquared + ySquared,
+	}
+}
+
+// MinHeap is a custom heap type for Points
+type MinHeap []Point
+func (h MinHeap) Len() int           { return len(h) }
+func (h MinHeap) Less(i, j int) bool { return h[i].distance < h[j].distance }
+func (h MinHeap) Swap(i, j int)      { h[i], h[j] = h[j], h[i] }
+func (h *MinHeap) Push(x interface{}) { *h = append(*h, x.(Point)) }
+func (h *MinHeap) Pop() interface{} {
+	old := *h
+	n := len(old)
+	x := old[n-1]
+	*h = old[:n-1]
+	return x
+}
+
+func kClosest(points [][]int, k int) [][]int {
+	// Create a MinHeap and initialize it
+	pointMinHeap := &MinHeap{}
+	heap.Init(pointMinHeap)
+
+	// Populate the heap
+	for _, val := range points {
+		heap.Push(pointMinHeap, New(val))
+	}
+
+	// Extract k closest points
+	res := [][]int{}
+	for i := 0; i < k; i++ {
+		minPoint := heap.Pop(pointMinHeap).(Point).coords
+		res = append(res, minPoint)
+	}
+
+	return res
+}
+
