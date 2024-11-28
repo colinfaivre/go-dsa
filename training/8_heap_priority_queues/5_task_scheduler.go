@@ -38,3 +38,64 @@ tasks[i] is an uppercase English letter.
 
 /*** @SOLUTION https://www.youtube.com/watch?v=s8p8ukTyA2I
 ***/
+
+type MaxHeap []int
+
+func (h MaxHeap) Len() int            { return len(h) }
+func (h MaxHeap) Less(i, j int) bool  { return h[i] > h[j] }
+func (h MaxHeap) Swap(i, j int)       { h[i], h[j] = h[j], h[i] }
+func (h *MaxHeap) Push(x interface{}) { *h = append(*h, x.(int)) }
+func (h *MaxHeap) Pop() interface{} {
+	old := *h
+	n := len(old)
+	x := old[n-1]
+	*h = old[:n-1]
+	return x
+}
+
+func leastInterval(tasks []byte, n int) int {
+	// Step 1: Count task frequencies
+	tasksFreqs := map[byte]int{}
+	for _, val := range tasks {
+		tasksFreqs[val]++
+	}
+
+	// Step 2: Initialize a max-heap for task frequencies
+	maxFreqHeap := &MaxHeap{}
+	heap.Init(maxFreqHeap)
+	for _, freq := range tasksFreqs {
+		heap.Push(maxFreqHeap, freq)
+	}
+
+	time := 0
+	queue := []struct {
+		freq      int
+		readyTime int
+	}{}
+
+	// Step 3: Simulate the task execution
+	for maxFreqHeap.Len() > 0 || len(queue) > 0 {
+		time++
+
+		// Execute the most frequent task if available
+		if maxFreqHeap.Len() > 0 {
+			freq := heap.Pop(maxFreqHeap).(int)
+			freq--
+			if freq > 0 {
+				// Push the task into the cooldown queue
+				queue = append(queue, struct {
+					freq      int
+					readyTime int
+				}{freq: freq, readyTime: time + n})
+			}
+		}
+
+		// Check if any task in the cooldown queue is ready
+		if len(queue) > 0 && queue[0].readyTime == time {
+			heap.Push(maxFreqHeap, queue[0].freq)
+			queue = queue[1:] // Remove the task from the queue
+		}
+	}
+
+	return time
+}
