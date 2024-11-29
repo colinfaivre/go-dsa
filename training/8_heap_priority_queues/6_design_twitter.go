@@ -37,3 +37,92 @@ At most 3 * 10^4 calls will be made to postTweet, getNewsFeed, follow, and unfol
 
 /*** @SOLUTION https://www.youtube.com/watch?v=pNichitDD2E
 ***/
+
+type Tweet struct {
+	userId  int
+	tweetId int
+	time    int // Timestamp to maintain chronological order
+}
+
+type Twitter struct {
+	tweets      []Tweet                // Global tweet feed (chronological order)
+	userTweets  map[int][]Tweet        // User-specific tweets
+	followGraph map[int]map[int]struct{} // Followers and followees
+	time        int                    // Simulate timestamp
+}
+
+func Constructor() Twitter {
+	return Twitter{
+		tweets:      []Tweet{},
+		userTweets:  make(map[int][]Tweet),
+		followGraph: make(map[int]map[int]struct{}),
+		time:        0,
+	}
+}
+
+func (this *Twitter) PostTweet(userId int, tweetId int) {
+	this.time++
+	tweet := Tweet{userId: userId, tweetId: tweetId, time: this.time}
+	this.tweets = append(this.tweets, tweet)
+	this.userTweets[userId] = append(this.userTweets[userId], tweet)
+}
+
+func (this *Twitter) GetNewsFeed(userId int) []int {
+	// Use a max heap to efficiently get the top 10 recent tweets
+	h := &TweetHeap{}
+	heap.Init(h)
+
+	// Add user's tweets to the heap
+	for _, tweet := range this.userTweets[userId] {
+		heap.Push(h, tweet)
+	}
+
+	// Add followees' tweets to the heap
+	if followees, ok := this.followGraph[userId]; ok {
+		for followeeId := range followees {
+			for _, tweet := range this.userTweets[followeeId] {
+				heap.Push(h, tweet)
+			}
+		}
+	}
+
+	// Extract the 10 most recent tweets
+	var newsFeed []int
+	for i := 0; i < 10 && h.Len() > 0; i++ {
+		newsFeed = append(newsFeed, heap.Pop(h).(Tweet).tweetId)
+	}
+	return newsFeed
+}
+
+func (this *Twitter) Follow(followerId int, followeeId int) {
+	if _, ok := this.followGraph[followerId]; !ok {
+		this.followGraph[followerId] = make(map[int]struct{})
+	}
+	this.followGraph[followerId][followeeId] = struct{}{}
+}
+
+func (this *Twitter) Unfollow(followerId int, followeeId int) {
+	if _, ok := this.followGraph[followerId]; ok {
+		delete(this.followGraph[followerId], followeeId)
+	}
+}
+
+// TweetHeap is a max-heap for Tweets based on their timestamp
+type TweetHeap []Tweet
+
+func (h TweetHeap) Len() int           { return len(h) }
+func (h TweetHeap) Less(i, j int) bool { return h[i].time > h[j].time }
+func (h TweetHeap) Swap(i, j int)      { h[i], h[j] = h[j], h[i] }
+
+func (h *TweetHeap) Push(x interface{}) {
+	*h = append(*h, x.(Tweet))
+}
+
+func (h *TweetHeap) Pop() interface{} {
+	old := *h
+	n := len(old)
+	tweet := old[n-1]
+	*h = old[:n-1]
+	return tweet
+}
+
