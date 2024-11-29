@@ -1,4 +1,4 @@
-# 🗺️ Roadmap (54/64) 84%
+# 🗺️ Roadmap (55/64) 86%
 subset of [neetcode roadmap](https://neetcode.io/roadmap)
 
 > - `E`: easy
@@ -83,13 +83,13 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 14. `H` Binary Tree Maximum Path Sum [leetcode](https://leetcode.com/problems/binary-tree-maximum-path-sum/) - [solution](https://www.youtube.com/watch?v=Hr5cWUld4vU)
 15. `H` Serialize And Deserialize Binary Tree [leetcode](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/) - [solution](https://www.youtube.com/watch?v=u4JAi2JJhI8)
 
-## 8. Heap / Priority Queues (5/6)
+## 8. Heap / Priority Queues (6/6)
 1. ❌60'`E` Kth Largest Element In a Stream [leetcode](https://leetcode.com/problems/kth-largest-element-in-a-stream/) - [solution](https://www.youtube.com/watch?v=hOjcdrqMoQ8)
 2. ❌60'`E` Last Stone Weight [leetcode](https://leetcode.com/problems/last-stone-weight/) - [solution](https://www.youtube.com/watch?v=B-QCq79-Vfw&t=3s)
 3. ❌50'`M` K Closest Points to Origin [leetcode](https://leetcode.com/problems/k-closest-points-to-origin/) - [solution](https://www.youtube.com/watch?v=rI2EBUEMfTk)
 4. ❌20'`M` Kth Largest Element In An Array [leetcode](https://leetcode.com/problems/kth-largest-element-in-an-array/) - [solution](https://www.youtube.com/watch?v=XEmy13g1Qxc)
 5. ❌20'`M` Task Scheduler [leetcode](https://leetcode.com/problems/task-scheduler/) - [solution](https://www.youtube.com/watch?v=s8p8ukTyA2I)
-6. `M` Design Twitter [leetcode](https://leetcode.com/problems/design-twitter/) - [solution](https://www.youtube.com/watch?v=pNichitDD2E)
+6. ❌35'`M` Design Twitter [leetcode](https://leetcode.com/problems/design-twitter/) - [solution](https://www.youtube.com/watch?v=pNichitDD2E)
 7. `H` Find Median From Data Stream [leetcode](https://leetcode.com/problems/find-median-from-data-stream/) - [solution](https://www.youtube.com/watch?v=itmhHWaHupI)
 
 ## 9. Graphs (0/9)
