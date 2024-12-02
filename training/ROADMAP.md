@@ -1,4 +1,4 @@
-# 🗺️ Roadmap (55/64) 86%
+# 🗺️ Roadmap (56/64) 87%
 subset of [neetcode roadmap](https://neetcode.io/roadmap)
 
 > - `E`: easy
@@ -92,8 +92,8 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 6. ❌35'`M` Design Twitter [leetcode](https://leetcode.com/problems/design-twitter/) - [solution](https://www.youtube.com/watch?v=pNichitDD2E)
 7. `H` Find Median From Data Stream [leetcode](https://leetcode.com/problems/find-median-from-data-stream/) - [solution](https://www.youtube.com/watch?v=itmhHWaHupI)
 
-## 9. Graphs (0/9)
-1. `M` Number of Islands [leetcode](https://leetcode.com/problems/number-of-islands/) - [solution](https://www.youtube.com/watch?v=pV2kpPD66nE)
+## 9. Graphs (1/9)
+1. ❌55'`M` Number of Islands [leetcode](https://leetcode.com/problems/number-of-islands/) - [solution](https://www.youtube.com/watch?v=pV2kpPD66nE)
 2. `M` Max Area of Island [leetcode](https://leetcode.com/problems/max-area-of-island/) - [solution](https://www.youtube.com/watch?v=iJGr1OtmH0c)
 3. `M` Clone Graph [leetcode](https://leetcode.com/problems/clone-graph/) - [solution](https://www.youtube.com/watch?v=mQeF6bN8hMk)
 4. 🔒`M` Walls And Gates [leetcode](https://leetcode.com/problems/walls-and-gates/) - [solution](https://www.youtube.com/watch?v=e69C6xhiSQE)
