@@ -36,3 +36,33 @@ grid[i][j] is either 0 or 1.
 
 /*** @SOLUTION https://www.youtube.com/watch?v=iJGr1OtmH0c
 ***/
+
+func maxAreaOfIsland(grid [][]int) int {
+    rows, cols := len(grid), len(grid[0])
+    if rows == 0 || cols == 0 { return 0 }
+
+    var maxArea int
+    for r := 0; r < rows; r++ {
+        for c := 0; c < cols; c++ {
+            if grid[r][c] == 1 {
+                maxArea = max(maxArea, getMaxArea(grid, r, c))
+            }
+        }
+    }
+
+    return maxArea
+}
+
+func getMaxArea(grid [][]int, r, c int) int {
+    rows, cols := len(grid), len(grid[0])
+    if r < 0 || r >= rows || c < 0 || c >= cols || grid[r][c] == 0 { return 0 }
+
+    grid[r][c] = 0
+    maxDown := getMaxArea(grid, r+1, c)
+    maxUp := getMaxArea(grid, r-1, c)
+    maxLeft := getMaxArea(grid, r, c-1)
+    maxRight := getMaxArea(grid, r, c+1)
+
+    return 1 + maxDown + maxUp + maxLeft + maxRight
+}
+
