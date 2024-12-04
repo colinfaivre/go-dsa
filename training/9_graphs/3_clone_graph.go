@@ -49,3 +49,29 @@ The Graph is connected and all nodes can be visited starting from the given node
 
 /*** @SOLUTION https://www.youtube.com/watch?v=mQeF6bN8hMk
 ***/
+
+/**
+ * Definition for a Node.
+ * type Node struct {
+ *     Val int
+ *     Neighbors []*Node
+ * }
+ */
+
+func cloneGraph(node *Node) *Node {
+    oldToNew := make(map[*Node]*Node)
+    return dfs(node, oldToNew)
+}
+
+func dfs(node *Node, oldToNew map[*Node]*Node) *Node {
+    if node == nil { return nil }
+    if new, exists := oldToNew[node]; exists { return new }
+
+    copy := Node{ Val: node.Val }
+    oldToNew[node] = &copy
+
+    for _, n := range node.Neighbors {
+        copy.Neighbors = append(copy.Neighbors, dfs(n, oldToNew))
+    }
+    return &copy
+}
