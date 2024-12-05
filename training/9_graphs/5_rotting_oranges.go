@@ -34,3 +34,49 @@ grid[i][j] is 0, 1, or 2.
 
 /*** @SOLUTION https://www.youtube.com/watch?v=y704fEOx0s0
 ***/
+
+func orangesRotting(grid [][]int) int {
+    var queue [][2]int
+    var time, freshTotal int
+    ROWS, COLS := len(grid), len(grid[0])
+
+    // Count fresh oranges and initialize the queue with rotten oranges
+    for r := 0; r < ROWS; r++ {
+        for c := 0; c < COLS; c++ {
+            if grid[r][c] == 1 {
+                freshTotal++
+            } else if grid[r][c] == 2 {
+                queue = append(queue, [2]int{r, c})
+            }
+        }
+    }
+
+    if freshTotal == 0 {
+        return 0 // No fresh oranges to rot
+    }
+
+    var start int // Pointer to the front of the queue
+    for start < len(queue) && freshTotal > 0 {
+        size := len(queue)
+        for i := start; i < size; i++ {
+            r, c := queue[i][0], queue[i][1]
+            dirs := [][]int{{0, 1}, {0, -1}, {1, 0}, {-1, 0}}
+            for _, dir := range dirs {
+                row, col := r+dir[0], c+dir[1]
+                if row < 0 || row == ROWS || col < 0 || col == COLS || grid[row][col] != 1 {
+                    continue
+                }
+                grid[row][col] = 2
+                queue = append(queue, [2]int{row, col})
+                freshTotal--
+            }
+        }
+        time++
+        start = size // Advance the start pointer
+    }
+
+    if freshTotal == 0 {
+        return time
+    }
+    return -1 // Not all fresh oranges could be rotted
+}
