@@ -46,34 +46,35 @@ n == heights[r].length
 0 <= heights[r][c] <= 10^5
 ***/
 
-package main
+/*** @SOLUTION https://www.youtube.com/watch?v=s-VkcjHqkGI
+***/
 
 func pacificAtlantic(heights [][]int) [][]int {
-    if len(heights) == 0 {
+    ROWS, COLS := len(heights), len(heights[0])
+    if ROWS == 0 {
         return [][]int{}
     }
 
-    m, n := len(heights), len(heights[0])
-    pacific := make([][]bool, m)
-    atlantic := make([][]bool, m)
-    for i := 0; i < m; i++ {
-        pacific[i] = make([]bool, n)
-        atlantic[i] = make([]bool, n)
+    pacific := make([][]bool, ROWS)
+    atlantic := make([][]bool, ROWS)
+    for i := 0; i < ROWS; i++ {
+        pacific[i] = make([]bool, COLS)
+        atlantic[i] = make([]bool, COLS)
     }
 
     // Start DFS from Pacific and Atlantic borders
-    for i := 0; i < m; i++ {
-        dfs(i, 0, pacific, heights, m, n)       // Left edge (Pacific)
-        dfs(i, n-1, atlantic, heights, m, n)    // Right edge (Atlantic)
+    for i := 0; i < ROWS; i++ {
+        dfs(i, 0, pacific, heights)       // Left edge (Pacific)
+        dfs(i, COLS-1, atlantic, heights)    // Right edge (Atlantic)
     }
-    for j := 0; j < n; j++ {
-        dfs(0, j, pacific, heights, m, n)       // Top edge (Pacific)
-        dfs(m-1, j, atlantic, heights, m, n)    // Bottom edge (Atlantic)
+    for j := 0; j < COLS; j++ {
+        dfs(0, j, pacific, heights)       // Top edge (Pacific)
+        dfs(ROWS-1, j, atlantic, heights)    // Bottom edge (Atlantic)
     }
 
     result := [][]int{}
-    for i := 0; i < m; i++ {
-        for j := 0; j < n; j++ {
+    for i := 0; i < ROWS; i++ {
+        for j := 0; j < COLS; j++ {
             if pacific[i][j] && atlantic[i][j] {
                 result = append(result, []int{i, j})
             }
@@ -83,19 +84,15 @@ func pacificAtlantic(heights [][]int) [][]int {
     return result
 }
 
-// dfs is a standalone function that performs depth-first search
-func dfs(row, col int, ocean [][]bool, heights [][]int, m, n int) {
+func dfs(row, col int, ocean [][]bool, heights [][]int) {
+    ROWS, COLS := len(heights), len(heights[0])
     ocean[row][col] = true
     directions := [][]int{{0, 1}, {1, 0}, {0, -1}, {-1, 0}}
     for _, dir := range directions {
         newRow, newCol := row+dir[0], col+dir[1]
-        if newRow >= 0 && newRow < m && newCol >= 0 && newCol < n &&
+        if newRow >= 0 && newRow < ROWS && newCol >= 0 && newCol < COLS &&
             !ocean[newRow][newCol] && heights[newRow][newCol] >= heights[row][col] {
-            dfs(newRow, newCol, ocean, heights, m, n)
+            dfs(newRow, newCol, ocean, heights)
         }
     }
 }
-
-
-/*** @SOLUTION https://www.youtube.com/watch?v=s-VkcjHqkGI
-***/
