@@ -46,5 +46,56 @@ n == heights[r].length
 0 <= heights[r][c] <= 10^5
 ***/
 
+package main
+
+func pacificAtlantic(heights [][]int) [][]int {
+    if len(heights) == 0 {
+        return [][]int{}
+    }
+
+    m, n := len(heights), len(heights[0])
+    pacific := make([][]bool, m)
+    atlantic := make([][]bool, m)
+    for i := 0; i < m; i++ {
+        pacific[i] = make([]bool, n)
+        atlantic[i] = make([]bool, n)
+    }
+
+    // Start DFS from Pacific and Atlantic borders
+    for i := 0; i < m; i++ {
+        dfs(i, 0, pacific, heights, m, n)       // Left edge (Pacific)
+        dfs(i, n-1, atlantic, heights, m, n)    // Right edge (Atlantic)
+    }
+    for j := 0; j < n; j++ {
+        dfs(0, j, pacific, heights, m, n)       // Top edge (Pacific)
+        dfs(m-1, j, atlantic, heights, m, n)    // Bottom edge (Atlantic)
+    }
+
+    result := [][]int{}
+    for i := 0; i < m; i++ {
+        for j := 0; j < n; j++ {
+            if pacific[i][j] && atlantic[i][j] {
+                result = append(result, []int{i, j})
+            }
+        }
+    }
+
+    return result
+}
+
+// dfs is a standalone function that performs depth-first search
+func dfs(row, col int, ocean [][]bool, heights [][]int, m, n int) {
+    ocean[row][col] = true
+    directions := [][]int{{0, 1}, {1, 0}, {0, -1}, {-1, 0}}
+    for _, dir := range directions {
+        newRow, newCol := row+dir[0], col+dir[1]
+        if newRow >= 0 && newRow < m && newCol >= 0 && newCol < n &&
+            !ocean[newRow][newCol] && heights[newRow][newCol] >= heights[row][col] {
+            dfs(newRow, newCol, ocean, heights, m, n)
+        }
+    }
+}
+
+
 /*** @SOLUTION https://www.youtube.com/watch?v=s-VkcjHqkGI
 ***/
