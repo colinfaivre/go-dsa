@@ -31,3 +31,34 @@ All the pairs prerequisites[i] are unique.
 
 /*** @SOLUTION https://www.youtube.com/watch?v=EgI5nU9etnU
 ***/
+
+func canFinish(numCourses int, prerequisites [][]int) bool {
+    adjList := make(map[int] []int)
+    for _, pre := range prerequisites {
+        if _, exists := adjList[pre[0]]; !exists {
+            adjList[pre[0]] = []int{ pre[1] }
+        } else {
+            adjList[pre[0]] = append(adjList[pre[0]], pre[1])
+        }
+    }
+    visited := make(map[int] bool)
+    for c := 0; c < numCourses; c++ {
+        if !noCycle(c, visited, adjList) {
+            return false
+        }
+    }
+
+    return true
+}
+
+func noCycle(course int, visited map[int] bool, adjList map[int] []int) bool {
+    if visited[course] { return false }
+    if len(adjList[course]) == 0 { return true }
+    visited[course] = true
+    for _, pre := range adjList[course] {
+        if !noCycle(pre, visited, adjList) { return false }
+    }
+    delete(visited, course)
+    adjList[course] = []int{}
+    return true
+}
