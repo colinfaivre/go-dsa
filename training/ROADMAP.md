@@ -1,4 +1,4 @@
-# 🗺️ Roadmap (61/64) 95%
+# 🗺️ Roadmap (62/64) 97%
 subset of [neetcode roadmap](https://neetcode.io/roadmap)
 
 > - `E`: easy
@@ -92,7 +92,7 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 6. ❌35'`M` Design Twitter [leetcode](https://leetcode.com/problems/design-twitter/) - [solution](https://www.youtube.com/watch?v=pNichitDD2E)
 7. `H` Find Median From Data Stream [leetcode](https://leetcode.com/problems/find-median-from-data-stream/) - [solution](https://www.youtube.com/watch?v=itmhHWaHupI)
 
-## 9. Graphs (6/9)
+## 9. Graphs (7/9)
 1. ❌55'`M` Number of Islands [leetcode](https://leetcode.com/problems/number-of-islands/) - [solution](https://www.youtube.com/watch?v=pV2kpPD66nE)
 2. ✅20'`M` Max Area of Island [leetcode](https://leetcode.com/problems/max-area-of-island/) - [solution](https://www.youtube.com/watch?v=iJGr1OtmH0c)
 3. ❌15'`M` Clone Graph [leetcode](https://leetcode.com/problems/clone-graph/) - [solution](https://www.youtube.com/watch?v=mQeF6bN8hMk)
@@ -100,7 +100,7 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 5. ❌40'`M` Rotting Oranges [leetcode](https://leetcode.com/problems/rotting-oranges/) - [solution](https://www.youtube.com/watch?v=y704fEOx0s0)
 6. ❌40'`M` Pacific Atlantic Water Flow [leetcode](https://leetcode.com/problems/pacific-atlantic-water-flow/) - [solution](https://www.youtube.com/watch?v=s-VkcjHqkGI)
 7. ❌60'`M` Surrounded Regions [leetcode](https://leetcode.com/problems/surrounded-regions/) - [solution](https://www.youtube.com/watch?v=9z2BunfoZ5Y)
-8. `M` Course Schedule [leetcode](https://leetcode.com/problems/course-schedule/) - [solution](https://www.youtube.com/watch?v=EgI5nU9etnU&t=1s)
+8. ❌30'`M` Course Schedule [leetcode](https://leetcode.com/problems/course-schedule/) - [solution](https://www.youtube.com/watch?v=EgI5nU9etnU&t=1s)
 9. `M` Course Schedule II [leetcode](https://leetcode.com/problems/course-schedule-ii/) - [solution](https://www.youtube.com/watch?v=Akt3glAwyfY)
 10. 🔒`M` Graph Valid Tree [leetcode](https://leetcode.com/problems/graph-valid-tree/) - [solution](https://www.youtube.com/watch?v=bXsUuownnoQ)
 11. 🔒`M` Number of Connected Components In An Undirected Graph [leetcode](https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/description/) - [solution](https://www.youtube.com/watch?v=8f1XPm4WOUc)
