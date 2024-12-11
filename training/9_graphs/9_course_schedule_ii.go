@@ -35,3 +35,45 @@ All the pairs [ai, bi] are distinct.
 
 /*** @SOLUTION https://www.youtube.com/watch?v=Akt3glAwyfY
 ***/
+
+func findOrder(numCourses int, prerequisites [][]int) []int {
+    adjList := make(map[int][]int)
+    for _, pre := range prerequisites {
+        adjList[pre[0]] = append(adjList[pre[0]], pre[1])
+    }
+
+    visited := make(map[int]bool) // Tracks currently visiting nodes to detect cycles
+    completed := make(map[int]bool) // Tracks nodes that are fully processed
+    result := []int{}              // Stores the topological order
+
+    for course := 0; course < numCourses; course++ {
+        if !completed[course] {
+            if hasCycle(course, visited, completed, adjList, &result) {
+                return []int{} // Return empty list if a cycle is detected
+            }
+        }
+    }
+
+    return result // The result is in reverse order, but it represents a valid course order
+}
+
+func hasCycle(course int, visited, completed map[int]bool, adjList map[int][]int, result *[]int) bool {
+    if visited[course] {
+        return true // Cycle detected
+    }
+    if completed[course] {
+        return false // Already processed
+    }
+
+    visited[course] = true
+    for _, pre := range adjList[course] {
+        if hasCycle(pre, visited, completed, adjList, result) {
+            return true
+        }
+    }
+    visited[course] = false
+    completed[course] = true
+
+    *result = append(*result, course) // Add course to the result in reverse order
+    return false
+}
