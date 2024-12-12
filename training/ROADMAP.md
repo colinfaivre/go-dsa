@@ -1,4 +1,4 @@
-# 🗺️ Roadmap (63/64) 98%
+# 🗺️ Roadmap (64/64) 100%
 subset of [neetcode roadmap](https://neetcode.io/roadmap)
 
 > - `E`: easy
@@ -92,7 +92,7 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 6. ❌35'`M` Design Twitter [leetcode](https://leetcode.com/problems/design-twitter/) - [solution](https://www.youtube.com/watch?v=pNichitDD2E)
 7. `H` Find Median From Data Stream [leetcode](https://leetcode.com/problems/find-median-from-data-stream/) - [solution](https://www.youtube.com/watch?v=itmhHWaHupI)
 
-## 9. Graphs (8/9)
+## 9. Graphs (9/9)
 1. ❌55'`M` Number of Islands [leetcode](https://leetcode.com/problems/number-of-islands/) - [solution](https://www.youtube.com/watch?v=pV2kpPD66nE)
 2. ✅20'`M` Max Area of Island [leetcode](https://leetcode.com/problems/max-area-of-island/) - [solution](https://www.youtube.com/watch?v=iJGr1OtmH0c)
 3. ❌15'`M` Clone Graph [leetcode](https://leetcode.com/problems/clone-graph/) - [solution](https://www.youtube.com/watch?v=mQeF6bN8hMk)
@@ -104,5 +104,5 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 9. ❌30'`M` Course Schedule II [leetcode](https://leetcode.com/problems/course-schedule-ii/) - [solution](https://www.youtube.com/watch?v=Akt3glAwyfY)
 10. 🔒`M` Graph Valid Tree [leetcode](https://leetcode.com/problems/graph-valid-tree/) - [solution](https://www.youtube.com/watch?v=bXsUuownnoQ)
 11. 🔒`M` Number of Connected Components In An Undirected Graph [leetcode](https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/description/) - [solution](https://www.youtube.com/watch?v=8f1XPm4WOUc)
-12. `M` Redundant Connection [leetcode](https://leetcode.com/problems/redundant-connection/) - [solution](https://www.youtube.com/watch?v=FXWRE67PLL0)
+12. ❌30'`M` Redundant Connection [leetcode](https://leetcode.com/problems/redundant-connection/) - [solution](https://www.youtube.com/watch?v=FXWRE67PLL0)
 13. `H` Word Ladder [leetcode](https://leetcode.com/problems/word-ladder/) - [solution](https://www.youtube.com/watch?v=h9iTnkgv05E)
