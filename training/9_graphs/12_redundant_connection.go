@@ -30,3 +30,54 @@ The given graph is connected.
 
 /*** @SOLUTION https://www.youtube.com/watch?v=FXWRE67PLL0
 ***/
+
+// Find the root of a node with path compression
+func find(parent []int, x int) int {
+    if parent[x] != x {
+        parent[x] = find(parent, parent[x]) // Path compression
+    }
+    return parent[x]
+}
+
+// Union two nodes and return false if they are already connected (cycle detected)
+func union(parent, rank []int, x, y int) bool {
+    rootX := find(parent, x)
+    rootY := find(parent, y)
+
+    if rootX == rootY {
+        return false // Cycle detected
+    }
+
+    // Union by rank
+    if rank[rootX] > rank[rootY] {
+        parent[rootY] = rootX
+    } else if rank[rootX] < rank[rootY] {
+        parent[rootX] = rootY
+    } else {
+        parent[rootY] = rootX
+        rank[rootX]++
+    }
+
+    return true
+}
+
+func findRedundantConnection(edges [][]int) []int {
+    n := len(edges)
+    parent := make([]int, n+1) // Parent array for union-find
+    rank := make([]int, n+1)  // Rank array for union-find
+
+    // Initialize the parent of each node to itself
+    for i := 1; i <= n; i++ {
+        parent[i] = i
+    }
+
+    for _, edge := range edges {
+        x, y := edge[0], edge[1]
+        if !union(parent, rank, x, y) {
+            return edge // This edge forms a cycle
+        }
+    }
+
+    return []int{} // Should never reach here for a valid input
+}
+
