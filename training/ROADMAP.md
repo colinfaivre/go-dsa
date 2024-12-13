@@ -1,4 +1,4 @@
-# 🗺️ Roadmap (38/64) 100%
+# 🗺️ Roadmap (38/64) 59%
 subset of [neetcode roadmap](https://neetcode.io/roadmap)
 
 > - `E`: easy
