@@ -10,7 +10,7 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 > - 🔒: leetcode premium
 
 ## 1. Arrays / Hashing (8/8)
-1. ✅✅20'`E` Contains Duplicate [leetcode](https://leetcode.com/problems/contains-duplicate/) - [solution](https://www.youtube.com/watch?v=3OamzN90kPg)
+1. ✅✅✅2'`E` Contains Duplicate [leetcode](https://leetcode.com/problems/contains-duplicate/) - [solution](https://www.youtube.com/watch?v=3OamzN90kPg)
 2. ✅✅20'`E` Valid Anagram [leetcode](https://leetcode.com/problems/valid-anagram/) - [solution](https://www.youtube.com/watch?v=9UtInBqnCgA)
 3. ✅✅20'`E` Two Sum [leetcode](https://leetcode.com/problems/two-sum/) - [solution](https://www.youtube.com/watch?v=KLlXCFG5TnA)
 4. ❌✅30'`M` Group Anagrams [leetcode](https://leetcode.com/problems/group-anagrams/) - [solution](https://www.youtube.com/watch?v=vzdNOK2oB2E)
