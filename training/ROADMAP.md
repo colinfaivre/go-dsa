@@ -6,6 +6,7 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 > - `H`: hard
 > - ❌: partially solved
 > - ✅: solved
+> - 🤔: read
 > - X': best solving time
 > - 🔒: leetcode premium
 
@@ -14,9 +15,9 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 2. ✅✅✅8'`E` Valid Anagram [leetcode](https://leetcode.com/problems/valid-anagram/) - [solution](https://www.youtube.com/watch?v=9UtInBqnCgA)
 3. ✅✅✅15'`E` Two Sum [leetcode](https://leetcode.com/problems/two-sum/) - [solution](https://www.youtube.com/watch?v=KLlXCFG5TnA)
 4. ❌✅✅11'`M` Group Anagrams [leetcode](https://leetcode.com/problems/group-anagrams/) - [solution](https://www.youtube.com/watch?v=vzdNOK2oB2E)
-5. ❌✅40'`M` Top K Frequent Elements [leetcode](https://leetcode.com/problems/top-k-frequent-elements/) - [solution](https://www.youtube.com/watch?v=YPTqKIgVk-k) // try again with max-heap
+5. ❌✅🤔40'`M` Top K Frequent Elements [leetcode](https://leetcode.com/problems/top-k-frequent-elements/) - [solution](https://www.youtube.com/watch?v=YPTqKIgVk-k) // try again with max-heap
 6. 🔒`M` Encode and Decode Strings [leetcode](https://leetcode.com/problems/encode-and-decode-strings/) - [solution](https://www.youtube.com/watch?v=B1k_sxOSgv8)
-7. ❌✅40'`M` Product of Array Except Self [leetcode](https://leetcode.com/problems/product-of-array-except-self/) - [solution](https://www.youtube.com/watch?v=bNvIQI2wAjk)
+7. ❌✅🤔40'`M` Product of Array Except Self [leetcode](https://leetcode.com/problems/product-of-array-except-self/) - [solution](https://www.youtube.com/watch?v=bNvIQI2wAjk)
 8. ❌✅50'`M` Valid Sudoku [leetcode](https://leetcode.com/problems/valid-sudoku/) - [solution](https://www.youtube.com/watch?v=TjFXEUCMqI8)
 9. ❌✅30'`M` Longest Consecutive Sequence [leetcode](https://leetcode.com/problems/longest-consecutive-sequence/) - [solution](https://www.youtube.com/watch?v=P6RZZMu_maU)
 
