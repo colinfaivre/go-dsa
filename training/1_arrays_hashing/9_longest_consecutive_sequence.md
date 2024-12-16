@@ -1,27 +1,25 @@
-package training
+# 1.9 Longest Consecutive Sequence `M`
 
-// 1.9 `M` Longest Consecutive Sequence
+[leetcode](https://leetcode.com/problems/longest-consecutive-sequence/)
+[youtube](https://www.youtube.com/watch?v=P6RZZMu_maU)
 
-/*** @LEETCODE https://leetcode.com/problems/longest-consecutive-sequence/
 Given an unsorted array of integers nums, return the length of the longest consecutive elements sequence.
 You must write an algorithm that runs in O(n) time.
----
-Example 1:
-Input: nums = [100,4,200,1,3,2]
-Output: 4
-Explanation: The longest consecutive elements sequence is [1, 2, 3, 4]. Therefore its length is 4.
----
-Example 2:
-Input: nums = [0,3,7,2,5,8,4,6,0,1]
-Output: 9
----
-Constraints:
-0 <= nums.length <= 10^5
--10^9 <= nums[i] <= 10^9
-***/
 
-/*** @SOLUTION https://www.youtube.com/watch?v=P6RZZMu_maU
-TC:O(n)/SC:O(n) solution - set
+> **Example 1:**
+> - Input: nums = [100,4,200,1,3,2]
+> - Output: 4
+> - Explanation: The longest consecutive elements sequence is [1, 2, 3, 4]. Therefore its length is 4.
+>
+> **Example 2:**
+> - Input: nums = [0,3,7,2,5,8,4,6,0,1]
+> - Output: 9
+>
+> **Constraints:**
+> - 0 <= nums.length <= 10^5
+> - -10^9 <= nums[i] <= 10^9
+
+### TC:O(n)/SC:O(n) solution - hashSet
 - initialize longest to 0
 - loop in nums to create a set containing each num
 - loop in set with value
@@ -29,8 +27,8 @@ TC:O(n)/SC:O(n) solution - set
   - initialize length to 0
   - loop in set while value+length exists incrementing length
   - set longest to max between length and itself
-***/
 
+```go
 func longestConsecutive(nums []int) int {
     numSet := map[int]bool{}
     longest := 0
@@ -52,3 +50,4 @@ func longestConsecutive(nums []int) int {
 
     return longest
 }
+```
