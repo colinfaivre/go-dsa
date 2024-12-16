@@ -1,31 +1,29 @@
-package training
+# 1.2 Valid Anagram `E`
 
-// 1.2 `E` Valid Anagram
+[leetcode](https://leetcode.com/problems/valid-anagram/)
+[youtube](https://www.youtube.com/watch?v=9UtInBqnCgA)
 
-/*** @LEETCODE https://leetcode.com/problems/valid-anagram/
 Given two strings s and t, return true if t is an anagram of s, and false otherwise.
 An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
----
-Example 1:
-Input: s = "anagram", t = "nagaram"
-Output: true
----
-Example 2:
-Input: s = "rat", t = "car"
-Output: false
----
-Constraints:
-1 <= s.length, t.length <= 5 * 10^4
-s and t consist of lowercase English letters.
-***/
 
-/*** @SOLUTION https://www.youtube.com/watch?v=9UtInBqnCgA
-sort solution: O(nlogn) - Space O(1)
+> **Example 1:**
+> - Input: s = "anagram", t = "nagaram"
+> - Output: true
+>
+> **Example 2:**
+> - Input: s = "rat", t = "car"
+> - Output: false
+>
+> **Constraints:**
+> - 1 <= s.length, t.length <= 5 * 10^4
+> - s and t consist of lowercase English letters.
+
+### O(nlogn) - Space O(1): sort solution
 - sort s
 - sort t
 - return s == t
 
-hashmap solution: O(n) - Space O(n)
+### O(n) - Space O(n): hashmap solution
 - return false if s and t have != length
 - init countS, countT as hashmaps mapping chars to their count
 - loop in s with i
@@ -34,8 +32,8 @@ hashmap solution: O(n) - Space O(n)
 - loop in countS with key
   - return false if countS at key != countT at key
 - return true
-***/
 
+```go
 func IsAnagram(s string, t string) bool {
     if len(s) != len(t) {
         return false
@@ -57,3 +55,4 @@ func IsAnagram(s string, t string) bool {
 
     return true
 }
+```
