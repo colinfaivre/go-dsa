@@ -30,6 +30,46 @@ You may return the answer in any order.
 - insert all freqMap items into a maxheap - O(n)
 - pop the first k biggest frequency nums from the maxheap - O(klogn)
 
+```go
+// O(klogn) solution - hashmap/maxheap
+type IntHeap []heapItem
+type heapItem struct {
+    num int
+    freq int
+}
+func (h IntHeap) Len() int           { return len(h) }
+func (h IntHeap) Less(i, j int) bool { return h[i].freq > h[j].freq }
+func (h IntHeap) Swap(i, j int)      { h[i], h[j] = h[j], h[i] }
+func (h *IntHeap) Push(x any) { *h = append(*h, x.(heapItem)) }
+func (h *IntHeap) Pop() any {
+	old := *h
+	n := len(old)
+	x := old[n-1]
+	*h = old[0 : n-1]
+	return x
+}
+
+func topKFrequent(nums []int, k int) []int {
+    freqMap := make(map[int] int)
+    for _, val := range nums {
+        freqMap[val]++
+    }
+
+    h := &IntHeap{}
+    heap.Init(h)
+    for key, val := range freqMap {
+        heap.Push(h, heapItem{num: key, freq: val})
+    }
+
+    var res []int
+    for i := 1; i <= k; i++ {
+        res = append(res, heap.Pop(h).(heapItem).num)
+    }
+
+    return res
+}
+```
+
 ### O(n) solution - hashmap/bucketsort
 - init freqMap w/ key as num and val as freq
 - init freqArr as a nums lengthed array of int arrays
