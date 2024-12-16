@@ -6,7 +6,7 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 > - `H`: hard
 > - ❌: partially solved
 > - ✅: solved
-> - 🤔: read
+> - 🤔: memo
 > - X': best solving time
 > - 🔒: leetcode premium
 
