@@ -1,4 +1,4 @@
-# 🗺️ Roadmap (38/76) 50%
+# 🗺️ Roadmap (38/94) 40%
 subset of [neetcode roadmap](https://neetcode.io/roadmap)
 
 > - `E`: easy
@@ -107,3 +107,14 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 11. 🔒`M` Number of Connected Components In An Undirected Graph [leetcode](https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/description/) - [solution](https://www.youtube.com/watch?v=8f1XPm4WOUc)
 12. ❌30'`M` Redundant Connection [leetcode](https://leetcode.com/problems/redundant-connection/) - [solution](https://www.youtube.com/watch?v=FXWRE67PLL0)
 13. `H` Word Ladder [leetcode](https://leetcode.com/problems/word-ladder/) - [solution](https://www.youtube.com/watch?v=h9iTnkgv05E)
+
+## 10. Backtracking (0/9)
+1. `M` Subsets [leetcode](https://leetcode.com/problems/subsets/) - [solution](https://www.youtube.com/watch?v=REOH22Xwdkk)
+2. `M` Combination Sum [leetcode](https://leetcode.com/problems/combination-sum/) - [solution](https://www.youtube.com/watch?v=GBKI9VSKdGg)
+3. `M` Permutations [leetcode](https://leetcode.com/problems/permutations/) - [solution](https://www.youtube.com/watch?v=FZe0UqISmUw)
+4. `M` Subsets II [leetcode](https://leetcode.com/problems/subsets-ii/) - [solution](https://www.youtube.com/watch?v=Vn2v6ajA7U0)
+5. `M` Combination Sum II [leetcode](https://leetcode.com/problems/combination-sum-ii/) - [solution](https://www.youtube.com/watch?v=FOyRpNUSFeA)
+6. `M` Word Search [leetcode](https://leetcode.com/problems/word-search/) - [solution](https://www.youtube.com/watch?v=pfiQ_PS1g8E)
+7. `M` Palindrome Partitioning [leetcode](https://leetcode.com/problems/palindrome-partitioning/) - [solution](https://www.youtube.com/watch?v=3jvWodd7ht0)
+8. `M` Letter Combinations of a Phone Number [leetcode](https://leetcode.com/problems/letter-combinations-of-a-phone-number/) - [solution](https://www.youtube.com/watch?v=0snEunUacZY)
+9. `H` N Queens [leetcode](https://leetcode.com/problems/n-queens/) - [solution](https://www.youtube.com/watch?v=Ph95IHmRp5M)
