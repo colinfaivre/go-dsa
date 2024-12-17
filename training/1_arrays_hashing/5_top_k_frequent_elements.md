@@ -1,37 +1,42 @@
 # 1.5 Top K Frequent Elements `M`
 
-[LeetCode](https://leetcode.com/problems/top-k-frequent-elements/) [Youtube](https://www.youtube.com/watch?v=YPTqKIgVk-k)
+[LeetCode](https://leetcode.com/problems/top-k-frequent-elements/) |
+[Youtube](https://www.youtube.com/watch?v=YPTqKIgVk-k)
 
 Given an integer array nums and an integer k,
 return the k most frequent elements.
 You may return the answer in any order.
 
-> **Example 1:**
+Example 1:
 > - Input: nums = [1,1,1,2,2,3], k = 2
 > - Output: [1,2]
->
-> **Example 2:**
+
+Example 2:
 > - Input: nums = [1], k = 1
 > - Output: [1]
->
-> **Constraints:**
+
+Constraints:
 > - 1 <= nums.length <= 10^5
 > - -10^4 <= nums[i] <= 10^4
 > - k is in the range [1, the number of unique elements in the array].
 > - It is guaranteed that the answer is unique.
 
-### O(nlogn) solution - hashmap/sort
+<details>
+    <summary><b>O(nlogn) solution - hashmap/sort</b></summary>
+
 - loop in nums inserting each num into a freqMap - O(n)
 - sort the map items in descending order by freqs - O(nlogn)
 - pop the first k biggest freq nums - O(k)
+</details>
 
-### O(klogn) solution - hashmap/maxheap
+<details>
+    <summary><b>O(klogn) solution - hashmap/maxheap</b></summary>
+
 - loop in nums inserting each num into a freqMap - O(n)
 - insert all freqMap items into a maxheap - O(n)
 - pop the first k biggest frequency nums from the maxheap - O(klogn)
 
 ```go
-// O(klogn) solution - hashmap/maxheap
 type IntHeap []heapItem
 type heapItem struct {
     num int
@@ -69,8 +74,12 @@ func topKFrequent(nums []int, k int) []int {
     return res
 }
 ```
+</details>
 
-### O(n) solution - hashmap/bucketsort
+<details>
+    <summary><b>O(n) solution - hashmap/bucketsort</b></summary>
+
+
 - init freqMap w/ key as num and val as freq
 - init freqArr as a nums lengthed array of int arrays
 - init res as an int array
@@ -80,7 +89,6 @@ func topKFrequent(nums []int, k int) []int {
    - return res when its length reaches k
 
 ```go
-// O(n) solution - hashmap/bucketsort
 func TopKFrequent(nums []int, k int) []int {
     freqMap := map[int] int {}
     freqArr := [200_001][] int {}
@@ -104,3 +112,4 @@ func TopKFrequent(nums []int, k int) []int {
     return res
 }
 ```
+</details>
