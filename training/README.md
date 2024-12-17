@@ -7,7 +7,7 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 > - ❌: failed
 > - ✅: solved
 > - 🤔: memo
-> - X': last time
+> - X': last chrono
 
 ## 1. Arrays / Hashing (8/8)
 1. ✅✅✅2'`E` Contains Duplicate [leetcode](https://leetcode.com/problems/contains-duplicate/) - [solution](https://www.youtube.com/watch?v=3OamzN90kPg) - [problem](./1_arrays_hashing/1_contains_duplicate.md)
