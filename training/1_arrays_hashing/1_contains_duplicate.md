@@ -1,39 +1,48 @@
 # 1.1 Contains Duplicate `E`
 
-[Leetcode](https://leetcode.com/problems/contains-duplicate/)
-[Youtube](https://www.youtube.com/watch?v=3OamzN90kPg)
+[leetcode](https://leetcode.com/problems/contains-duplicate/) |
+[youtube](https://www.youtube.com/watch?v=3OamzN90kPg)
 
 Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
 
-> **Example 1:**
+Example 1:
 > - Input: nums = [1,2,3,1]
 > - Output: true
->
-> **Example 2:**
+
+Example 2:
 > - Input: nums = [1,2,3,4]
 > - Output: false
->
-> **Example 3:**
+
+Example 3:
 > - Input: nums = [1,1,1,3,3,4,3,2,4,2]
 > - Output: true
-> 
-> **Constraints:**
+
+Constraints:
 > - 1 <= nums.length <= 10^5
 > - -10^9 <= nums[i] <= 10^9
 
-### O(n^2) solution - bruteforce
+<details>
+  <summary><b>O(n^2) solution - bruteforce</b></summary>
+  
 - loop in nums with i
   - loop in nums with j
     - return true if nums[i] == nums[j]
 - return false
 
-### O(nlogn) solution: sorting
-- sort nums
-- loop in nums
-  - return true if consecutive items are equal
-- return false
+</details>
 
-### O(n) solution: hashSet
+<details>
+  <summary><b>O(nlogn) solution: sorting</b></summary>
+  
+  - sort nums
+  - loop in nums
+    - return true if consecutive items are equal
+  - return false
+</details>
+
+<details>
+  <summary><b>O(n) solution: hashSet</b></summary>
+  
 - init hashset
 - loop in nums with i
   - return true if nums[i] is in hashset
@@ -52,3 +61,4 @@ func ContainsDuplicate(nums []int) bool {
     return false
 }
 ```
+</details>
