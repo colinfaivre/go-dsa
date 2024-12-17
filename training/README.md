@@ -18,7 +18,7 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 5. ❌✅✅15'`M` Top K Frequent Elements [leetcode](https://leetcode.com/problems/top-k-frequent-elements/) - [solution](https://www.youtube.com/watch?v=YPTqKIgVk-k) - [problem](./1_arrays_hashing/5_top_k_frequent_elements.md)
 6. 🔒`M` Encode and Decode Strings [leetcode](https://leetcode.com/problems/encode-and-decode-strings/) - [solution](https://www.youtube.com/watch?v=B1k_sxOSgv8) - [problem](./1_arrays_hashing/6_encode_and_decode_strings.md)
 7. ❌✅✅15'`M` Product of Array Except Self [leetcode](https://leetcode.com/problems/product-of-array-except-self/) - [solution](https://www.youtube.com/watch?v=bNvIQI2wAjk) - [problem](./1_arrays_hashing/7_product_of_array_except_self.md)
-8. ❌✅🤔50'`M` Valid Sudoku [leetcode](https://leetcode.com/problems/valid-sudoku/) - [solution](https://www.youtube.com/watch?v=TjFXEUCMqI8) - [problem](./1_arrays_hashing/8_valid_sudoku.md)
+8. ❌✅✅30'`M` Valid Sudoku [leetcode](https://leetcode.com/problems/valid-sudoku/) - [solution](https://www.youtube.com/watch?v=TjFXEUCMqI8) - [problem](./1_arrays_hashing/8_valid_sudoku.md)
 9. ❌✅🤔30'`M` Longest Consecutive Sequence [leetcode](https://leetcode.com/problems/longest-consecutive-sequence/) - [solution](https://www.youtube.com/watch?v=P6RZZMu_maU) - [problem](./1_arrays_hashing/9_longest_consecutive_sequence.md)
 
 ## 2. Two Pointers (4/5)
