@@ -4,11 +4,10 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 > - `E`: easy
 > - `M`: medium
 > - `H`: hard
-> - ❌: partially solved
+> - ❌: failed
 > - ✅: solved
 > - 🤔: memo
-> - X': best solving time
-> - 🔒: leetcode premium
+> - X': last time
 
 ## 1. Arrays / Hashing (8/8)
 1. ✅✅✅2'`E` Contains Duplicate [leetcode](https://leetcode.com/problems/contains-duplicate/) - [solution](https://www.youtube.com/watch?v=3OamzN90kPg) - [problem](./1_arrays_hashing/1_contains_duplicate.md)
@@ -16,10 +15,9 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 3. ✅✅✅15'`E` Two Sum [leetcode](https://leetcode.com/problems/two-sum/) - [solution](https://www.youtube.com/watch?v=KLlXCFG5TnA) - [problem](./1_arrays_hashing/3_two_sum.md)
 4. ❌✅✅11'`M` Group Anagrams [leetcode](https://leetcode.com/problems/group-anagrams/) - [solution](https://www.youtube.com/watch?v=vzdNOK2oB2E) - [problem](./1_arrays_hashing/4_group_anagrams.md)
 5. ❌✅✅15'`M` Top K Frequent Elements [leetcode](https://leetcode.com/problems/top-k-frequent-elements/) - [solution](https://www.youtube.com/watch?v=YPTqKIgVk-k) - [problem](./1_arrays_hashing/5_top_k_frequent_elements.md)
-6. 🔒`M` Encode and Decode Strings [leetcode](https://leetcode.com/problems/encode-and-decode-strings/) - [solution](https://www.youtube.com/watch?v=B1k_sxOSgv8) - [problem](./1_arrays_hashing/6_encode_and_decode_strings.md)
-7. ❌✅✅15'`M` Product of Array Except Self [leetcode](https://leetcode.com/problems/product-of-array-except-self/) - [solution](https://www.youtube.com/watch?v=bNvIQI2wAjk) - [problem](./1_arrays_hashing/7_product_of_array_except_self.md)
-8. ❌✅✅30'`M` Valid Sudoku [leetcode](https://leetcode.com/problems/valid-sudoku/) - [solution](https://www.youtube.com/watch?v=TjFXEUCMqI8) - [problem](./1_arrays_hashing/8_valid_sudoku.md)
-9. ❌✅✅10'`M` Longest Consecutive Sequence [leetcode](https://leetcode.com/problems/longest-consecutive-sequence/) - [solution](https://www.youtube.com/watch?v=P6RZZMu_maU) - [problem](./1_arrays_hashing/9_longest_consecutive_sequence.md)
+6. ❌✅✅15'`M` Product of Array Except Self [leetcode](https://leetcode.com/problems/product-of-array-except-self/) - [solution](https://www.youtube.com/watch?v=bNvIQI2wAjk) - [problem](./1_arrays_hashing/7_product_of_array_except_self.md)
+7. ❌✅✅30'`M` Valid Sudoku [leetcode](https://leetcode.com/problems/valid-sudoku/) - [solution](https://www.youtube.com/watch?v=TjFXEUCMqI8) - [problem](./1_arrays_hashing/8_valid_sudoku.md)
+8. ❌✅✅10'`M` Longest Consecutive Sequence [leetcode](https://leetcode.com/problems/longest-consecutive-sequence/) - [solution](https://www.youtube.com/watch?v=P6RZZMu_maU) - [problem](./1_arrays_hashing/9_longest_consecutive_sequence.md)
 
 ## 2. Two Pointers (4/5)
 1. ✅✅🤔20'`E` Valid Palindrome [leetcode](https://leetcode.com/problems/valid-palindrome/) - [solution](https://www.youtube.com/watch?v=jJXJ16kPFWg) - [problem](./2_two_pointers/1_valid_palindrome.md)
@@ -97,16 +95,13 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 1. ❌55'`M` Number of Islands [leetcode](https://leetcode.com/problems/number-of-islands/) - [solution](https://www.youtube.com/watch?v=pV2kpPD66nE)
 2. ✅20'`M` Max Area of Island [leetcode](https://leetcode.com/problems/max-area-of-island/) - [solution](https://www.youtube.com/watch?v=iJGr1OtmH0c)
 3. ❌15'`M` Clone Graph [leetcode](https://leetcode.com/problems/clone-graph/) - [solution](https://www.youtube.com/watch?v=mQeF6bN8hMk)
-4. 🔒`M` Walls And Gates [leetcode](https://leetcode.com/problems/walls-and-gates/) - [solution](https://www.youtube.com/watch?v=e69C6xhiSQE)
-5. ❌40'`M` Rotting Oranges [leetcode](https://leetcode.com/problems/rotting-oranges/) - [solution](https://www.youtube.com/watch?v=y704fEOx0s0)
-6. ❌40'`M` Pacific Atlantic Water Flow [leetcode](https://leetcode.com/problems/pacific-atlantic-water-flow/) - [solution](https://www.youtube.com/watch?v=s-VkcjHqkGI)
-7. ❌60'`M` Surrounded Regions [leetcode](https://leetcode.com/problems/surrounded-regions/) - [solution](https://www.youtube.com/watch?v=9z2BunfoZ5Y)
-8. ❌30'`M` Course Schedule [leetcode](https://leetcode.com/problems/course-schedule/) - [solution](https://www.youtube.com/watch?v=EgI5nU9etnU&t=1s)
-9. ❌30'`M` Course Schedule II [leetcode](https://leetcode.com/problems/course-schedule-ii/) - [solution](https://www.youtube.com/watch?v=Akt3glAwyfY)
-10. 🔒`M` Graph Valid Tree [leetcode](https://leetcode.com/problems/graph-valid-tree/) - [solution](https://www.youtube.com/watch?v=bXsUuownnoQ)
-11. 🔒`M` Number of Connected Components In An Undirected Graph [leetcode](https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/description/) - [solution](https://www.youtube.com/watch?v=8f1XPm4WOUc)
-12. ❌30'`M` Redundant Connection [leetcode](https://leetcode.com/problems/redundant-connection/) - [solution](https://www.youtube.com/watch?v=FXWRE67PLL0)
-13. `H` Word Ladder [leetcode](https://leetcode.com/problems/word-ladder/) - [solution](https://www.youtube.com/watch?v=h9iTnkgv05E)
+4. ❌40'`M` Rotting Oranges [leetcode](https://leetcode.com/problems/rotting-oranges/) - [solution](https://www.youtube.com/watch?v=y704fEOx0s0)
+5. ❌40'`M` Pacific Atlantic Water Flow [leetcode](https://leetcode.com/problems/pacific-atlantic-water-flow/) - [solution](https://www.youtube.com/watch?v=s-VkcjHqkGI)
+6. ❌60'`M` Surrounded Regions [leetcode](https://leetcode.com/problems/surrounded-regions/) - [solution](https://www.youtube.com/watch?v=9z2BunfoZ5Y)
+7. ❌30'`M` Course Schedule [leetcode](https://leetcode.com/problems/course-schedule/) - [solution](https://www.youtube.com/watch?v=EgI5nU9etnU&t=1s)
+8. ❌30'`M` Course Schedule II [leetcode](https://leetcode.com/problems/course-schedule-ii/) - [solution](https://www.youtube.com/watch?v=Akt3glAwyfY)
+9. ❌30'`M` Redundant Connection [leetcode](https://leetcode.com/problems/redundant-connection/) - [solution](https://www.youtube.com/watch?v=FXWRE67PLL0)
+10. `H` Word Ladder [leetcode](https://leetcode.com/problems/word-ladder/) - [solution](https://www.youtube.com/watch?v=h9iTnkgv05E)
 
 ## 10. Backtracking (0/9)
 1. `M` Subsets [leetcode](https://leetcode.com/problems/subsets/) - [solution](https://www.youtube.com/watch?v=REOH22Xwdkk)
