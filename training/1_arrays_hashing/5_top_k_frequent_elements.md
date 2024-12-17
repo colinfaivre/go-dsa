@@ -1,7 +1,7 @@
 # 1.5 Top K Frequent Elements `M`
 
-[LeetCode](https://leetcode.com/problems/top-k-frequent-elements/) |
-[Youtube](https://www.youtube.com/watch?v=YPTqKIgVk-k)
+[leetCode](https://leetcode.com/problems/top-k-frequent-elements/) |
+[youtube](https://www.youtube.com/watch?v=YPTqKIgVk-k)
 
 Given an integer array nums and an integer k,
 return the k most frequent elements.
