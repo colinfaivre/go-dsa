@@ -44,39 +44,30 @@ Only the filled cells need to be validated according to the mentioned rules.
 > - board[i].length == 9
 > - board[i][j] is a digit 1-9 or '.'.
 
-### O(9^2) solution - hashmaps
-- create hashmaps of hashmaps for rows, cols and squares
+### O(9^2) solution - arrays
+- create arrays of arrays for rows, cols and squares
 - loop in board matrix:
   - ignore dots
-  - return false if the char is already in one of the hashmaps
-  - add the char to each hashmap
+  - return false if the char is already in one of the arrays
+  - add the char to each arrays
 
 ```go
-func IsValidSudoku(board [][]byte) bool {
-    rowMap := make(map[int]map[byte]bool)
-    colMap := make(map[int]map[byte]bool)
-    squareMap := make(map[[2]int]map[byte]bool)
-    for i := range 9 {
-        rowMap[i] = make(map[byte]bool)
-        colMap[i] = make(map[byte]bool)
-        for j := range 9 {
-            squareMap[[2]int{i/3, j/3}] = make(map[byte]bool)
-        }
-    }
+func isValidSudoku(board [][]byte) bool {
+    var rows [9][9]bool
+    var cols [9][9]bool
+    var squares [9][9]bool
 
-    for i, row := range board {
-        for j, val := range row {
-            if val == '.' {
-                continue
-            }
+    for r := 0; r < 9; r++ {
+        for c := 0; c < 9; c++ {
+            if board[r][c] == '.' { continue }
+            num := board[r][c] - '1' // Convert char '1'-'9' to index 0-8
+            squareIndex := (r/3)*3 + c/3 // Unique square index from 0 to 8
 
-            if rowMap[i][val] || colMap[j][val] || squareMap[[2]int {i/3, j/3}][val]  {
-                return false
-            }
+            if rows[r][num] || cols[c][num] || squares[squareIndex][num] { return false }
 
-            rowMap[i][val] = true
-            colMap[j][val] = true
-            squareMap[[2]int {i/3, j/3}][val] = true
+            rows[r][num] = true
+            cols[c][num] = true
+            squares[squareIndex][num] = true
         }
     }
 
