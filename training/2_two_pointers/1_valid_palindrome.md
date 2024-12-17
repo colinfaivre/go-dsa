@@ -1,6 +1,6 @@
 # 2.1 Valid Palindrome `E`
 
-[leetcode](https://leetcode.com/problems/valid-palindrome/)
+[leetcode](https://leetcode.com/problems/valid-palindrome/) |
 [youtube](https://www.youtube.com/watch?v=jJXJ16kPFWg)
 
 A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.
