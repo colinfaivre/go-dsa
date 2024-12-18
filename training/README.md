@@ -1,4 +1,4 @@
-# 🗺️ Roadmap (38/94) 40%
+# 🗺️ Roadmap (32/85) 38%
 subset of [neetcode roadmap](https://neetcode.io/roadmap)
 
 > - `E`: easy
@@ -82,7 +82,7 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 14. `H` Binary Tree Maximum Path Sum [leetcode](https://leetcode.com/problems/binary-tree-maximum-path-sum/) - [youtube](https://www.youtube.com/watch?v=Hr5cWUld4vU)
 15. `H` Serialize And Deserialize Binary Tree [leetcode](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/) - [youtube](https://www.youtube.com/watch?v=u4JAi2JJhI8)
 
-## 8. Heap / Priority Queues (6/7)
+## 8. Heap / Priority Queues (0/7)
 1. ❌60'`E` Kth Largest Element In a Stream [leetcode](https://leetcode.com/problems/kth-largest-element-in-a-stream/) - [youtube](https://www.youtube.com/watch?v=hOjcdrqMoQ8)
 2. ❌60'`E` Last Stone Weight [leetcode](https://leetcode.com/problems/last-stone-weight/) - [youtube](https://www.youtube.com/watch?v=B-QCq79-Vfw&t=3s)
 3. ❌50'`M` K Closest Points to Origin [leetcode](https://leetcode.com/problems/k-closest-points-to-origin/) - [youtube](https://www.youtube.com/watch?v=rI2EBUEMfTk)
@@ -104,7 +104,7 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 10. `H` Word Ladder [leetcode](https://leetcode.com/problems/word-ladder/) - [youtube](https://www.youtube.com/watch?v=h9iTnkgv05E)
 
 ## 10. Backtracking (0/9)
-1. `M` Subsets [leetcode](https://leetcode.com/problems/subsets/) - [youtube](https://www.youtube.com/watch?v=REOH22Xwdkk)
+1. ❌20'`M` Subsets [leetcode](https://leetcode.com/problems/subsets/) - [youtube](https://www.youtube.com/watch?v=REOH22Xwdkk)
 2. `M` Combination Sum [leetcode](https://leetcode.com/problems/combination-sum/) - [youtube](https://www.youtube.com/watch?v=GBKI9VSKdGg)
 3. `M` Permutations [leetcode](https://leetcode.com/problems/permutations/) - [youtube](https://www.youtube.com/watch?v=FZe0UqISmUw)
 4. `M` Subsets II [leetcode](https://leetcode.com/problems/subsets-ii/) - [youtube](https://www.youtube.com/watch?v=Vn2v6ajA7U0)
