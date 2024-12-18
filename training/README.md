@@ -20,7 +20,7 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 8. ❌✅✅10'`M` [Longest Consecutive Sequence](./1_arrays_hashing/8_longest_consecutive_sequence.md) - [leetcode](https://leetcode.com/problems/longest-consecutive-sequence/) - [youtube](https://www.youtube.com/watch?v=P6RZZMu_maU)
 
 ## 2. Two Pointers (4/5)
-1. ✅✅🤔20'`E` [Valid Palindrome](./2_two_pointers/1_valid_palindrome.md) - [leetcode](https://leetcode.com/problems/valid-palindrome/) - [youtube](https://www.youtube.com/watch?v=jJXJ16kPFWg)
+1. ✅✅✅12'`E` [Valid Palindrome](./2_two_pointers/1_valid_palindrome.md) - [leetcode](https://leetcode.com/problems/valid-palindrome/) - [youtube](https://www.youtube.com/watch?v=jJXJ16kPFWg)
 2. ✅✅🤔20'`M` [Two Sum II Input Array Is Sorted](./2_two_pointers/2_two_sum_ii_input_array_is_sorted.md) - [leetcode](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/) - [youtube](https://www.youtube.com/watch?v=cQ1Oz4ckceM)
 3. ❌✅35'`M` [3Sum](./2_two_pointers/3_3_sum.md) - [leetcode](https://leetcode.com/problems/3sum/) - [youtube](https://www.youtube.com/watch?v=jzZsG8n2R9A.io%2F)
 4. ❌✅15'`M` [Container With Most Water](./2_two_pointers/4_container_with_most_water.md) - [leetcode](https://leetcode.com/problems/container-with-most-water/) - [youtube](https://www.youtube.com/watch?v=UuiTKBwPgAo)
