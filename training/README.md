@@ -32,7 +32,7 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 3. ❌✅25'`M` [Evaluate Reverse Polish Notation](./3_stack/3_evaluate_reverse_polish_notation.md) - [leetcode](https://leetcode.com/problems/evaluate-reverse-polish-notation/) - [youtube](https://www.youtube.com/watch?v=iu0082c4HDE)
 4. ❌❌60'`M` [Generate Parentheses](./3_stack/4_generate_parentheses.md) - [leetcode](https://leetcode.com/problems/generate-parentheses/) - [youtube](https://www.youtube.com/watch?v=s9fokUqJ76A)
 5. ❌✅55'`M` [Daily Temperatures](./3_stack/5_daily_temperatures.md) - [leetcode](https://leetcode.com/problems/daily-temperatures/) - [youtube](https://www.youtube.com/watch?v=cTBiBSnjO3c)
-6. ❌✅55'`M` Car Fleet [leetcode](https://leetcode.com/problems/car-fleet/) - [youtube](https://www.youtube.com/watch?v=Pr6T-3yB9RM)
+6. ❌✅55'`M` [Car Fleet](./3_stack/6_car_fleet.md) - [leetcode](https://leetcode.com/problems/car-fleet/) - [youtube](https://www.youtube.com/watch?v=Pr6T-3yB9RM)
 7. `H` Largest Rectangle In Histogram [leetcode](https://leetcode.com/problems/largest-rectangle-in-histogram/) - [youtube](https://www.youtube.com/watch?v=zx5Sw9130L0&source_ve_path=OTY3MTQ)
 
 ## 4. Binary Search (2/7)
