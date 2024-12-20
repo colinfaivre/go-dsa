@@ -56,35 +56,29 @@ Constraints:
     - inrement left while value is the same as previous
 
 ```go
-func ThreeSum(nums []int) [][]int {
-	res := [][]int{}
-	sort.Slice(nums, func(i, j int) bool {
-		return nums[i] < nums[j]
-	})
+func threeSum(nums []int) [][]int {
+    sort.Ints(nums)
 
-	for i, v := range nums {
-		if i > 0 && v == nums[i-1] {
-			continue
-		}
+    res := make([][]int, 0)
+    for i := 0; i < len(nums)-2; i++ { // Ensure at least 3 elements
+        if i > 0 && nums[i] == nums[i-1] { continue } // Skip duplicates
 
-		l, r := i+1, len(nums)-1
-		for l < r {
-			sum := v + nums[l] + nums[r]
-			if sum > 0 {
-				r--
-			} else if sum < 0 {
-				l++
-			} else {
-				res = append(res, []int{v, nums[l], nums[r]})
-				l++
-				for nums[l] == nums[l-1] && l < r {
-					l++
-				}
-			}
-		}
-	}
+        l, r := i+1, len(nums)-1
+        for l < r {
+            sum := nums[i] + nums[l] + nums[r]
+            if sum < 0 { l++ }
+            if sum > 0 { r-- }
+            if sum == 0 {
+                res = append(res, []int{ nums[i], nums[l], nums[r] })
+                for l < r && nums[l] == nums[l+1] { l++ } // Skip duplicates
+                for l < r && nums[r] == nums[r-1] { r-- } // Skip duplicates
+                l++
+                r--
+            }
+        }
+    }
 
-	return res
+    return res
 }
 ```
 </details>
