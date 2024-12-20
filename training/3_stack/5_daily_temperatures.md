@@ -1,31 +1,31 @@
-package training
+# 3.5 Daily Temperatures `M`
 
-// 3.5 `M` Daily Temperatures
+[leetcode](https://leetcode.com/problems/daily-temperatures/)
+[youtube](https://www.youtube.com/watch?v=cTBiBSnjO3c)
 
-/*** @LEETCODE https://leetcode.com/problems/daily-temperatures/
 Given an array of integers temperatures represents the daily temperatures,
 return an array answer such that answer[i] is the number of days you have to wait after the ith day to get a warmer temperature.
 If there is no future day for which this is possible, keep answer[i] == 0 instead.
----
-Example 1:
-Input: temperatures = [73,74,75,71,69,72,76,73]
-Output: [1,1,4,2,1,1,0,0]
----
-Example 2:
-Input: temperatures = [30,40,50,60]
-Output: [1,1,1,0]
----
-Example 3:
-Input: temperatures = [30,60,90]
-Output: [1,1,0]
----
-Constraints:
-1 <= temperatures.length <= 10^5
-30 <= temperatures[i] <= 100
-***/
 
-/*** @SOLUTION https://www.youtube.com/watch?v=cTBiBSnjO3c
-O(n^2) solution - brute force:
+Example 1:
+> - Input: temperatures = [73,74,75,71,69,72,76,73]
+> - Output: [1,1,4,2,1,1,0,0]
+
+Example 2:
+> - Input: temperatures = [30,40,50,60]
+> - Output: [1,1,1,0]
+
+Example 3:
+> - Input: temperatures = [30,60,90]
+> - Output: [1,1,0]
+
+Constraints:
+> - 1 <= temperatures.length <= 10^5
+> - 30 <= temperatures[i] <= 100
+
+<details>
+	<summary><b>O(n^2) solution - brute force</b></summary>
+
 - init res array of integers
 - loop in temperatures with i
 	- loop in temperatures with j
@@ -34,8 +34,11 @@ O(n^2) solution - brute force:
 			- go to outer loop
 	- append 0 to res
 - return res
+</details>
 
-O(n) solution - stack:
+<details>
+	<summary><b>O(n) solution - stack</b></summary>
+
 - init res array of integers filled with zeros
 - init stack of integer couples
 - loop in temperatures (i, t)
@@ -43,8 +46,8 @@ O(n) solution - stack:
 		- pop from the stack
 		- set res at popped temp index to i - popped temp index
 	- push the couple (t, i) on top of the stack
-***/
 
+```go
 func DailyTemperatures(temperatures []int) []int {
 	res := []int{}
 	for i := 0; i < len(temperatures); i++ {
@@ -63,3 +66,5 @@ func DailyTemperatures(temperatures []int) []int {
 
 	return res
 }
+```
+</details>
