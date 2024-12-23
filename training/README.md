@@ -42,7 +42,7 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 4. ❌60'`M` [Find Minimum In Rotated Sorted Array](./4_binary_search/4_find_minimum_in_rotated_sorted_array.md) - [leetcode](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/) - [youtube](https://www.youtube.com/watch?v=nIVW4P8b1VA)
 5. ❌25'`M` [Search In Rotated Sorted Array](./4_binary_search/5_search_in_rotated_sorted_array.md) - [leetcode](https://leetcode.com/problems/search-in-rotated-sorted-array/) - [youtube](https://www.youtube.com/watch?v=U8XENwh8Oy8)
 6. ❌35'`M` [Time Based Key Value Store](./4_binary_search/6_time_based_key_value_store.md) - [leetcode](https://leetcode.com/problems/time-based-key-value-store/) - [youtube](https://www.youtube.com/watch?v=fu2cD_6E8Hw)
-7. `H` Median of Two Sorted Arrays [leetcode](https://leetcode.com/problems/median-of-two-sorted-arrays/) - [youtube](https://www.youtube.com/watch?v=q6IEA26hvXc)
+7. `H` [Median of Two Sorted Arrays](./4_binary_search/7_median_of_two_sorted_arrays.md) - [leetcode](https://leetcode.com/problems/median-of-two-sorted-arrays/) - [youtube](https://www.youtube.com/watch?v=q6IEA26hvXc)
 
 ## 5. Sliding Window (0/6)
 1. ❌❌20'`E` Best Time to Buy And Sell Stock [leetcode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) - [youtube](https://www.youtube.com/watch?v=1pkOgXD63yU)
