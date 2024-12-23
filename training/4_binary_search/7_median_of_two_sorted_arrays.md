@@ -1,4 +1,4 @@
-4.7 Median of Two Sorted Arrays `H`
+# 4.7 Median of Two Sorted Arrays `H`
 
 [leetcode](https://leetcode.com/problems/median-of-two-sorted-arrays/) |
 [youtube](https://www.youtube.com/watch?v=q6IEA26hvXc)
