@@ -105,7 +105,7 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 
 ## 10. Backtracking (0/9)
 1. ❌20'`M` [Subsets](./10_backtracking/1_subsets.md) - [leetcode](https://leetcode.com/problems/subsets/) - [youtube](https://www.youtube.com/watch?v=REOH22Xwdkk)
-2. `M` [Combination Sum](./10_backtracking/2_combination_sum.md) - [leetcode](https://leetcode.com/problems/combination-sum/) - [youtube](https://www.youtube.com/watch?v=GBKI9VSKdGg)
+2. ❌30'`M` [Combination Sum](./10_backtracking/2_combination_sum.md) - [leetcode](https://leetcode.com/problems/combination-sum/) - [youtube](https://www.youtube.com/watch?v=GBKI9VSKdGg)
 3. `M` Permutations [leetcode](https://leetcode.com/problems/permutations/) - [youtube](https://www.youtube.com/watch?v=FZe0UqISmUw)
 4. `M` Subsets II [leetcode](https://leetcode.com/problems/subsets-ii/) - [youtube](https://www.youtube.com/watch?v=Vn2v6ajA7U0)
 5. `M` Combination Sum II [leetcode](https://leetcode.com/problems/combination-sum-ii/) - [youtube](https://www.youtube.com/watch?v=FOyRpNUSFeA)
