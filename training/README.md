@@ -46,7 +46,7 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 
 ## 5. Sliding Window (0/6)
 1. ❌❌20'`E` [Best Time to Buy And Sell Stock](./5_sliding_window/1_best_time_to_buy_and_sell_stock.md) - [leetcode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) - [youtube](https://www.youtube.com/watch?v=1pkOgXD63yU)
-2. ❌❌40'`M` Longest Substring Without Repeating Characters [leetcode](https://leetcode.com/problems/longest-substring-without-repeating-characters/) - [youtube](https://www.youtube.com/watch?v=wiGpQwVHdE0)
+2. ❌❌40'`M` [Longest Substring Without Repeating Characters](./5_sliding_window/2_longest_substring_without_repeating_characters.md) - [leetcode](https://leetcode.com/problems/longest-substring-without-repeating-characters/) - [youtube](https://www.youtube.com/watch?v=wiGpQwVHdE0)
 3. ❌35'`M` Longest Repeating Character Replacement [leetcode](https://leetcode.com/problems/longest-repeating-character-replacement/) - [youtube](https://www.youtube.com/watch?v=gqXU1UyA8pk)
 4. ❌❌30'`M` Permutation In String [leetcode](https://leetcode.com/problems/permutation-in-string/) - [youtube](https://www.youtube.com/watch?v=UbyhOgBN834)
 5. `H` Minimum Window Substring [leetcode](https://leetcode.com/problems/minimum-window-substring/) - [youtube](https://www.youtube.com/watch?v=jSto0O4AJbM)
