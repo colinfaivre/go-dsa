@@ -33,4 +33,37 @@ Constraints:
 
 <details>
   <summary><b>solution</b></summary>
+
+```go
+func combinationSum(candidates []int, target int) [][]int {
+    var res [][]int
+    var temp []int
+
+    var backtrack func(start, remaining int)
+    backtrack = func(start, remaining int) {
+        if remaining == 0 {
+            // If the remaining target is 0, we found a valid combination
+            combination := append([]int{}, temp...)
+            res = append(res, combination)
+            return
+        }
+        if remaining < 0 {
+            // If remaining is negative, no valid combination
+            return
+        }
+
+        for i := start; i < len(candidates); i++ {
+            // Add the current candidate to the temporary combination
+            temp = append(temp, candidates[i])
+            // Recursively try with the same candidate (unlimited usage allowed)
+            backtrack(i, remaining-candidates[i])
+            // Backtrack by removing the last added element
+            temp = temp[:len(temp)-1]
+        }
+    }
+
+    backtrack(0, target)
+    return res
+}
+```
 </details>
