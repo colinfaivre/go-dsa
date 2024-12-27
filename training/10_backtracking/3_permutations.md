@@ -1,4 +1,4 @@
-# 3. Permutations `M`
+# 10.3. Permutations `M`
 
 [leetcode](https://leetcode.com/problems/permutations/description/) |
 [youtube](https://www.youtube.com/watch?v=FZe0UqISmUw)
