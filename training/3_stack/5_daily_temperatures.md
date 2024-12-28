@@ -45,26 +45,25 @@ Constraints:
 	- while stack is not empty and t > top temp from stack
 		- pop from the stack
 		- set res at popped temp index to i - popped temp index
-	- push the couple (t, i) on top of the stack
+	- push i on top of the stack
+ - return res
 
 ```go
-func DailyTemperatures(temperatures []int) []int {
-	res := []int{}
-	for i := 0; i < len(temperatures); i++ {
-		res = append(res, 0)
-	}
-	stack := [][2]int{}
+func dailyTemperatures(temperatures []int) []int {
+    n := len(temperatures)
+    res := make([]int, n)
+    stack := []int{}
 
-	for i, t := range temperatures {
-		for len(stack) != 0 && t > stack[len(stack)-1][0] {
-			stackInd := stack[len(stack)-1][1]
-			stack = stack[:len(stack)-1]
-			res[stackInd] = i - stackInd
-		}
-		stack = append(stack, [2]int{t, i})
-	}
+    for i, t := range temperatures {
+        for len(stack) > 0 && t > temperatures[stack[len(stack)-1]] {
+            topIndex := stack[len(stack)-1]
+            stack = stack[:len(stack)-1]
+            res[topIndex] = i - topIndex
+        }
+        stack = append(stack, i)
+    }
 
-	return res
+    return res
 }
 ```
 </details>
