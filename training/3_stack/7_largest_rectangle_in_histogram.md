@@ -21,7 +21,7 @@ Constraints:
 > - 0 <= heights[i] <= 10^4
 
 <details>
-  <summary><b>solution</b></summary>
+  <summary><b>O(n) solution - monotonic stack</b></summary>
 
 ```go
 func largestRectangleArea(heights []int) int {
