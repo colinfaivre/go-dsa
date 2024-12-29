@@ -37,7 +37,7 @@ Constraints:
 </details>
 
 <details>
-	<summary><b>O(n) solution - stack</b></summary>
+	<summary><b>O(n) solution - monotonic stack</b></summary>
 
 - init res array of integers filled with zeros
 - init stack of indexes
