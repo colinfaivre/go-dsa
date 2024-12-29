@@ -52,17 +52,18 @@ Constraints:
 func dailyTemperatures(temperatures []int) []int {
     n := len(temperatures)
     res := make([]int, n)
-    stack := []int{}
+    stack := []int{} // Track unresolved temp indices waiting for warmer day
 
     for i, t := range temperatures {
         for len(stack) > 0 && t > temperatures[stack[len(stack)-1]] {
-            topIndex := stack[len(stack)-1]
+            // insert (i - popped topIdx) into res at topIdx
+            topIdx := stack[len(stack)-1]
             stack = stack[:len(stack)-1]
-            res[topIndex] = i - topIndex
+            res[topIdx] = i - topIdx // how many days were waited
         }
-        stack = append(stack, i)
+        stack = append(stack, i) // push curr index to stack waiting for warmer day
     }
-
+    
     return res
 }
 ```
