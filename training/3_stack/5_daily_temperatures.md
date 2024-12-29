@@ -40,9 +40,9 @@ Constraints:
 	<summary><b>O(n) solution - stack</b></summary>
 
 - init res array of integers filled with zeros
-- init stack of integer couples
+- init stack of indexes
 - loop in temperatures (i, t)
-	- while stack is not empty and t > top temp from stack
+	- while stack is not empty and t > top temp index from stack
 		- pop from the stack
 		- set res at popped temp index to i - popped temp index
 	- push i on top of the stack
