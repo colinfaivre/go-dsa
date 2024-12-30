@@ -49,7 +49,7 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 2. ❌❌40'`M` [Longest Substring Without Repeating Characters](./5_sliding_window/2_longest_substring_without_repeating_characters.md) - [leetcode](https://leetcode.com/problems/longest-substring-without-repeating-characters/) - [youtube](https://www.youtube.com/watch?v=wiGpQwVHdE0)
 3. ❌35'`M` [Longest Repeating Character Replacement](./5_sliding_window/3_longest_repeating_character_replacement.md) - [leetcode](https://leetcode.com/problems/longest-repeating-character-replacement/) - [youtube](https://www.youtube.com/watch?v=gqXU1UyA8pk)
 4. ❌❌30'`M` [Permutation In String](./5_sliding_window/4_permutation_in_string.md) - [leetcode](https://leetcode.com/problems/permutation-in-string/) - [youtube](https://www.youtube.com/watch?v=UbyhOgBN834)
-5. `H` Minimum Window Substring [leetcode](https://leetcode.com/problems/minimum-window-substring/) - [youtube](https://www.youtube.com/watch?v=jSto0O4AJbM)
+5. `H` [Minimum Window Substring](./5_sliding_window/5_minimum_window_substring.md) - [leetcode](https://leetcode.com/problems/minimum-window-substring/) - [youtube](https://www.youtube.com/watch?v=jSto0O4AJbM)
 6. `H` Sliding Window Maximum [leetcode](https://leetcode.com/problems/sliding-window-maximum/) - [youtube](https://www.youtube.com/watch?v=DfljaUwZsOk)
 
 ## 6. Linked List (4/11)
