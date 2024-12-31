@@ -53,28 +53,24 @@ Constraints:
 
 ```go
 func CarFleet(target int, position []int, speed []int) int {
-	posSpeedPairs := [][2]int{}
+	posSpeedPairs := make([][2]int, len(position))
 	for i := 0; i < len(position); i++ {
-		currPair := [2]int{position[i], speed[i]}
-		posSpeedPairs = append(posSpeedPairs, currPair)
+		posSpeedPairs[i] = [2]int{position[i], speed[i]}
 	}
-	// sort posSpeedPairs by increasing order of positions
 	sort.Slice(posSpeedPairs, func(i, j int) bool {
 		return posSpeedPairs[i][0] < posSpeedPairs[j][0]
 	})
 
-	// init a stack to store time to destination
-	stack := []float64{}
+	stack := []float64{} // Track the times to reach the target for each car
 
-	for i := len(posSpeedPairs) - 1; i >= 0; i-- {
+	for i := len(posSpeedPairs) - 1; i >= 0; i-- { // Traverse cars from last to first
 		position := float64(posSpeedPairs[i][0])
 		speed := float64(posSpeedPairs[i][1])
-		stack = append(stack, (float64(target)-position)/speed)
-
-		// if the current car time to destination is less than the previous
-		// two cars are at the same place, keep the slowest
-		if len(stack) >= 2 && stack[len(stack)-1] <= stack[len(stack)-2] {
-			stack = stack[:len(stack)-1]
+		timeToReach := (float64(target) - position) / speed // Time to reach the target for the current car
+		
+		// If the current car is slower than the one ahead, it's part of the same fleet
+		if len(stack) == 0 || timeToReach > stack[len(stack)-1] {
+			stack = append(stack, timeToReach)
 		}
 	}
 
