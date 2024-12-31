@@ -68,7 +68,6 @@ func CarFleet(target int, position []int, speed []int) int {
 		speed := float64(posSpeedPairs[i][1])
 		timeToReach := (float64(target) - position) / speed // Time to reach the target for the current car
 		
-		// If the current car is slower than the one ahead, it's part of the same fleet
 		if len(stack) == 0 || timeToReach > stack[len(stack)-1] {
 			stack = append(stack, timeToReach)
 		}
