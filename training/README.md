@@ -1,4 +1,4 @@
-# 🗺️ Roadmap (34/85) 40%
+# 🗺️ Roadmap (36/85) 42%
 subset of [neetcode roadmap](https://neetcode.io/roadmap)
 
 > - `E`: easy
@@ -35,7 +35,7 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 6. ❌✅🤔🤔55'`M` [Car Fleet](./3_stack/6_car_fleet.md) - [leetcode](https://leetcode.com/problems/car-fleet/) - [youtube](https://www.youtube.com/watch?v=Pr6T-3yB9RM)
 7. 🤔45'`H` [Largest Rectangle In Histogram](./3_stack/7_largest_rectangle_in_histogram.md) - [leetcode](https://leetcode.com/problems/largest-rectangle-in-histogram/) - [youtube](https://www.youtube.com/watch?v=zx5Sw9130L0&source_ve_path=OTY3MTQ)
 
-## 4. Binary Search (2/7)
+## 4. Binary Search (4/7)
 1. ✅✅✅4`E` [Binary Search](./4_binary_search/1_binary_search.md) - [leetcode](https://leetcode.com/problems/binary-search/) - [youtube](https://www.youtube.com/watch?v=s4DPM8ct1pI)
 2. ❌✅✅15'`M` [Search a 2D Matrix](./4_binary_search/2_search_a_2d_matrix.md) - [leetcode](https://leetcode.com/problems/search-a-2d-matrix/) - [youtube](https://www.youtube.com/watch?v=Ber2pi2C0j0)
 3. ❌❌🤔🤔60'`M` [Koko Eating Bananas](./4_binary_search/3_koko_eating_bananas.md) - [leetcode](https://leetcode.com/problems/koko-eating-bananas/) - [youtube](https://www.youtube.com/watch?v=U2SozAs9RzA)
