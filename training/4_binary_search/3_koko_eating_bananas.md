@@ -56,23 +56,23 @@ Constraints:
 - return res
 
 ```go
-func MinEatingSpeed(piles []int, h int) int {
-    l, r := 1, slices.Max(piles)
-    res := r
+func minEatingSpeed(piles []int, h int) int {
+    lo, hi := 1, slices.Max(piles)
+    var res = hi
 
-    for l <= r {
-        k := (l + r) / 2
-        hours := 0
+    for lo <= hi {
+        mid := lo+(hi-lo)/2
+        hours := 0 
 
-        for _, p := range piles {
-            hours += int(math.Ceil(float64(p) / float64(k)))
+        for _, pile := range piles {
+            hours += int(math.Ceil(float64(pile)/float64(mid)))
         }
 
         if hours <= h {
-            res = min(res, k)
-            r = k - 1
+            res = mid
+            hi = mid-1
         } else {
-            l = k + 1
+            lo = mid+1
         }
     }
 
