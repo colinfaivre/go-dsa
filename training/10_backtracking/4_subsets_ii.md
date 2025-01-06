@@ -1,7 +1,7 @@
 # 10.4 Subsets II `M`
 
 [leetcode](https://leetcode.com/problems/subsets-ii/description/) |
-[youtube](https://www.youtube.com/watch?v=FZe0UqISmUw)
+[youtube](https://www.youtube.com/watch?v=Vn2v6ajA7U0)
 
 Given an integer array nums that may contain duplicates, return all possible subsets (the power set).
 The solution set must not contain duplicate subsets. Return the solution in any order.
