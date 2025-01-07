@@ -41,17 +41,13 @@ Constraints:
 - return res
 
 ```go
-func CharacterReplacement(s string, k int) int {
+func characterReplacement(s string, k int) int {
     res := 0
     l := 0
     charCount := map[byte]int{}
 
     for r := 0; r < len(s); r++ {
-        if _, ok := charCount[s[r]]; ok {
-            charCount[s[r]]++
-        } else {
-            charCount[s[r]] = 1
-        }
+        charCount[s[r]]++
 
         for (r - l + 1) - slices.Max(slices.Collect(maps.Values(charCount))) > k {
             charCount[s[l]]--
