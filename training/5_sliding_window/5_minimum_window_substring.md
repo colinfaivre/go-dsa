@@ -31,5 +31,62 @@ Constraints:
 > - s and t consist of uppercase and lowercase English letters.
 
 <details>
-  <summary><b>solution</b></summary>
+  <summary><b>O(n) solution - Sliding Window</b></summary>
+
+```go
+func minWindow(s string, t string) string {
+    if len(s) == 0 || len(t) == 0 {
+        return ""
+    }
+
+    // Create a map to store the frequency of characters in t
+    targetFreq := make(map[byte]int)
+    for i := 0; i < len(t); i++ {
+        targetFreq[t[i]]++
+    }
+
+    // Sliding window variables
+    left, right := 0, 0
+    minLen := len(s) + 1
+    minStart := 0
+    required := len(targetFreq)
+    formed := 0
+
+    // Current window frequency map
+    windowFreq := make(map[byte]int)
+
+    for right < len(s) {
+        // Add the current character to the window
+        char := s[right]
+        windowFreq[char]++
+        if targetFreq[char] > 0 && windowFreq[char] == targetFreq[char] {
+            formed++
+        }
+
+        // Try to shrink the window
+        for left <= right && formed == required {
+            if right-left+1 < minLen {
+                minLen = right - left + 1
+                minStart = left
+            }
+
+            // Remove the character at the left
+            leftChar := s[left]
+            windowFreq[leftChar]--
+            if targetFreq[leftChar] > 0 && windowFreq[leftChar] < targetFreq[leftChar] {
+                formed--
+            }
+            left++
+        }
+
+        // Expand the window
+        right++
+    }
+
+    if minLen == len(s)+1 {
+        return ""
+    }
+    return s[minStart : minStart+minLen]
+}
+```
 </details>
