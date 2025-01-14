@@ -50,7 +50,7 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 3. ❌❌30'`M` [Longest Repeating Character Replacement](./5_sliding_window/3_longest_repeating_character_replacement.md) - [leetcode](https://leetcode.com/problems/longest-repeating-character-replacement/) - [youtube](https://www.youtube.com/watch?v=gqXU1UyA8pk)
 4. ❌❌✅30'`M` [Permutation In String](./5_sliding_window/4_permutation_in_string.md) - [leetcode](https://leetcode.com/problems/permutation-in-string/) - [youtube](https://www.youtube.com/watch?v=UbyhOgBN834)
 5. ❌30'`H` [Minimum Window Substring](./5_sliding_window/5_minimum_window_substring.md) - [leetcode](https://leetcode.com/problems/minimum-window-substring/) - [youtube](https://www.youtube.com/watch?v=jSto0O4AJbM)
-6. `H` [Sliding Window Maximum](./5_sliding_window/6_sliding_window_maximum.md) - [leetcode](https://leetcode.com/problems/sliding-window-maximum/) - [youtube](https://www.youtube.com/watch?v=DfljaUwZsOk)
+6. ✅30'`H` [Sliding Window Maximum](./5_sliding_window/6_sliding_window_maximum.md) - [leetcode](https://leetcode.com/problems/sliding-window-maximum/) - [youtube](https://www.youtube.com/watch?v=DfljaUwZsOk)
 
 ## 6. Linked List (4/11)
 1. ❌✅✅10'`E` Reverse Linked List [leetcode](https://leetcode.com/problems/reverse-linked-list/) - [youtube](https://www.youtube.com/watch?v=G0_I-ZF0S38)
