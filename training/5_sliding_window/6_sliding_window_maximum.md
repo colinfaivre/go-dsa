@@ -33,7 +33,7 @@ Constraints:
 > - 1 <= k <= nums.length
 
 <details>
- <summary><b>solution - sliding win / heap</b></summary>
+ <summary><b>O(nlogk) solution - sliding win / heap</b></summary>
 
 ```go
 type Pair struct {
@@ -72,6 +72,31 @@ func maxSlidingWindow(nums []int, k int) []int {
 	}
 
 	return res
+}
+```
+</details>
+
+<details>
+	<summary><b>O(n) solution - sliding win / monotonic queue</b></summary>
+
+```go
+func maxSlidingWindow(nums []int, k int) []int {
+    if len(nums) == 0 || k == 0 { return []int{} }
+    res := []int{}
+    queue := []int{} // Monotonic queue to store indices
+
+    for i := 0; i < len(nums); i++ {
+        if len(queue) > 0 && queue[0] < i-k+1 { queue = queue[1:] } // Remove indices outside the window
+
+        // Remove indices from the back if their values are smaller than the current value
+        for len(queue) > 0 && nums[queue[len(queue)-1]] <= nums[i] {
+            queue = queue[:len(queue)-1]
+        }
+        queue = append(queue, i) // Add the current index to the queue
+        if i >= k-1 { res = append(res, nums[queue[0]]) } // Add the max value of the curr window to res
+    }
+
+    return res
 }
 ```
 </details>
