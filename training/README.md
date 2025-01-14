@@ -1,4 +1,4 @@
-# 🗺️ Roadmap (40/85) 47%
+# 🗺️ Roadmap (41/85) 48%
 subset of [neetcode roadmap](https://neetcode.io/roadmap)
 
 > - `E`: easy
@@ -44,7 +44,7 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 6. ❌🤔35'`M` [Time Based Key Value Store](./4_binary_search/6_time_based_key_value_store.md) - [leetcode](https://leetcode.com/problems/time-based-key-value-store/) - [youtube](https://www.youtube.com/watch?v=fu2cD_6E8Hw)
 7. `H` [Median of Two Sorted Arrays](./4_binary_search/7_median_of_two_sorted_arrays.md) - [leetcode](https://leetcode.com/problems/median-of-two-sorted-arrays/) - [youtube](https://www.youtube.com/watch?v=q6IEA26hvXc)
 
-## 5. Sliding Window (3/6)
+## 5. Sliding Window (4/6)
 1. ❌❌✅12'`E` [Best Time to Buy And Sell Stock](./5_sliding_window/1_best_time_to_buy_and_sell_stock.md) - [leetcode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) - [youtube](https://www.youtube.com/watch?v=1pkOgXD63yU)
 2. ❌❌✅10`M` [Longest Substring Without Repeating Characters](./5_sliding_window/2_longest_substring_without_repeating_characters.md) - [leetcode](https://leetcode.com/problems/longest-substring-without-repeating-characters/) - [youtube](https://www.youtube.com/watch?v=wiGpQwVHdE0)
 3. ❌❌30'`M` [Longest Repeating Character Replacement](./5_sliding_window/3_longest_repeating_character_replacement.md) - [leetcode](https://leetcode.com/problems/longest-repeating-character-replacement/) - [youtube](https://www.youtube.com/watch?v=gqXU1UyA8pk)
