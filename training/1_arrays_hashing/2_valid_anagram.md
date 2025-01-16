@@ -24,6 +24,17 @@ Constraints:
 - sort s
 - sort t
 - return s == t
+
+```js
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+var isAnagram = function(s, t) {
+    return s.length === t.length && [...s].sort().join('') === [...t].sort().join('');
+};
+```
 </details>
 
 <details>
@@ -56,6 +67,28 @@ func IsAnagram(s string, t string) bool {
         if countS[k] != countT[k] {
             return false
         }
+    }
+
+    return true
+}
+```
+
+```js
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+var isAnagram = function(s, t) {
+    if (s.length != t.length) return false
+    const count = {}
+
+    for (let i = 0; i < s.length; i++) {
+        count[s[i]] = (count[s[i]] || 0)+1 
+    }
+    for (let i = 0; i < t.length; i++) {
+        if (!count[t[i]]) return false
+        count[t[i]]--
     }
 
     return true
