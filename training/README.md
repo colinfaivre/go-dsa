@@ -12,7 +12,7 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 
 ## 1. Arrays / Hashing (8/8)
 1. ✅✅✅🟨2'`E` [Contains Duplicate](./1_arrays_hashing/1_contains_duplicate.md) - [leetcode](https://leetcode.com/problems/contains-duplicate/) - [youtube](https://www.youtube.com/watch?v=3OamzN90kPg)
-2. ✅✅✅8'`E` [Valid Anagram](./1_arrays_hashing/2_valid_anagram.md) - [leetcode](https://leetcode.com/problems/valid-anagram/) - [youtube](https://www.youtube.com/watch?v=9UtInBqnCgA)
+2. ✅✅✅🟨8'`E` [Valid Anagram](./1_arrays_hashing/2_valid_anagram.md) - [leetcode](https://leetcode.com/problems/valid-anagram/) - [youtube](https://www.youtube.com/watch?v=9UtInBqnCgA)
 3. ✅✅✅15'`E` [Two Sum](./1_arrays_hashing/3_two_sum.md) - [leetcode](https://leetcode.com/problems/two-sum/) - [youtube](https://www.youtube.com/watch?v=KLlXCFG5TnA)
 4. ❌✅✅11'`M` [Group Anagrams](./1_arrays_hashing/4_group_anagrams.md) - [leetcode](https://leetcode.com/problems/group-anagrams/) - [youtube](https://www.youtube.com/watch?v=vzdNOK2oB2E)
 5. ❌✅✅15'`M` [Top K Frequent Elements](./1_arrays_hashing/5_top_k_frequent_elements.md) - [leetcode](https://leetcode.com/problems/top-k-frequent-elements/) - [youtube](https://www.youtube.com/watch?v=YPTqKIgVk-k)
