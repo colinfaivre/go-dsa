@@ -27,6 +27,21 @@ Constraints:
 - loop in nums inserting each num into a freqMap - O(n)
 - sort the map items in descending order by freqs - O(nlogn)
 - pop the first k biggest freq nums - O(k)
+
+```js
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number[]}
+ */
+var topKFrequent = function(nums, k) {
+    const freqMap = new Map()
+    for (const num of nums) freqMap.set(num, (freqMap.get(num) || 0) + 1)
+    const sorted = [...freqMap.entries()].sort((a, b) => b[1] - a[1])
+
+    return sorted.slice(0, k).map(entry => entry[0])
+}
+```
 </details>
 
 <details>
