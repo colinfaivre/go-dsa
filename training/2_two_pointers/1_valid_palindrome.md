@@ -51,4 +51,23 @@ func IsPalindrome(s string) bool {
     return true
 }
 ```
+
+```js
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+var isPalindrome = function(s) {
+    const cleanS = s.toLowerCase().replace(/[^0-9a-z]/gi, '').trim()
+
+    let lo = 0, hi = cleanS.length - 1
+    while (lo <= hi) {
+        if (cleanS[lo] != cleanS[hi]) return false
+        lo++
+        hi--
+    }
+
+    return true
+};
+```
 </details>
