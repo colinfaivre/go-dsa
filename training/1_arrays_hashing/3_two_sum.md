@@ -57,5 +57,24 @@ func TwoSum(nums []int, target int) []int {
     return []int {0, 0} // default return
 }
 ```
+
+```js
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function(nums, target) {
+    numMap = new Map()
+
+    for (let i = 0; i < nums.length; i++) {
+        const complement = target - nums[i]
+        if (numMap.has(complement)) return [numMap.get(complement), i] 
+        numMap.set(nums[i], i)
+    }
+
+    return []
+};
+```
 </details>
 
