@@ -59,4 +59,23 @@ func GroupAnagrams(strs []string) [][]string {
     return res
 }
 ```
+
+```js
+/**
+ * @param {string[]} strs
+ * @return {string[][]}
+ */
+var groupAnagrams = function(strs) {
+    const hashMap = new Map()
+    for (const str of strs) {
+        const charCount = Array(26).fill(0)
+        for (const char of str) charCount[char.charCodeAt(0) - 'a'.charCodeAt(0)]++
+        const key = charCount.join(',')
+        if (!hashMap.has(key)) hashMap.set(key, [])
+        hashMap.get(key).push(str)
+    }
+
+    return [...hashMap.values()]
+}
+```
 </details>
