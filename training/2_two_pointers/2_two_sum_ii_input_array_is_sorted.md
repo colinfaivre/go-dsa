@@ -61,4 +61,21 @@ Constraints:
       return []int{}
   }
   ```
+
+```js
+/**
+ * @param {number[]} numbers
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function(numbers, target) {
+    let lo = 0, hi = numbers.length - 1
+
+    while (lo < hi) {
+        const sum = numbers[lo] + numbers[hi]
+        if (sum === target) return [lo + 1, hi + 1]
+        sum > target ? hi-- : lo++
+    }
+}
+```
 </details>
