@@ -16,7 +16,7 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 3. ✅✅✅🟨15'`E` [Two Sum](./1_arrays_hashing/3_two_sum.md) - [leetcode](https://leetcode.com/problems/two-sum/) - [youtube](https://www.youtube.com/watch?v=KLlXCFG5TnA)
 4. ❌✅✅🟨11'`M` [Group Anagrams](./1_arrays_hashing/4_group_anagrams.md) - [leetcode](https://leetcode.com/problems/group-anagrams/) - [youtube](https://www.youtube.com/watch?v=vzdNOK2oB2E)
 5. ❌✅✅🟨15'`M` [Top K Frequent Elements](./1_arrays_hashing/5_top_k_frequent_elements.md) - [leetcode](https://leetcode.com/problems/top-k-frequent-elements/) - [youtube](https://www.youtube.com/watch?v=YPTqKIgVk-k)
-6. ❌✅✅15'`M` [Product of Array Except Self](./1_arrays_hashing/6_product_of_array_except_self.md) - [leetcode](https://leetcode.com/problems/product-of-array-except-self/) - [youtube](https://www.youtube.com/watch?v=bNvIQI2wAjk)
+6. ❌✅✅🟨15'`M` [Product of Array Except Self](./1_arrays_hashing/6_product_of_array_except_self.md) - [leetcode](https://leetcode.com/problems/product-of-array-except-self/) - [youtube](https://www.youtube.com/watch?v=bNvIQI2wAjk)
 7. ❌✅✅30'`M` [Valid Sudoku](./1_arrays_hashing/7_valid_sudoku.md) - [leetcode](https://leetcode.com/problems/valid-sudoku/) - [youtube](https://www.youtube.com/watch?v=TjFXEUCMqI8)
 8. ❌✅✅10'`M` [Longest Consecutive Sequence](./1_arrays_hashing/8_longest_consecutive_sequence.md) - [leetcode](https://leetcode.com/problems/longest-consecutive-sequence/) - [youtube](https://www.youtube.com/watch?v=P6RZZMu_maU)
 
