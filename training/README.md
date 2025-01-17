@@ -7,6 +7,7 @@ subset of [neetcode roadmap](https://neetcode.io/roadmap)
 > - ❌: failed
 > - ✅: Go solved
 > - 🟨: JS solved
+> - 🟦: TS solved
 > - 🤔: memo
 > - X': last chrono
 
