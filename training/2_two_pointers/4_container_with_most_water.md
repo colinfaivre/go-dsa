@@ -66,4 +66,21 @@ func MaxAreaOn(height []int) int {
 }
 ```
 
+```js
+/**
+ * @param {number[]} height
+ * @return {number}
+ */
+var maxArea = function(height) {
+    let lo = 0, hi = height.length - 1, res = 0
+    while (lo < hi) {
+        const area = Math.min(height[lo], height[hi])*(hi-lo)
+        res = Math.max(res, area)
+        if (height[lo] <= height[hi]) lo++
+        else hi--
+    }
+    return res
+};
+```
+
 </details>
