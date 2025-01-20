@@ -76,4 +76,26 @@ func isValidSudoku(board [][]byte) bool {
     return true
 }
 ```
+
+```js
+function isValidSudoku(board) {
+    const rows = Array.from({ length: 9 }, () => Array(9).fill(false))
+    const cols = Array.from({ length: 9 }, () => Array(9).fill(false))
+    const squares = Array.from({ length: 9 }, () => Array(9).fill(false))
+
+    for (let r = 0; r < 9; r++) {
+        for (let c = 0; c < 9; c++) {
+            if (board[r][c] === '.') continue
+            const num = board[r][c] - '1' // Convert char '1'-'9' to index 0-8
+            const squareIndex = Math.floor(r / 3) * 3 + Math.floor(c / 3) // Unique square index from 0 to 8
+            if (rows[r][num] || cols[c][num] || squares[squareIndex][num]) return false
+            rows[r][num] = true
+            cols[c][num] = true
+            squares[squareIndex][num] = true
+        }
+    }
+
+    return true
+}
+```
 </details>
