@@ -56,4 +56,26 @@ func IsValid(s string) bool {
 	return len(stack) == 0
 }
 ```
+
+```js
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+var isValid = function(s) {
+    const parenMap = {
+        "(": ")",
+        "[": "]",
+        "{": "}",
+    }
+    stack = []
+
+    for (const char of s) {
+        if (parenMap[stack[stack.length-1]] != char || stack.length === 0) stack.push(char)
+        else stack.pop()
+    }
+
+    return stack.length === 0
+};
+```
 </details>
