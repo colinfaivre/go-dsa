@@ -75,4 +75,34 @@ func SearchMatrix(matrix [][]int, target int) bool {
     return false
 }
 ```
+
+```js
+/**
+ * @param {number[][]} matrix
+ * @param {number} target
+ * @return {boolean}
+ */
+var searchMatrix = function(matrix, target) {
+    let loRow = 0, hiRow = matrix.length-1
+    let targetRow = -1
+    while (loRow <= hiRow) {
+        let midRow = loRow + Math.floor((hiRow-loRow)/2)
+        if (matrix[midRow][0] > target) hiRow = midRow-1
+        else if (matrix[midRow][matrix[midRow].length-1] < target) loRow = midRow+1
+        else {targetRow = midRow; break}
+    }
+
+    if (targetRow === -1) return false
+
+    let lo = 0, hi = matrix[targetRow].length-1
+    while (lo <= hi) {
+        let mid = lo + Math.floor((hi-lo)/2)
+        if (matrix[targetRow][mid] > target) hi = mid-1
+        else if (matrix[targetRow][mid] < target) lo = mid+1
+        else return true
+    }
+
+    return false
+};
+```
 </details>
