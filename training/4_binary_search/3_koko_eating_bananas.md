@@ -79,4 +79,22 @@ func minEatingSpeed(piles []int, h int) int {
     return res
 }
 ```
+
+```ts
+function minEatingSpeed(piles: number[], h: number): number {
+    let lo = 1, hi = Math.max(...piles), res = hi
+
+    while (lo <= hi) {
+        const mid = lo + Math.floor((hi-lo)/2)
+        let hours = 0
+        for (const pile of piles) hours += Math.ceil(pile/mid)
+        if (hours <= h) {
+            res = mid
+            hi = mid-1
+        } else lo = mid+1
+    }
+
+    return res
+};
+```
 </details>
