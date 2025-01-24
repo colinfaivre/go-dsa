@@ -81,4 +81,22 @@ func FindMin(nums []int) int {
     return res
 }
 ```
+
+```ts
+function findMin(nums: number[]): number {
+    let lo = 0, hi = nums.length-1, res = 50001
+    while (lo <= hi) {
+        if (nums[lo] < nums[hi]){
+            res = nums[lo]
+            break
+        }
+        const mid = lo + Math.floor((hi-lo)/2)
+        res = Math.min(res, nums[mid])
+
+        if (nums[mid] >= nums[hi]) lo = mid+1
+        else hi = mid
+    }
+    return res
+}
+```
 </details>
