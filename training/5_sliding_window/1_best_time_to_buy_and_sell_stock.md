@@ -51,4 +51,17 @@ func MaxProfit(prices []int) int {
     return maxP
 }
 ```
+
+```ts
+function maxProfit(prices: number[]): number {
+    let lo = 0, hi = 0, maxProfit = 0
+    while (hi < prices.length) {
+        if (prices[lo] < prices[hi]) maxProfit = Math.max(maxProfit, prices[hi]-prices[lo])
+        else lo = hi
+        hi++
+    }
+
+    return maxProfit
+}
+```
 </details>
