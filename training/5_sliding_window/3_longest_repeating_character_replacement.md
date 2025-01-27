@@ -60,4 +60,28 @@ func characterReplacement(s string, k int) int {
     return res
 }
 ```
+
+```ts
+function characterReplacement(s: string, k: number): number {
+    const charCount = new Map<string, number>()
+    let res = 0, lo = 0, maxCount = 0
+
+    for (let hi = 0; hi < s.length; hi++) {
+        const char = s[hi]
+        const count = (charCount.get(char) || 0) + 1
+        charCount.set(char, count)
+        maxCount = Math.max(maxCount, count)
+
+        while ((hi - lo + 1) - maxCount > k) {
+            const leftChar = s[lo]
+            charCount.set(leftChar, charCount.get(leftChar)! - 1)
+            lo++
+        }
+
+        res = Math.max(res, hi - lo + 1)
+    }
+
+    return res
+}
+```
 </details>
