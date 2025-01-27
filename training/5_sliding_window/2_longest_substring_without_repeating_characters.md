@@ -68,4 +68,22 @@ func LengthOfLongestSubstring(s string) int {
     return res
 }
 ```
+
+```ts
+function lengthOfLongestSubstring(s: string): number {
+    const charSet = new Set()
+    let lo = 0, res = 0
+
+    for (let hi = 0; hi < s.length; hi++) {
+        while (charSet.has(s[hi])) {
+            charSet.delete(s[lo])
+            lo++
+        }
+        charSet.add(s[hi])
+        res = Math.max(res, hi-lo+1)
+    }
+
+    return res
+}
+```
 </details>
